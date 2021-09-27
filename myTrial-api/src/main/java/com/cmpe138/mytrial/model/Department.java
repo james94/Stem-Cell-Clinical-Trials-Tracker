@@ -3,11 +3,6 @@ package com.cmpe138.mytrial.model;
 import java.sql.Date;
 
 public class Department {
-	@Override
-	public String toString() {
-		return "Department [dname=" + dname + ", dnumber=" + dnumber + ", mgrssn=" + mgrssn + ", mgrstartdate="
-				+ mgrstartdate + "]";
-	}
 	private String dname;
 	private int dnumber;
 	private int mgrssn;
@@ -36,5 +31,9 @@ public class Department {
 	public void setMgrstartdate(Date mgrstartdate) {
 		this.mgrstartdate = mgrstartdate;
 	}
-	
+	@Override
+	public String toString() {
+		return "Department [dname=" + dname + ", dnumber=" + dnumber + ", mgrssn=" + mgrssn + ", mgrstartdate="
+				+ mgrstartdate + "]";
+	}
 }
