@@ -58,6 +58,20 @@ CREATE TABLE awards (
     foreign key (grant_number) references cirm_grant (grant_number)
 );
 
+--  organization is a reserved word
+CREATE TABLE org (
+    org_name varchar(300) not null,
+    researcher_number int default 0,
+    primary key (org_name)
+);
+
+CREATE TABLE disease_area (
+    researcher_id varchar(9) not null,
+    disease_name varchar(300) not null,
+    primary key (researcher_id, disease_name),
+    foreign key (researcher_id) references researcher (researcher_id)
+);
+
 -- INSERT into Database TABLES
 
 
