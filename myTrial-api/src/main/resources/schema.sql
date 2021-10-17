@@ -78,18 +78,22 @@ CREATE TABLE r_disease_area (
 
 CREATE TABLE patient(
     patient_id varchar(300) not null,
-    phase varchar(20) not null
-    status varchar(30) not null
-    disease_areas varchar(300) not null
-    primary key (patient_id)
+    phase varchar(20) not null,
+    status varchar(30) not null,
+    disease varchar(300) not null,
+    trail_id varchar(9) not null,
+    p_username varchar(30) not null,
+    p_password varchar(20) not null,
+    primary key (patient_id),
+    foreign key (trail_id) references trail (trail_id)
 );
 
-CREATE TABLE reports(
+CREATE TABLE works_for(
     researcher_id varchar(9) not null,
-    grant_number varchar(11) not null,
+    org_name varchar(300) not null,
     primary key (researcher_id, grant_number),
     foreign key (researcher_id) references researcher (researcher_id),
-    foreign key (grant_number) references cirm_grant (grant_number)
+    foreign key (org_name) references org (org_name)
 );
 
 CREATE TABLE t_disease_area (
