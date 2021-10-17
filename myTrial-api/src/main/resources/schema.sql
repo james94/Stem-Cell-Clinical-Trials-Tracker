@@ -85,6 +85,33 @@ CREATE TABLE reply
      FOREIGN KEY (researcher_id) REFERENCES researcher(researcher_id)
   ); 
 
+CREATE TABLE patient(
+    patient_id varchar(300) not null,
+    phase varchar(20) not null,
+    status varchar(30) not null,
+    disease varchar(300) not null,
+    trail_id varchar(9) not null,
+    p_username varchar(30) not null,
+    p_password varchar(20) not null,
+    primary key (patient_id),
+    foreign key (trail_id) references trail (trail_id)
+);
+
+CREATE TABLE works_for(
+    researcher_id varchar(9) not null,
+    org_name varchar(300) not null,
+    primary key (researcher_id, grant_number),
+    foreign key (researcher_id) references researcher (researcher_id),
+    foreign key (org_name) references org (org_name)
+);
+
+CREATE TABLE t_disease_area (
+    trial_id varchar(9) not null,
+    disease_name varchar(300) not null,
+    primary key (trial_id, disease_name),
+    foreign key (trial_id) references trial (trial_id)
+);
+
 -- INSERT into Database TABLES
 INSERT trial VALUES
 ('179431196','Active, not recruiting',16,'NCT02590692','Phase 1','Phase 1 Safety Assessment of CPCB-RPE1, hESC-derived RPE Cell Coated Parylene Membrane Implants, in Patients with Advanced Dry Age Related Macular Degeneration','University of Southern California'),													
@@ -1791,4 +1818,3 @@ INSERT r_disease_area VALUES
 ('000000189',' Spinal Muscular Atrophy'),
 ('000000424',' Rett\'s Syndrome'),
 ('000000296',' Skeletal/Smooth Muscle disorders');
-
