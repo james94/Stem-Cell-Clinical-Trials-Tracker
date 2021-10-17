@@ -4,6 +4,7 @@ create database mytrial;
 
 -- CREATE Database Objects
 
+
 -- NOTE: I see NCT_no link to specific CT title
 CREATE TABLE trial (
 	trial_id varchar(9) not null,
@@ -34,6 +35,14 @@ CREATE TABLE p_watchlist (
     foreign key (patient_id) references patient (patient_id)
 );
 
+CREATE TABLE donor (
+    patient_id varchar(9) not null,
+    name varchar(50) not null,
+    email varchar(50),
+    primary key (patient_id, name),
+    foreign key (patient_id) references patient (patient_id)
+);
+
 CREATE TABLE discussion_forum (
     dfname varchar(60) not null,
     df_id varchar(9) not null,
@@ -42,6 +51,15 @@ CREATE TABLE discussion_forum (
     primary key (df_id)
 );
 
+
+CREATE TABLE discusses{
+    researcher_id varchar(9) not null,
+    df_id varchar(9) not null,
+    primary key (researcher_id, df_id),
+    foreign key (researcher_id) references researcher (researcher_id),
+    foreign key (df_id) references discussion_forum (df_id)
+}
+
 CREATE TABLE investigates (
 	researcher_id varchar(9) not null,
     trial_id varchar(9) not null,
@@ -49,6 +67,7 @@ CREATE TABLE investigates (
     foreign key (researcher_id) references researcher (researcher_id),
     foreign key (trial_id) references trial (trial_id)
 );
+
 
 CREATE TABLE awards (
     researcher_id varchar(9) not null,
