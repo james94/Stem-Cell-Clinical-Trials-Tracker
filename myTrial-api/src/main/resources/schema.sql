@@ -76,6 +76,29 @@ CREATE TABLE r_disease_area (
     foreign key (researcher_id) references researcher (researcher_id)
 );
 
+CREATE TABLE patient(
+    patient_id varchar(300) not null,
+    phase varchar(20) not null
+    status varchar(30) not null
+    disease_areas varchar(300) not null
+    primary key (patient_id)
+);
+
+CREATE TABLE reports(
+    researcher_id varchar(9) not null,
+    grant_number varchar(11) not null,
+    primary key (researcher_id, grant_number),
+    foreign key (researcher_id) references researcher (researcher_id),
+    foreign key (grant_number) references cirm_grant (grant_number)
+);
+
+CREATE TABLE t_disease_area (
+    trial_id varchar(9) not null,
+    disease_name varchar(300) not null,
+    primary key (trial_id, disease_name),
+    foreign key (trial_id) references trial (trial_id)
+);
+
 -- INSERT into Database TABLES
 INSERT trial VALUES
 ("179431196","Active, not recruiting",16,"NCT02590692","Phase 1","Phase 1 Safety Assessment of CPCB-RPE1, hESC-derived RPE Cell Coated Parylene Membrane Implants, in Patients with Advanced Dry Age Related Macular Degeneration","University of Southern California"),
