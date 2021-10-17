@@ -89,14 +89,16 @@ CREATE TABLE patient (
     trial_id varchar(9) not null,
     p_username varchar(30) not null,
     p_password varchar(20) not null,
+    researcher_id varchar(9) not null,
     primary key (patient_id),
-    foreign key (trial_id) references trail (trial_id)
+    foreign key (trial_id) references trail (trial_id),
+    foreign key (researcher_id) references researcher (researcher_id)
 );
 
 CREATE TABLE works_for (
     researcher_id varchar(9) not null,
     org_name varchar(300) not null,
-    primary key (researcher_id),
+    primary key (researcher_id, org_name),
     foreign key (researcher_id) references researcher (researcher_id),
     foreign key (org_name) references org (org_name)
 );
