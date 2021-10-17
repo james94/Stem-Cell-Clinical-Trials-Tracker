@@ -12,6 +12,7 @@ CREATE TABLE trial (
     NCT_no char(11),
     phase varchar(5) not null,
     title varchar(300) not null,
+    org_name varchar(300),
     primary key (trial_id)
 );
 
@@ -30,6 +31,7 @@ CREATE TABLE researcher (
 CREATE TABLE p_watchlist (
 	patient_id varchar(9) not null,
     name varchar(50) not null,
+    disease varchar(300) not null,
     primary key (patient_id, name),
     foreign key (patient_id) references patient (patient_id)
 );
