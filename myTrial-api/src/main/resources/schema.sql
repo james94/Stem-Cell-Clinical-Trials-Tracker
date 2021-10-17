@@ -79,15 +79,15 @@ CREATE TABLE r_disease_area (
 CREATE TABLE grants
 	(grant_number		varchar(8), 
 	 grant_title		varchar(20), 
-     trial_id		    varchar(9), 
+         trial_id		varchar(9), 
 	 disease_focus		varchar(20),
      start_date			date,
      end_date			date,
-     type				varchar(20), 
+     type			varchar(20), 
      award_status		varchar(20),
      institution		varchar(20),
      stem_cell_use		varchar(30),
-     amount				decimal(10,2) check (amount > 0),		
+     amount			decimal(10,2) check (amount > 0),		
 	 primary key (grant_number),
 		foreign key (trial_id) references trial(trial_id)
 		on delete cascade
@@ -95,10 +95,10 @@ CREATE TABLE grants
     
     
 CREATE TABLE r_watchlist
-	(name				varchar(20), 
-	 researcher_id		varchar(9), 
-     trial_id		    varchar(9), 
-	 disease_area		varchar(20),
+	( name			    varchar(20), 
+	 researcher_id		    varchar(9), 
+     	 trial_id		    varchar(9), 
+	 disease_area		    varchar(20),
 	 primary key (name, researcher_id),
 	 foreign key (researcher_id) references researcher(researcher_id)
 		on delete cascade
