@@ -6,4 +6,6 @@ import com.cmpe138.mytrial.model.*;
 
 public interface MyTrialService {
 	List<Department> getAllDepartments();
+	List<Trial> getTrials(String researcher_id);
 }
+
