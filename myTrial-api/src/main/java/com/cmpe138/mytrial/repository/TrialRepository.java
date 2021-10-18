@@ -28,7 +28,7 @@ public class TrialRepository {
 		t.setNCT_no(rs.getString("NCT_no"));
 		t.setPhase(rs.getString("phase"));
 		t.setTitle(rs.getString("title"));
-		t.setOrganization_name(rs.getString("organization_name"));
+		t.setOrganization_name(rs.getString("org_name"));
 		return t;
 }
 }
