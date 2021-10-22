@@ -6,6 +6,12 @@ import com.cmpe138.mytrial.model.*;
 
 public interface MyTrialService {
 	List<Department> getAllDepartments();
-	List<Trial> getTrials(String researcher_id);
+	
+	List<Trial> getResearcherTrials(String researcher_id);
+	
+	void createTrial(String r_id, String trial_status, int target_enrollment, 
+			String NCT_no, String phase, String title, String org_name);
+	
+	Trial getTrialById(String t_id);
 }
 
