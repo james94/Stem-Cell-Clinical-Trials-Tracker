@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +20,12 @@ public class trialController {
 	
 	@GetMapping("/trials")
 	public List<Trial> getTrials(@RequestParam String researcher_id) {
-		return myTrial.getTrials(researcher_id);
+		return myTrial.getResearcherTrials(researcher_id);
+	}
+	
+	@PostMapping("/addtrial")
+	public void getTrial(@RequestParam String researcher_id, @RequestBody Trial trial) {
+		myTrial.createTrial(researcher_id, trial.getTrial_status(), trial.getTarget_enrollment(), 
+				 trial.getNCT_no(), trial.getPhase(), trial.getTitle(), trial.getOrganization_name());
 	}
 }
