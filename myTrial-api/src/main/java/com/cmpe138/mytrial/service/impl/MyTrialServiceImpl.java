@@ -27,8 +27,22 @@ public class MyTrialServiceImpl implements MyTrialService {
 	}
 	
 	@Override
-	public List<Trial> getTrials(String researcher_id) {
+	public List<Trial> getResearcherTrials(String researcher_id) {
 		return trialRepository.findByResearcherId(researcher_id);
+	}
+	
+	@Override
+	public void createTrial(String r_id, String trial_status, int target_enrollment, String NCT_no, String phase, String title, String org_name) {
+		String trial_id = String.valueOf((int)(Math.random() * 999999999));
+		while (getTrialById(trial_id) != null) {
+			trial_id = String.valueOf((int)(Math.random() * 999999999));
+		}
+		trialRepository.createNewTrial(r_id, trial_id, trial_status, target_enrollment, NCT_no, phase, title, org_name);
+	}
+	
+	@Override
+	public Trial getTrialById(String trial_id) {
+		return trialRepository.findById(trial_id);
 	}
 
 }
