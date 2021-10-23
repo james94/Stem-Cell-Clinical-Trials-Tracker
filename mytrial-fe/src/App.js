@@ -5,9 +5,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
-import HomePage from './HomePage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import LandingPage from './components/LandingPage';
+import ResearcherHomePage from './components/ResearcherHomePage';
+import TrialsPage from './components/TrialsPage';
 
 
 function App() {
@@ -21,8 +23,14 @@ function App() {
           <Route path="/register">
             <RegisterPage />
           </Route>
+          <Route path="/rhome">
+            <ResearcherHomePage />
+          </Route>
+          <Route path="/trials">
+            <TrialsPage />
+          </Route>
           <Route path="/">
-            <HomePage />
+            <LandingPage />
           </Route>
         </Switch>
       </div>
