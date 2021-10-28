@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { fetchMytrial } from '../utils';
 import { TRIALS_BY_RESEARCHER_END_POINT, TRIALS_BY_PATIENT_END_POINT} from '../settings';
 
@@ -31,7 +32,7 @@ class Trials extends React.Component {
         return (
             <div>
                 <ul>
-                    {this.state.trials.map((e,i) => <li key={i}>{e.title}</li>)}
+                    {this.state.trials.map((e,i) => <li key={i}><Link to={{pathname: `/trials/${e.trial_id}`}}>{e.title}</Link></li>)}
                 </ul>
             </div>
         )

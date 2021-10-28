@@ -9,7 +9,7 @@ const loginUser = (username, password, history) => {
     fetchMytrial(LOGIN_END_POINT, null, {method: 'POST'}, {username, password})
         .then(data => {
             localStorage.setItem('id', data.id);
-            history.push("/rhome");
+            history.push("/rhome"); // need change for patient's case (retrieve trial id at the time of login)
         })
         .catch(err => {
             history.push("/");

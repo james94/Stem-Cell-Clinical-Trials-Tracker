@@ -1,5 +1,6 @@
 package com.cmpe138.mytrial.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,14 @@ public class trialController {
 	private MyTrialService myTrial;
 	
 	@GetMapping("/trials")
-	public List<Trial> getTrials(@RequestHeader("id") String researcher_id) {
-		return myTrial.getResearcherTrials(researcher_id);
+	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, @RequestParam(value="trialId", required=false) String trial_id) {
+		if (trial_id == null) {
+			return myTrial.getResearcherTrials(researcher_id);
+		} else {
+			List<Trial> res = new ArrayList<>();
+			res.add(myTrial.getTrialById(trial_id));
+			return res;
+		}
 	}
 	
 	@PostMapping("/addtrial")
