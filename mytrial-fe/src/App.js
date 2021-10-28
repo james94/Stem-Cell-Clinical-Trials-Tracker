@@ -5,9 +5,13 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
-import HomePage from './HomePage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import LandingPage from './components/LandingPage';
+import ResearcherHomePage from './components/ResearcherHomePage';
+import TrialsPage from './components/TrialsPage';
+import TrialInfoPage from './components/TrialInfoPage';
+import CreateTrialPage from './components/CreateTrialPage';
 
 
 function App() {
@@ -21,8 +25,20 @@ function App() {
           <Route path="/register">
             <RegisterPage />
           </Route>
+          <Route path="/rhome">
+            <ResearcherHomePage />
+          </Route>
+          <Route path="/trials/:id">
+            <TrialInfoPage />
+          </Route>
+          <Route path="/trials">
+            <TrialsPage />
+          </Route>
+          <Route path="/addtrial">
+            <CreateTrialPage />
+          </Route>
           <Route path="/">
-            <HomePage />
+            <LandingPage />
           </Route>
         </Switch>
       </div>
