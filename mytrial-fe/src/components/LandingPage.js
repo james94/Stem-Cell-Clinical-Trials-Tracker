@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-const HomePage = () => {
+const LandingPage = () => {
     return (
         <div>
             Select your role:
@@ -16,4 +16,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage;
+export default LandingPage;
