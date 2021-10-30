@@ -45,6 +45,14 @@ CREATE TABLE patient (
     foreign key (researcher_id) references researcher (researcher_id)
 );
 
+CREATE TABLE donor (
+    patient_id varchar(9) not null,
+    name varchar(50) not null,
+    email varchar(50),
+    primary key (patient_id, name),
+    foreign key (patient_id) references patient (patient_id)
+);
+
 CREATE TABLE p_watchlist (
     name varchar(50) not null,
     patient_id varchar(9) not null,
