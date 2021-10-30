@@ -18,7 +18,18 @@ public class ReplyRepository {
 
 	public List<Reply> findAll() {
 		System.out.println("Reached repo");
-		return jdbc.query("select * from organization", this::mapRowToReply);
+		return jdbc.query("select * from reply", this::mapRowToReply);
+	}
+
+	public List<Reply> getReplyByResearcherId(String researcher_id) {
+		String sql = "select * from reply where researcher_id = ?";
+		return jdbc.query(sql, this::mapRowToReply, researcher_id);
+
+	}
+
+	public Reply getReplyById(String reply_id) {
+		String sql = "select * from reply where reply_id = ?";
+		return jdbc.queryForObject(sql, this::mapRowToReply, reply_id);
 	}
 
 	private Reply mapRowToReply(ResultSet rs, int rowNum) throws SQLException {
@@ -30,5 +41,4 @@ public class ReplyRepository {
 		reply.setResearcher_id(rs.getString("researcher_id"));
 		return reply;
 	}
-
 }

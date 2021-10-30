@@ -20,4 +20,14 @@ public class ReplyServiceImpl implements ReplyService {
 		return replyRepo.findAll();
 	}
 
+	@Override
+	public List<Reply> getReplyByResearcherId(String researcher_id) {
+		return replyRepo.getReplyByResearcherId(researcher_id);
+	}
+
+	@Override
+	public Reply getReplyId(String reply_id) {
+		return replyRepo.getReplyById(reply_id);
+	}
+
 }
