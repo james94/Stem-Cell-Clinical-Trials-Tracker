@@ -1,12 +1,23 @@
 # BackEnd: Deploy SpringBoot JAR App into Docker Alpine Container
 
-1\. Let's change to the **myTrial-api** directory:
+If you haven't installed Docker, refer to our
+[Ubuntu Docker Install Guide](./dockerInstallUbuntu.md)
+
+1\. Install OpenJDK and Maven:
+
+~~~bash
+sudo apt -y update
+sudo apt -y install openjdk-17-jre-headless
+sudo apt -y install maven
+~~~
+
+2\. Let's change to the **myTrial-api** directory:
 
 ~~~bash
 cd myTrial-api
 ~~~
 
-2\. Create .jar file use below command
+3\. Create .jar file use below command
 
 ~~~bash
 ./mvnw install
@@ -22,13 +33,12 @@ COPY ${JAR_FILE} app.jar</br>
 ENTRYPOINT ["java","-jar","/app.jar"]
 ~~~ -->
 
-3\. Build and tag the Docker image for our SpringBoot **myTrial-api** app using the Dockerfile:
+4\. Build and tag the Docker image for our SpringBoot **myTrial-api** app using the Dockerfile:
 
 ~~~bash
-sudo docker build -t springio/gs-spring-boot-docker
+sudo docker build -t mytrial-api:dev .
 ~~~
 
-Here springio/gs-spring-boot-docker is the name of the docker.
 Once docker image is generated any number of containers can be made out of this docker image (Containers are like the instance of Image).
 
 <!-- 4\. Use only one of the following **docker run** commands:
@@ -47,14 +57,16 @@ B.) Lets launch the docker container in background:
 sudo docker run -b springio/gs-spring-boot-docker
 ~~~ -->
 
-4\. Launch the Docker container named **scct_tracker_be** for our SpringBoot app with the code based from **myTrial-api** folder:
+5\. Launch the Docker container named **scct_tracker_be** for our SpringBoot app with the code based from **myTrial-api** folder:
 
 ~~~bash
 sudo docker run \
     --name scct_tracker_be \
     -bp 8080:8080 \
-    springio/gs-spring-boot-docker
+    mytrial-api:dev
 ~~~
+
+Access myTrial-api app at `localhost:8080/test`
 
 So now not only the docker host has access to the docker container, the other remote computers have access to the docker container too.
 
