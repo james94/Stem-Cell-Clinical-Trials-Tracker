@@ -51,15 +51,6 @@ CREATE TABLE discussion_forum (
     primary key (df_id)
 );
 
-
-CREATE TABLE discusses{
-    researcher_id varchar(9) not null,
-    df_id varchar(9) not null,
-    primary key (researcher_id, df_id),
-    foreign key (researcher_id) references researcher (researcher_id),
-    foreign key (df_id) references discussion_forum (df_id)
-}
-
 CREATE TABLE investigates (
 	researcher_id varchar(9) not null,
     trial_id varchar(9) not null,
