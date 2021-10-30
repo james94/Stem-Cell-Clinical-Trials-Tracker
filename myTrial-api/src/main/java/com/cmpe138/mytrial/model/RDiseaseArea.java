@@ -1,6 +1,6 @@
 package com.cmpe138.mytrial.model;
 
-public class RDiseaseAreas {
+public class RDiseaseArea {
 
 	public String researcher_id;
 	public String disease_name;
