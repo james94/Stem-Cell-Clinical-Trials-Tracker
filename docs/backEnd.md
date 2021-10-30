@@ -1,50 +1,84 @@
-# Backend Document
+# BackEnd: Deploy SpringBoot JAR App into Docker Alpine Container
 
-This document contains all the documentation and LLBP for backend
+1\. Let's change to the **myTrial-api** directory:
 
-## Docker
-### Basic info
+~~~bash
+cd myTrial-api
+~~~
 
-https://www.youtube.com/watch?v=fqMOX6JJhGo&t=1058s
+2\. Create .jar file use below command
 
-### Setup
-
-* Create .jar file use below command</br>
+~~~bash
 ./mvnw install
+~~~
 
-* Create the 'Dockerfile'(name exactly the same) and copy the below code(Dockerfile should be out of target directory)</br>
+<!-- 2\. Create the 'Dockerfile'(name exactly the same) and copy the below code(Dockerfile should be out of target directory):
+
+~~~bash
+# NOTE: Creating Dockerfile for backend
 FROM openjdk:17-jdk-alpine</br>
 ARG JAR_FILE=target/*.jar</br>
 COPY ${JAR_FILE} app.jar</br>
 ENTRYPOINT ["java","-jar","/app.jar"]
+~~~ -->
 
-* Generate docker image by building Dockerfile</br>
-sudo docker build -t springio/gs-spring-boot-docker .</br>
-Here springio/gs-spring-boot-docker is the name of the docker
+3\. Build and tag the Docker image for our SpringBoot **myTrial-api** app using the Dockerfile:
 
-__USE ONLY ONE OF THE FOLLOWING RUN COMMANDS__</br>
-* Docker run</br>
-Once docker image is generated anynumber of containers can be made out of this docker image(Containers are like the instance of Image).
-Now lets run the docker with the image we have</br>
+~~~bash
+sudo docker build -t springio/gs-spring-boot-docker
+~~~
 
-sudo docker run springio/gs-spring-boot-docker</br>
-Above command runs the server in attached mode(foreground process) now terminal is inaccessible and if we ctrl+c docker and server goes down.
+Here springio/gs-spring-boot-docker is the name of the docker.
+Once docker image is generated any number of containers can be made out of this docker image (Containers are like the instance of Image).
 
-To run the docker in background use -b</br>
-sudo docker run -b springio/gs-spring-boot-docker</br>
+<!-- 4\. Use only one of the following **docker run** commands:
 
-Only the docker host has access to the docker container so to make it access to others use the below command</br>
-sudo docker run -bp 8080:8080 springio/gs-spring-boot-docker</br>
+A.) Lets launch the docker container with the image we have:
+
+~~~bash
+sudo docker run springio/gs-spring-boot-docker
+~~~
+
+- The above command runs the server in attached mode(foreground process) now terminal is inaccessible and if we ctrl+c docker and server goes down.
+
+B.) Lets launch the docker container in background:
+
+~~~bash
+sudo docker run -b springio/gs-spring-boot-docker
+~~~ -->
+
+4\. Launch the Docker container named **scct_tracker_be** for our SpringBoot app with the code based from **myTrial-api** folder:
+
+~~~bash
+sudo docker run \
+    --name scct_tracker_be \
+    -bp 8080:8080 \
+    springio/gs-spring-boot-docker
+~~~
+
+So now not only the docker host has access to the docker container, the other remote computers have access to the docker container too.
 
 ### Appendix
 
-If you are running in Virtual Box you need to setup port forwarding:
+If you are running in Virtual Box, you need to setup port forwarding:
+
 * Machine->settings->network->advanced->port forwarding
 * Add connection(small + button on the right)
-* Host ip:empty, Host port:8080, Guest ip:empty, Guest port: 8080
+* Host `ip:empty`, Host `port:8080`, 
+* Guest `ip:empty`, Guest `port: 8080`
 
-Command to find the IP of the docker container:</br>
+Command to find the IP of the docker container:
+
+~~~bash
 sudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
+~~~
 
-List all the docker instances:</br>
+List all the docker instances:
+
+~~~bash
 sudo docker ps
+~~~
+
+## Reference
+
+- [Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers](https://www.youtube.com/watch?v=fqMOX6JJhGo&t=1058s)
