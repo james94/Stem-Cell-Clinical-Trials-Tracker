@@ -1,5 +1,8 @@
 # FrontEnd: Install ReactJS on Ubuntu VM, Then Deploy ReactJS Docker Alpine Container
 
+If you haven't installed Docker, refer to our
+[Ubuntu Docker Install Guide](./dockerInstallUbuntu.md)
+
 1\. Install npm (also installs node.js) on Ubuntu VM host if its not installed:
 
 ~~~bash
@@ -40,7 +43,7 @@ sudo docker build -t mytrial-fe:dev .
 
 ~~~bash
 sudo docker run -it \
-    --name scct_tracker \
+    --name scct_tracker_fe \
     -v ${PWD}:/mytrial-fe \
     -v /mytrial-fe/node_modules \
     -p 3001:3000 \
