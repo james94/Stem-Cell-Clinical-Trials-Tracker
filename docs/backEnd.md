@@ -62,7 +62,7 @@ sudo docker run -b springio/gs-spring-boot-docker
 ~~~bash
 sudo docker run \
     --name scct_tracker_be \
-    -bp 8080:8080 \
+    -p 8080:8080 \
     mytrial-api:dev
 ~~~
 

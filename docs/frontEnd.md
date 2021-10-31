@@ -8,8 +8,8 @@ If you haven't installed Docker, refer to our
 ~~~bash
 sudo apt-get install -y curl
 # Mu installed Node 12.13.0, Npm 7.18.1.
-curl -fsSL https://deb.nodesource.com/setup_12.x | bash
-apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo bash
+sudo apt-get install -y nodejs
 
 sudo apt -y install npm
 ~~~
