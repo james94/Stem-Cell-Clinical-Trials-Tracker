@@ -1,10 +1,24 @@
 import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { useState } from 'react';
+import { ADD_TRIAL_END_POINT } from '../settings';
+import { fetchMytrial } from '../utils';
 
 const createTrial = (title, organization, phase, nctNum, status, targetEnroll) => {
     console.log(title, organization, phase, nctNum, status, targetEnroll);
     if (title && organization && phase && nctNum && status && targetEnroll) {
         // create a trial on the backend
+        const data = {
+            title,
+            organization_name: organization,
+            phase,
+            nct_no: nctNum,
+            trial_status: status,
+            target_enrollment: targetEnroll
+        };
+        fetchMytrial(ADD_TRIAL_END_POINT, null, {method: 'POST'}, data, {'id': '000000046'})
+        .catch(err => {
+            console.log(err)
+        });
     } else {
         alert('Please fill in all required fields');
     }
