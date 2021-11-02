@@ -22,9 +22,9 @@ public class TrialRepository {
 	    return res.get(0);
 	}
 	
-	public void createNewTrial(String r_id, String trial_id, String trial_status, int target_enrollment, String NCT_no, String phase, String title, String org_name) {
+	public void createNewTrial(String r_id, String trial_id, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
 		String trial_sql = "INSERT trial VALUES (?, ?, ?, ?, ?, ?, ?)";
-		jdbc.update(trial_sql, trial_id, trial_status, target_enrollment, NCT_no, phase, title, org_name);
+		jdbc.update(trial_sql, trial_id, trial_status, target_enrollment, nct_no, phase, title, org_name);
 		String investigates_sql = "INSERT investigates VALUES (?, ?)";
 		jdbc.update(investigates_sql, r_id, trial_id);
 	}

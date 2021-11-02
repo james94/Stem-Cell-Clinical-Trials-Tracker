@@ -4,7 +4,7 @@ public class Trial {
 	private String trial_id;
 	private String trial_status;
 	private int target_enrollment;
-	private String NCT_no;
+	private String nct_no;
 	private String phase;
 	private String title;
 	private String organization_name;
@@ -27,10 +27,10 @@ public class Trial {
 		this.target_enrollment = target_enrollment;
 	}
 	public String getNCT_no() {
-		return NCT_no;
+		return nct_no;
 	}
-	public void setNCT_no(String nCT_no) {
-		NCT_no = nCT_no;
+	public void setNCT_no(String nct_no) {
+		this.nct_no = nct_no;
 	}
 	public String getPhase() {
 		return phase;
@@ -54,7 +54,7 @@ public class Trial {
 	@Override
 	public String toString() {
 		return "Trial [trial_id=" + trial_id + ", trial_status=" + trial_status + ", target_enrollment="
-				+ target_enrollment + ", NCT_no=" + NCT_no + ", phase=" + phase + ", title=" + title
+				+ target_enrollment + ", NCT_no=" + nct_no + ", phase=" + phase + ", title=" + title
 				+ ", organization_name=" + organization_name + "]";
 	}
 	

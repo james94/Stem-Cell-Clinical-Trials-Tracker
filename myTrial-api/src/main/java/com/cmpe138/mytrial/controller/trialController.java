@@ -34,7 +34,8 @@ public class trialController {
 	}
 	
 	@PostMapping("/addtrial")
-	public void getTrial(@RequestParam String researcher_id, @RequestBody Trial trial) {
+	public void getTrial(@RequestHeader(value="id") String researcher_id, @RequestBody Trial trial) {
+		System.out.println(trial);
 		myTrial.createTrial(researcher_id, trial.getTrial_status(), trial.getTarget_enrollment(), 
 				 trial.getNCT_no(), trial.getPhase(), trial.getTitle(), trial.getOrganization_name());
 	}

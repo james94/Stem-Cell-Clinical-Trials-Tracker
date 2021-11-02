@@ -32,12 +32,12 @@ public class MyTrialServiceImpl implements MyTrialService {
 	}
 	
 	@Override
-	public void createTrial(String r_id, String trial_status, int target_enrollment, String NCT_no, String phase, String title, String org_name) {
+	public void createTrial(String r_id, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
 		String trial_id = String.valueOf((int)(Math.random() * 999999999));
 		while (getTrialById(trial_id) != null) {
 			trial_id = String.valueOf((int)(Math.random() * 999999999));
 		}
-		trialRepository.createNewTrial(r_id, trial_id, trial_status, target_enrollment, NCT_no, phase, title, org_name);
+		trialRepository.createNewTrial(r_id, trial_id, trial_status, target_enrollment, nct_no, phase, title, org_name);
 	}
 	
 	@Override
