@@ -2013,606 +2013,606 @@ INSERT r_disease_area VALUES
 ('000000598',' Developmental Disorders'),
 ('000000598','Autism');
 
-INSERT works_for VALUES
-('000000592','University of California, Davis'),
-('000000535','University of California, San Francisco'),
-('000000386','Stanford University'),
-('000000382','University of California, Los Angeles'),
-('000000104','University of California, Irvine'),
-('000000107','ViaCyte, Inc.'),
-('000000075','Stanford University'),
-('000000034','Stanford University'),
-('000000154','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000326','Childrens Neurobiological Solutions (CNS), Foundation'),
-('000000334','Stanford University'),
-('000000351','StemCells, Inc.'),
-('000000579','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000456','Stanford University'),
-('000000147','Rumi Scientific CA'),
-('000000322','University of California, Los Angeles'),
-('000000111','University of California, Davis'),
-('000000010','Vitabolus, Inc.'),
-('000000116','University of California, Los Angeles'),
-('000000458','ViaCyte, Inc.'),
-('000000122','University of California, Davis'),
-('000000168','University of California, San Diego'),
-('000000523','University of California, Los Angeles'),
-('000000340','University of California, San Diego'),
-('000000056','Aspen Neuroscience'),
-('000000190','University of California, San Francisco'),
-('000000270','University of California, Berkeley'),
-('000000249','University of California, San Francisco'),
-('000000349','University of Southern California'),
-('000000542','University of California, Irvine'),
-('000000385','University of California, San Diego'),
-('000000286','Human Organ Project'),
-('000000434','La Jolla Institute for Allergy and Immunology'),
-('000000325','University of California, San Francisco'),
-('000000328','Stanford University'),
-('000000225','ImmunoCellular Therapeutics'),
-('000000136','International Alliance for Biological Standardization'),
-('000000117','Stanford University'),
-('000000345','University of California, Los Angeles'),
-('000000109','University of California, Los Angeles'),
-('000000186','University of California, Los Angeles'),
-('000000358','University of California, San Francisco'),
-('000000419','University of California, San Francisco'),
-('000000384','Brain Mapping Foundation'),
-('000000478','Berkeley City College'),
-('000000343','University of California, San Francisco'),
-('000000304','Cedars-Sinai Medical Center'),
-('000000450','Escape Therapeutics, Inc'),
-('000000452','University of California, Los Angeles'),
-('000000508','University of California, San Diego'),
-('000000189','University of California, Los Angeles'),
-('000000338','Gladstone Institutes, J. David'),
-('000000379','University of California, Santa Barbara'),
-('000000084','Stanford University'),
-('000000090','Sangamo BioSciences, Inc.'),
-('000000582','Salk Institute for Biological Studies'),
-('000000060','Cal State Univ, San Marcos'),
-('000000141','SanBio, Inc.'),
-('000000152','University of Southern California'),
-('000000546','University of California, Santa Cruz'),
-('000000504','Ludwig Institute for Cancer Research'),
-('000000395','University of California, San Diego'),
-('000000165','Parkinsons Institute'),
-('000000091','Fate Therapeutics, Inc.'),
-('000000477','University of California, San Francisco'),
-('000000023','University of California, Irvine'),
-('000000414','Stanford University'),
-('000000039','University of California, Los Angeles'),
-('000000524','Gladstone Institutes, J. David'),
-('000000420','University of California, Los Angeles'),
-('000000586','Stanford University'),
-('000000307','University of California, Santa Cruz'),
-('000000217','City College Of San Francisco'),
-('000000251','University of California, Los Angeles'),
-('000000492','Scripps Research Institute'),
-('000000488','San Francisco State University'),
-('000000035','University of California, Los Angeles'),
-('000000581','University of California, Berkeley'),
-('000000555','Childrens Hospital of Los Angeles'),
-('000000097','International Society for Stem Cell Research'),
-('000000119','University of California, San Diego'),
-('000000389','University of California, San Diego'),
-('000000591','University of California, Irvine'),
-('000000509','Stanford University'),
-('000000541','University of California, Davis'),
-('000000176','Midwinter Conference of Immunologists'),
-('000000279','University of California, San Diego'),
-('000000134','City of Hope, Beckman Research Institute'),
-('000000444','Stanford University'),
-('000000556','Stanford University'),
-('000000536','University of Southern California'),
-('000000218','Cal State Univ, Northridge'),
-('000000047','Cedars-Sinai Medical Center'),
-('000000131','Nohla Therapeutics Inc'),
-('000000282','University of California, San Diego'),
-('000000025','Neurona Therapeutics'),
-('000000356','University of California, Irvine'),
-('000000003','University of California, Los Angeles'),
-('000000089','Stanford University'),
-('000000594','Buck Institute for Age Research'),
-('000000299','Cedars-Sinai Medical Center'),
-('000000007','University of California, San Diego'),
-('000000291','University of California, Los Angeles'),
-('000000093','Medeor Therapeutics, Inc.'),
-('000000412','University of California, San Francisco'),
-('000000026','University of California, Irvine'),
-('000000233','Scripps Health'),
-('000000490','Childrens Hospital of Los Angeles'),
-('000000017','Boston Childrens Hospital'),
-('000000182','California Institute of Technology'),
-('000000113','Loma Linda University'),
-('000000267','University of California, San Diego'),
-('000000426','City of Hope, Beckman Research Institute'),
-('000000573','University of California, Santa Cruz'),
-('000000484','University of California, Santa Cruz'),
-('000000578','University of Southern California'),
-('000000377','University of California, Davis'),
-('000000435','University of California, Berkeley'),
-('000000095','University of California, San Francisco'),
-('000000179','University of California, Berkeley'),
-('000000231','Salk Institute for Biological Studies'),
-('000000180','University of California, Davis'),
-('000000277','California Institute of Technology'),
-('000000196','International Society for Experimental Hematology'),
-('000000513','University of Southern California'),
-('000000145','University of California, Davis'),
-('000000315','FUJIFILM Cellular Dynamics'),
-('000000398','University of California, San Diego'),
-('000000331','Buck Institute for Age Research'),
-('000000164','Gladstone Institutes, J. David'),
-('000000169','University of Southern California'),
-('000000455','University of California, San Diego'),
-('000000481','University of California, Santa Barbara'),
-('000000288','University of California, Los Angeles'),
-('000000077','Poseida Therapeutics, Inc.'),
-('000000006','University of California, Davis'),
-('000000256','University of California, San Francisco'),
-('000000265','University of California, San Diego'),
-('000000589','University of California, San Francisco'),
-('000000195','University of California, San Diego'),
-('000000114','Cedars-Sinai Medical Center'),
-('000000008','University of California, Los Angeles'),
-('000000376','University of California, San Diego'),
-('000000438','University of California, Los Angeles'),
-('000000538','Western University of Health Sciences'),
-('000000497','Gamma Medica-Ideas, Inc.'),
-('000000558','University of California, Irvine'),
-('000000593','University of California, Davis'),
-('000000342','Cedars-Sinai Medical Center'),
-('000000226','Sanford Consortium for Regenerative Medicine'),
-('000000066','Angiocrine Bioscience, Inc.'),
-('000000506','University of California, Irvine'),
-('000000009','Lundquist Institute for Biomedical Innovation at Harbor - UCLA Medical Center'),
-('000000571','Childrens Hospital of Los Angeles'),
-('000000427','Vitalant Research Institute'),
-('000000220','Childrens Hospital of Oakland Research Institute'),
-('000000437','University of California, Berkeley'),
-('000000321','University of California, Davis'),
-('000000519','ViaCyte, Inc.'),
-('000000428','University of California, San Francisco'),
-('000000079','University of California, San Diego'),
-('000000305','University of California, San Diego'),
-('000000433','University of California, Davis'),
-('000000574','Gladstone Institutes, J. David'),
-('000000139','JDRF International'),
-('000000175','IQVIA, Inc.'),
-('000000341','University of California, San Diego'),
-('000000027','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000065','Stanford University'),
-('000000501','ViaCyte, Inc.'),
-('000000137','University of California, San Diego'),
-('000000250','Stanford University'),
-('000000388','University of California, San Diego'),
-('000000083','MAX BioPharma, Inc.'),
-('000000201','Semma Therapeutics'),
-('000000598','Gladstone Institutes, J. David'),
-('000000223','City of Hope, Beckman Research Institute'),
-('000000317','City of Hope, Beckman Research Institute'),
-('000000404','University of California, Santa Barbara'),
-('000000259','Lineage Cell Therapeutics Inc.'),
-('000000476','University of California, Irvine'),
-('000000585','University of California, Riverside'),
-('000000424','Salk Institute for Biological Studies'),
-('000000487','University of California, Davis'),
-('000000306','Sangamo BioSciences, Inc.'),
-('000000473','University of California, Los Angeles'),
-('000000507','University of Southern California'),
-('000000446','Stanford University'),
-('000000553','Salk Institute for Biological Studies'),
-('000000149','Stanford University'),
-('000000040','University of California, Los Angeles'),
-('000000019','Rocket Pharmaceuticals, Inc.'),
-('000000531','University of California, Los Angeles'),
-('000000457','Calimmune, Inc.'),
-('000000528','University of California, Berkeley'),
-('000000129','Alliance Forum Foundation'),
-('000000336','University of California, San Diego'),
-('000000235','Ocular Research Symposia Foundation, Inc.'),
-('000000339','Stanford University'),
-('000000298','University of California, Los Angeles'),
-('000000123','University of California, San Diego'),
-('000000043','University of California, Davis'),
-('000000533','University of California, Santa Barbara'),
-('000000096','International Society for Stem Cell Research'),
-('000000597','University of California, Irvine'),
-('000000568','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000121','Stanford University'),
-('000000559','University of California, Los Angeles'),
-('000000466','Stanford University'),
-('000000240','University of California, Los Angeles'),
-('000000557','University of California, Irvine'),
-('000000562','University of California, San Francisco'),
-('000000566','University of California, San Francisco'),
-('000000021','Stanford University'),
-('000000086','Childrens Hospital of Oakland Research Institute'),
-('000000046','jCyte, Inc'),
-('000000209','California Institute of Technology'),
-('000000001','University of California, San Francisco'),
-('000000042','Stanford University'),
-('000000140','University of California, San Francisco'),
-('000000335','Stanford University'),
-('000000132','ViaCyte, Inc.'),
-('000000494','University of California, Los Angeles'),
-('000000583','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000333','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000448','Palo Alto Veterans Institute for Research'),
-('000000297','Salk Institute for Biological Studies'),
-('000000431','iPierian, Inc.'),
-('000000547','University of California, Berkeley'),
-('000000416','University of California, Los Angeles'),
-('000000244','Stanford University'),
-('000000246','University of California, Davis'),
-('000000471','Parkinsons Institute'),
-('000000159','Cellular Biomedicine Group, Inc.'),
-('000000185','University of California, Berkeley'),
-('000000215','Humboldt State University'),
-('000000312','University of California, San Francisco'),
-('000000313','University of California, San Diego'),
-('000000237','Stanford University'),
-('000000362','Scripps Research Institute'),
-('000000475','University of California, Davis'),
-('000000602','Geron Corporation'),
-('000000155','University of California, Irvine'),
-('000000324','University of California, San Francisco'),
-('000000285','University of California, San Francisco'),
-('000000181','Scripps Research Institute'),
-('000000442','University of California, San Francisco'),
-('000000192','Stanford University'),
-('000000133','Humacyte, Inc.'),
-('000000515','University of California, San Francisco'),
-('000000290','University of California, San Francisco'),
-('000000261','Biocom Institute'),
-('000000540','University of California, Merced'),
-('000000202','University of California, San Francisco'),
-('000000332','University of California, San Francisco'),
-('000000033','City of Hope, Beckman Research Institute'),
-('000000411','GMR Epigenetics'),
-('000000402','City of Hope, Beckman Research Institute'),
-('000000482','Cal Poly Pomona'),
-('000000472','Stanford University'),
-('000000309','Stanford University'),
-('000000303','University of California, San Diego'),
-('000000406','TriFoil Imaging, Inc.'),
-('000000387','Stanford University'),
-('000000391','Scripps Research Institute'),
-('000000502','University of California, Santa Cruz'),
-('000000100','University of California, Los Angeles'),
-('000000124','Human BioMolecular Research Institute'),
-('000000166','University of California, Los Angeles'),
-('000000572','Stanford University'),
-('000000417','iPierian, Inc.'),
-('000000300','Numerate, Inc.'),
-('000000527','Stanford University'),
-('000000373','Samumed, LLC'),
-('000000346','University of California, Davis'),
-('000000399','University of California, San Francisco'),
-('000000222','University of California, San Diego'),
-('000000445','University of California, San Francisco'),
-('000000532','University of California, Merced'),
-('000000405','Cedars-Sinai Medical Center'),
-('000000041','City of Hope, Beckman Research Institute'),
-('000000071','University of California, San Diego'),
-('000000198','University of California, Davis'),
-('000000269','Salk Institute for Biological Studies'),
-('000000311','University of California, San Diego'),
-('000000238','City of Hope, Beckman Research Institute'),
-('000000092','City of Hope, Beckman Research Institute'),
-('000000005','Immune-Onc Therapeutics'),
-('000000098','Stanford University'),
-('000000271','University of California, Santa Cruz'),
-('000000355','Salk Institute for Biological Studies'),
-('000000062','Stanford University'),
-('000000110','Loma Linda University'),
-('000000521','Stanford University'),
-('000000167','University of California, San Francisco'),
-('000000301','Stanford University'),
-('000000150','Scaled Biolabs Inc.'),
-('000000012','University of Southern California'),
-('000000310','University of California, San Diego'),
-('000000262','University of California, Merced'),
-('000000050','City of Hope, Beckman Research Institute'),
-('000000024','University of California, San Diego'),
-('000000068','University of California, San Francisco'),
-('000000378','University of California, San Francisco'),
-('000000548','Stanford University'),
-('000000118','University of California, San Diego'),
-('000000408','University of California, San Diego'),
-('000000381','Stanford University'),
-('000000206','University of California, San Francisco'),
-('000000337','University of California, Los Angeles'),
-('000000360','University of Southern California'),
-('000000078','Stanford University'),
-('000000480','University of California, Los Angeles'),
-('000000443','Stanford University'),
-('000000183','ViaCyte, Inc.'),
-('000000022','University of California, Berkeley'),
-('000000059','Rocket Pharmaceuticals, Inc.'),
-('000000503','University of California, Davis'),
-('000000584','Stanford University'),
-('000000125','Calibr'),
-('000000397','Scripps Research Institute'),
-('000000491','VistaGen Therapeutics, Inc.'),
-('000000049','Brain Neurotherapy Bio'),
-('000000400','University of California, San Diego'),
-('000000451','University of California, San Diego'),
-('000000108','Stanford University'),
-('000000595','University of California, Irvine'),
-('000000353','University of California, Davis'),
-('000000500','City of Hope, Beckman Research Institute'),
-('000000529','University of California, Davis'),
-('000000248','University of California, Davis'),
-('000000200','University of California, San Diego'),
-('000000545','Salk Institute for Biological Studies'),
-('000000252','University of California, Los Angeles'),
-('000000004','City of Hope, Beckman Research Institute'),
-('000000253','Gordon Research Conferences'),
-('000000173','Orchard Therapeutics plc'),
-('000000064','University of California, Irvine'),
-('000000080','Gladstone Institutes, J. David'),
-('000000002','University of California, Los Angeles'),
-('000000213','San Francisco State University'),
-('000000511','University of California, Berkeley'),
-('000000365','University of California, Santa Barbara'),
-('000000187','Cedars-Sinai Medical Center'),
-('000000551','University of California, San Francisco'),
-('000000199','Capricor, Inc'),
-('000000549','University of California, Santa Cruz'),
-('000000278','University of California, Irvine'),
-('000000212','Cal State Univ, Sacramento'),
-('000000210','Cal State Univ, Long Beach'),
-('000000514','University of California, San Francisco'),
-('000000462','University of California, Los Angeles'),
-('000000085','University of California, Irvine'),
-('000000273','University of California, San Diego'),
-('000000323','University of California, San Diego'),
-('000000415','Fluidigm Corporation'),
-('000000372','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000193','Vitalant Research Institute'),
-('000000534','University of California, Santa Cruz'),
-('000000449','University of California, Irvine'),
-('000000327','Research for Cure'),
-('000000275','Stanford University'),
-('000000020','University of California, San Diego'),
-('000000283','University of California, San Francisco'),
-('000000601','Forty Seven Inc.'),
-('000000052','University of Southern California'),
-('000000580','Stanford University'),
-('000000144','Stanford University'),
-('000000057','University of California, San Francisco'),
-('000000289','University of California, Davis'),
-('000000423','University of California, Davis'),
-('000000148','Childrens Hospital of Los Angeles'),
-('000000418','City of Hope, Beckman Research Institute'),
-('000000463','University of Southern California'),
-('000000370','University of California, Davis'),
-('000000468','Scripps Research Institute'),
-('000000453','University of California, San Diego'),
-('000000413','University of California, Los Angeles'),
-('000000375','University of California, Los Angeles'),
-('000000526','Buck Institute for Age Research'),
-('000000011','University of California, Irvine'),
-('000000302','OCTANe Foundation for Innovation'),
-('000000130','Stanford University'),
-('000000127','Poseida Therapeutics, Inc.'),
-('000000053','University of California, Davis'),
-('000000479','City of Hope, Beckman Research Institute'),
-('000000396','Stanford University'),
-('000000329','Stanford University'),
-('000000530','University of California, Irvine'),
-('000000172','Cedars-Sinai Medical Center'),
-('000000516','Stanford University'),
-('000000037','University of California, San Francisco'),
-('000000496','University of California, Los Angeles'),
-('000000565','University of California, Riverside'),
-('000000126','Childrens Hospital of Los Angeles'),
-('000000401','University of California, Berkeley'),
-('000000266','Stanford University'),
-('000000464','University of California, Los Angeles'),
-('000000474','BioTime, Inc.'),
-('000000294','Stanford University'),
-('000000260','University of California, Irvine'),
-('000000318','Stanford University'),
-('000000330','University of California, San Francisco'),
-('000000272','University of California, San Diego'),
-('000000460','University of California, Davis'),
-('000000454','University of California, San Francisco'),
-('000000537','Mohammad Pashmforoush'),
-('000000088','University of California, San Francisco'),
-('000000347','University of California, Davis'),
-('000000156','American Association of Blood Banks'),
-('000000074','University of Southern California'),
-('000000112','Palo Alto Veterans Institute for Research'),
-('000000447','Scripps Research Institute'),
-('000000219','Cal State Univ, San Bernadino'),
-('000000207','Cal State Univ, Fullerton'),
-('000000205','Cal State Univ, Channel Island'),
-('000000425','University of California, Los Angeles'),
-('000000467','ViaCyte, Inc.'),
-('000000224','Gordon Research Conferences'),
-('000000495','University of California, Irvine'),
-('000000191','University of California, Los Angeles'),
-('000000470','Jackson Labs'),
-('000000216','Pasadena City College'),
-('000000498','Vala Sciences, Inc.'),
-('000000204','Angiocrine Bioscience, Inc.'),
-('000000510','University of California, Davis'),
-('000000280','Cedars-Sinai Medical Center'),
-('000000369','California Institute of Technology'),
-('000000171','City of Hope, Beckman Research Institute'),
-('000000208','Stanford University'),
-('000000245','University of Southern California'),
-('000000197','University of California, Los Angeles'),
-('000000287','University of California, Davis'),
-('000000600','University of California, Irvine'),
-('000000421','University of California, Santa Barbara'),
-('000000268','University of California, Irvine'),
-('000000587','University of Southern California'),
-('000000184','IQVIA, Inc.'),
-('000000228','Calibr'),
-('000000055','University of California, San Francisco'),
-('000000073','Stanford University'),
-('000000359','Childrens Hospital of Orange County'),
-('000000188','Stanford University'),
-('000000038','ExCellThera Inc.'),
-('000000499','University of Southern California'),
-('000000030','University of Southern California'),
-('000000550','University of California, Riverside'),
-('000000247','University of Southern California'),
-('000000234','University of Southern California'),
-('000000403','Parkinsons Institute'),
-('000000352','Capricor, Inc'),
-('000000174','San Diego State University Foundation'),
-('000000138','BrainStorm Cell Therapeutics'),
-('000000561','University of California, San Francisco'),
-('000000236','University of California, Davis'),
-('000000599','University of California, Berkeley'),
-('000000292','University of California, San Francisco'),
-('000000518','Stanford University'),
-('000000320','University of California, Los Angeles'),
-('000000512','San Diego State University Foundation'),
-('000000410','University of California, Los Angeles'),
-('000000368','City of Hope, Beckman Research Institute'),
-('000000459','University of California, Los Angeles'),
-('000000230','Caladrius Biosciences'),
-('000000525','Gladstone Institutes, J. David'),
-('000000319','Cedars-Sinai Medical Center'),
-('000000505','University of California, San Francisco'),
-('000000013','University of California, Irvine'),
-('000000485','Gladstone Institutes, J. David'),
-('000000486','University of Southern California'),
-('000000432','Stanford University'),
-('000000596','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000295','University of California, Los Angeles'),
-('000000374','Stanford University'),
-('000000177','University of California, San Diego'),
-('000000344','University of California, Berkeley'),
-('000000429','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000364','University of Southern California'),
-('000000163','Stanford University'),
-('000000367','International Symposium on Neural Regeneration, Inc.'),
-('000000203','Mosaic Event Management, Inc.'),
-('000000081','Salk Institute for Biological Studies'),
-('000000383','University of California, Irvine'),
-('000000045','Stanford University'),
-('000000232','University of California, Davis'),
-('000000380','University of California, San Diego'),
-('000000281','University of California, Los Angeles'),
-('000000517','Salk Institute for Biological Studies'),
-('000000563','University of California, San Francisco'),
-('000000157','Stanford University'),
-('000000242','Stanford University'),
-('000000105','City of Hope, Beckman Research Institute'),
-('000000051','City of Hope, Beckman Research Institute'),
-('000000102','University of California, Los Angeles'),
-('000000554','University of California, Los Angeles'),
-('000000390','Stanford University'),
-('000000120','University of California, San Francisco'),
-('000000194','Childrens Hospital of Los Angeles'),
-('000000564','Salk Institute for Biological Studies'),
-('000000363','Gladstone Institutes, J. David'),
-('000000241','University of California, San Diego'),
-('000000229','Cedars-Sinai Medical Center'),
-('000000263','Gladstone Institutes, J. David'),
-('000000178','Vitalant Research Institute'),
-('000000308','University of California, San Diego'),
-('000000394','University of California, Los Angeles'),
-('000000103','University of California, San Francisco'),
-('000000243','University of California, San Diego'),
-('000000539','University of California, Los Angeles'),
-('000000227','University of California, Irvine'),
-('000000031','University of California, Los Angeles'),
-('000000158','University of California, Los Angeles'),
-('000000544','University of Southern California'),
-('000000153','University of California, San Francisco'),
-('000000048','University of California, Los Angeles'),
-('000000014','University of California, Los Angeles'),
-('000000350','University of California, Los Angeles'),
-('000000560','Stanford University'),
-('000000054','University of California, San Diego'),
-('000000354','City of Hope, Beckman Research Institute'),
-('000000161','St. Jude Childrens Research Hospital'),
-('000000028','University of California, San Diego'),
-('000000441','Stanford University'),
-('000000407','University of California, Berkeley'),
-('000000018','University of California, San Francisco'),
-('000000082','University of California, Los Angeles'),
-('000000254','Gladstone Institutes, J. David'),
-('000000087','University of California, San Francisco'),
-('000000069','University of California, Los Angeles'),
-('000000293','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000036','Scripps Research Institute'),
-('000000576','University of California, San Francisco'),
-('000000465','Stanford University'),
-('000000255','University of California, San Francisco'),
-('000000151','Cellerant Therapeutics, Inc.'),
-('000000483','University of California, San Diego'),
-('000000101','University of California, San Diego'),
-('000000015','University of California, San Diego'),
-('000000316','University of California, Los Angeles'),
-('000000162','University of California, San Francisco'),
-('000000440','Cedars-Sinai Medical Center'),
-('000000094','Keystone Symposia on Molecular and Cellular Biology'),
-('000000575','University of California, San Francisco'),
-('000000409','Stanford University'),
-('000000058','University of California, Los Angeles'),
-('000000070','Stanford University'),
-('000000135','University of California, San Diego'),
-('000000590','University of California, Irvine'),
-('000000314','Cellular Dynamics International'),
-('000000284','Palo Alto Veterans Institute for Research'),
-('000000567','Stanford University'),
-('000000128','RUNX1 Research Program'),
-('000000371','OncoMed Pharmaceuticals, Inc.'),
-('000000570','City of Hope, Beckman Research Institute'),
-('000000142','University of California, San Francisco'),
-('000000543','City of Hope, Beckman Research Institute'),
-('000000258','Gladstone Institutes, J. David'),
-('000000436','Palo Alto Veterans Institute for Research'),
-('000000239','University of Southern California'),
-('000000072','Childrens Hospital of Los Angeles'),
-('000000211','Cal Poly Corporation, an Auxiliary of California Polytechnic State University, San Luis Obispo'),
-('000000214','San Jose State University'),
-('000000489','Scripps Research Institute'),
-('000000032','University of California, Los Angeles'),
-('000000264','University of California, San Francisco'),
-('000000361','Childrens Hospital of Oakland Research Institute'),
-('000000115','Zenobia Therapeutics'),
-('000000348','University of California, Davis'),
-('000000067','Pathways to Stem Cell Science'),
-('000000366','Buck Institute for Age Research'),
-('000000588','University of California, Irvine'),
-('000000552','Stanford University'),
-('000000221','Cedars-Sinai Medical Center'),
-('000000357','University of California, Davis'),
-('000000461','University of Southern California'),
-('000000469','Gladstone Institutes, J. David'),
-('000000522','Ludwig Institute for Cancer Research'),
-('000000274','University of California, San Diego'),
-('000000063','Jasper Therapeutics, Inc.'),
-('000000392','University of California, Los Angeles'),
-('000000430','University of California, Davis'),
-('000000160','Caladrius Biosciences'),
-('000000257','University of California, Berkeley'),
-('000000422','Buck Institute for Age Research'),
-('000000029','Celularity Inc'),
-('000000099','University of California, Riverside'),
-('000000146','X-Therma Inc.'),
-('000000276','Stanford University'),
-('000000076','City of Hope, Beckman Research Institute'),
-('000000170','Gladstone Institutes, J. David'),
-('000000106','University of California, San Diego'),
-('000000016','City of Hope, Beckman Research Institute'),
-('000000393','University of California, Los Angeles'),
-('000000493','University of California, San Diego'),
-('000000061','Ankasa Regenerative Therapeutics'),
-('000000439','University of California, Los Angeles'),
-('000000143','City of Hope, Beckman Research Institute'),
-('000000044','University of California, Los Angeles'),
-('000000296','University of California, Los Angeles'),
-('000000520','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000577','Sanford Burnham Prebys Medical Discovery Institute'),
-('000000569','University of California, Los Angeles');
+INSERT works_for VALUES('000000592','University of California, Davis');
+INSERT works_for VALUES('000000535','University of California, San Francisco');
+INSERT works_for VALUES('000000386','Stanford University');
+INSERT works_for VALUES('000000382','University of California, Los Angeles');
+INSERT works_for VALUES('000000104','University of California, Irvine');
+INSERT works_for VALUES('000000107','ViaCyte, Inc.');
+INSERT works_for VALUES('000000075','Stanford University');
+INSERT works_for VALUES('000000034','Stanford University');
+INSERT works_for VALUES('000000154','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000326','Children\'s Neurobiological Solutions (CNS) Foundation');
+INSERT works_for VALUES('000000334','Stanford University');
+INSERT works_for VALUES('000000351','StemCells, Inc.');
+INSERT works_for VALUES('000000579','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000456','Stanford University');
+INSERT works_for VALUES('000000147','Rumi Scientific CA');
+INSERT works_for VALUES('000000322','University of California, Los Angeles');
+INSERT works_for VALUES('000000111','University of California, Davis');
+INSERT works_for VALUES('000000010','Vitabolus, Inc.');
+INSERT works_for VALUES('000000116','University of California, Los Angeles');
+INSERT works_for VALUES('000000458','ViaCyte, Inc.');
+INSERT works_for VALUES('000000122','University of California, Davis');
+INSERT works_for VALUES('000000168','University of California, San Diego');
+INSERT works_for VALUES('000000523','University of California, Los Angeles');
+INSERT works_for VALUES('000000340','University of California, San Diego');
+INSERT works_for VALUES('000000056','Aspen Neuroscience');
+INSERT works_for VALUES('000000190','University of California, San Francisco');
+INSERT works_for VALUES('000000270','University of California, Berkeley');
+INSERT works_for VALUES('000000249','University of California, San Francisco');
+INSERT works_for VALUES('000000349','University of Southern California');
+INSERT works_for VALUES('000000542','University of California, Irvine');
+INSERT works_for VALUES('000000385','University of California, San Diego');
+INSERT works_for VALUES('000000286','Human Organ Project');
+INSERT works_for VALUES('000000434','La Jolla Institute for Allergy and Immunology');
+INSERT works_for VALUES('000000325','University of California, San Francisco');
+INSERT works_for VALUES('000000328','Stanford University');
+INSERT works_for VALUES('000000225','ImmunoCellular Therapeutics');
+INSERT works_for VALUES('000000136','International Alliance for Biological Standardization');
+INSERT works_for VALUES('000000117','Stanford University');
+INSERT works_for VALUES('000000345','University of California, Los Angeles');
+INSERT works_for VALUES('000000109','University of California, Los Angeles');
+INSERT works_for VALUES('000000186','University of California, Los Angeles');
+INSERT works_for VALUES('000000358','University of California, San Francisco');
+INSERT works_for VALUES('000000419','University of California, San Francisco');
+INSERT works_for VALUES('000000384','Brain Mapping Foundation');
+INSERT works_for VALUES('000000478','Berkeley City College');
+INSERT works_for VALUES('000000343','University of California, San Francisco');
+INSERT works_for VALUES('000000304','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000450','Escape Therapeutics, Inc');
+INSERT works_for VALUES('000000452','University of California, Los Angeles');
+INSERT works_for VALUES('000000508','University of California, San Diego');
+INSERT works_for VALUES('000000189','University of California, Los Angeles');
+INSERT works_for VALUES('000000338','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000379','University of California, Santa Barbara');
+INSERT works_for VALUES('000000084','Stanford University');
+INSERT works_for VALUES('000000090','Sangamo BioSciences, Inc.');
+INSERT works_for VALUES('000000582','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000060','Cal State Univ, San Marcos');
+INSERT works_for VALUES('000000141','SanBio, Inc.');
+INSERT works_for VALUES('000000152','University of Southern California');
+INSERT works_for VALUES('000000546','University of California, Santa Cruz');
+INSERT works_for VALUES('000000504','Ludwig Institute for Cancer Research');
+INSERT works_for VALUES('000000395','University of California, San Diego');
+INSERT works_for VALUES('000000165','Parkinson\'s Institute');
+INSERT works_for VALUES('000000091','Fate Therapeutics, Inc.');
+INSERT works_for VALUES('000000477','University of California, San Francisco');
+INSERT works_for VALUES('000000023','University of California, Irvine');
+INSERT works_for VALUES('000000414','Stanford University');
+INSERT works_for VALUES('000000039','University of California, Los Angeles');
+INSERT works_for VALUES('000000524','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000420','University of California, Los Angeles');
+INSERT works_for VALUES('000000586','Stanford University');
+INSERT works_for VALUES('000000307','University of California, Santa Cruz');
+INSERT works_for VALUES('000000217','City College Of San Francisco');
+INSERT works_for VALUES('000000251','University of California, Los Angeles');
+INSERT works_for VALUES('000000492','Scripps Research Institute');
+INSERT works_for VALUES('000000488','San Francisco State University');
+INSERT works_for VALUES('000000035','University of California, Los Angeles');
+INSERT works_for VALUES('000000581','University of California, Berkeley');
+INSERT works_for VALUES('000000555','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000097','International Society for Stem Cell Research');
+INSERT works_for VALUES('000000119','University of California, San Diego');
+INSERT works_for VALUES('000000389','University of California, San Diego');
+INSERT works_for VALUES('000000591','University of California, Irvine');
+INSERT works_for VALUES('000000509','Stanford University');
+INSERT works_for VALUES('000000541','University of California, Davis');
+INSERT works_for VALUES('000000176','Midwinter Conference of Immunologists');
+INSERT works_for VALUES('000000279','University of California, San Diego');
+INSERT works_for VALUES('000000134','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000444','Stanford University');
+INSERT works_for VALUES('000000556','Stanford University');
+INSERT works_for VALUES('000000536','University of Southern California');
+INSERT works_for VALUES('000000218','Cal State Univ, Northridge');
+INSERT works_for VALUES('000000047','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000131','Nohla Therapeutics Inc');
+INSERT works_for VALUES('000000282','University of California, San Diego');
+INSERT works_for VALUES('000000025','Neurona Therapeutics');
+INSERT works_for VALUES('000000356','University of California, Irvine');
+INSERT works_for VALUES('000000003','University of California, Los Angeles');
+INSERT works_for VALUES('000000089','Stanford University');
+INSERT works_for VALUES('000000594','Buck Institute for Age Research');
+INSERT works_for VALUES('000000299','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000007','University of California, San Diego');
+INSERT works_for VALUES('000000291','University of California, Los Angeles');
+INSERT works_for VALUES('000000093','Medeor Therapeutics, Inc.');
+INSERT works_for VALUES('000000412','University of California, San Francisco');
+INSERT works_for VALUES('000000026','University of California, Irvine');
+INSERT works_for VALUES('000000233','Scripps Health');
+INSERT works_for VALUES('000000490','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000017','Boston Children\'s Hospital');
+INSERT works_for VALUES('000000182','California Institute of Technology');
+INSERT works_for VALUES('000000113','Loma Linda University');
+INSERT works_for VALUES('000000267','University of California, San Diego');
+INSERT works_for VALUES('000000426','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000573','University of California, Santa Cruz');
+INSERT works_for VALUES('000000484','University of California, Santa Cruz');
+INSERT works_for VALUES('000000578','University of Southern California');
+INSERT works_for VALUES('000000377','University of California, Davis');
+INSERT works_for VALUES('000000435','University of California, Berkeley');
+INSERT works_for VALUES('000000095','University of California, San Francisco');
+INSERT works_for VALUES('000000179','University of California, Berkeley');
+INSERT works_for VALUES('000000231','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000180','University of California, Davis');
+INSERT works_for VALUES('000000277','California Institute of Technology');
+INSERT works_for VALUES('000000196','International Society for Experimental Hematology');
+INSERT works_for VALUES('000000513','University of Southern California');
+INSERT works_for VALUES('000000145','University of California, Davis');
+INSERT works_for VALUES('000000315','FUJIFILM Cellular Dynamics');
+INSERT works_for VALUES('000000398','University of California, San Diego');
+INSERT works_for VALUES('000000331','Buck Institute for Age Research');
+INSERT works_for VALUES('000000164','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000169','University of Southern California');
+INSERT works_for VALUES('000000455','University of California, San Diego');
+INSERT works_for VALUES('000000481','University of California, Santa Barbara');
+INSERT works_for VALUES('000000288','University of California, Los Angeles');
+INSERT works_for VALUES('000000077','Poseida Therapeutics, Inc.');
+INSERT works_for VALUES('000000006','University of California, Davis');
+INSERT works_for VALUES('000000256','University of California, San Francisco');
+INSERT works_for VALUES('000000265','University of California, San Diego');
+INSERT works_for VALUES('000000589','University of California, San Francisco');
+INSERT works_for VALUES('000000195','University of California, San Diego');
+INSERT works_for VALUES('000000114','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000008','University of California, Los Angeles');
+INSERT works_for VALUES('000000376','University of California, San Diego');
+INSERT works_for VALUES('000000438','University of California, Los Angeles');
+INSERT works_for VALUES('000000538','Western University of Health Sciences');
+INSERT works_for VALUES('000000497','Gamma Medica-Ideas, Inc.');
+INSERT works_for VALUES('000000558','University of California, Irvine');
+INSERT works_for VALUES('000000593','University of California, Davis');
+INSERT works_for VALUES('000000342','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000226','Sanford Consortium for Regenerative Medicine');
+INSERT works_for VALUES('000000066','Angiocrine Bioscience, Inc.');
+INSERT works_for VALUES('000000506','University of California, Irvine');
+INSERT works_for VALUES('000000009','Lundquist Institute for Biomedical Innovation at Harbor - UCLA Medical Center');
+INSERT works_for VALUES('000000571','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000427','Vitalant Research Institute');
+INSERT works_for VALUES('000000220','Childrens Hospital of Oakland Research Institute');
+INSERT works_for VALUES('000000437','University of California, Berkeley');
+INSERT works_for VALUES('000000321','University of California, Davis');
+INSERT works_for VALUES('000000519','ViaCyte, Inc.');
+INSERT works_for VALUES('000000428','University of California, San Francisco');
+INSERT works_for VALUES('000000079','University of California, San Diego');
+INSERT works_for VALUES('000000305','University of California, San Diego');
+INSERT works_for VALUES('000000433','University of California, Davis');
+INSERT works_for VALUES('000000574','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000139','JDRF International');
+INSERT works_for VALUES('000000175','IQVIA, Inc.');
+INSERT works_for VALUES('000000341','University of California, San Diego');
+INSERT works_for VALUES('000000027','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000065','Stanford University');
+INSERT works_for VALUES('000000501','ViaCyte, Inc.');
+INSERT works_for VALUES('000000137','University of California, San Diego');
+INSERT works_for VALUES('000000250','Stanford University');
+INSERT works_for VALUES('000000388','University of California, San Diego');
+INSERT works_for VALUES('000000083','MAX BioPharma, Inc.');
+INSERT works_for VALUES('000000201','Semma Therapeutics');
+INSERT works_for VALUES('000000598','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000223','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000317','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000404','University of California, Santa Barbara');
+INSERT works_for VALUES('000000259','Lineage Cell Therapeutics Inc.');
+INSERT works_for VALUES('000000476','University of California, Irvine');
+INSERT works_for VALUES('000000585','University of California, Riverside');
+INSERT works_for VALUES('000000424','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000487','University of California, Davis');
+INSERT works_for VALUES('000000306','Sangamo BioSciences, Inc.');
+INSERT works_for VALUES('000000473','University of California, Los Angeles');
+INSERT works_for VALUES('000000507','University of Southern California');
+INSERT works_for VALUES('000000446','Stanford University');
+INSERT works_for VALUES('000000553','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000149','Stanford University');
+INSERT works_for VALUES('000000040','University of California, Los Angeles');
+INSERT works_for VALUES('000000019','Rocket Pharmaceuticals, Inc.');
+INSERT works_for VALUES('000000531','University of California, Los Angeles');
+INSERT works_for VALUES('000000457','Calimmune, Inc.');
+INSERT works_for VALUES('000000528','University of California, Berkeley');
+INSERT works_for VALUES('000000129','Alliance Forum Foundation');
+INSERT works_for VALUES('000000336','University of California, San Diego');
+INSERT works_for VALUES('000000235','Ocular Research Symposia Foundation, Inc.');
+INSERT works_for VALUES('000000339','Stanford University');
+INSERT works_for VALUES('000000298','University of California, Los Angeles');
+INSERT works_for VALUES('000000123','University of California, San Diego');
+INSERT works_for VALUES('000000043','University of California, Davis');
+INSERT works_for VALUES('000000533','University of California, Santa Barbara');
+INSERT works_for VALUES('000000096','International Society for Stem Cell Research');
+INSERT works_for VALUES('000000597','University of California, Irvine');
+INSERT works_for VALUES('000000568','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000121','Stanford University');
+INSERT works_for VALUES('000000559','University of California, Los Angeles');
+INSERT works_for VALUES('000000466','Stanford University');
+INSERT works_for VALUES('000000240','University of California, Los Angeles');
+INSERT works_for VALUES('000000557','University of California, Irvine');
+INSERT works_for VALUES('000000562','University of California, San Francisco');
+INSERT works_for VALUES('000000566','University of California, San Francisco');
+INSERT works_for VALUES('000000021','Stanford University');
+INSERT works_for VALUES('000000086','Childrens Hospital of Oakland Research Institute');
+INSERT works_for VALUES('000000046','jCyte, Inc');
+INSERT works_for VALUES('000000209','California Institute of Technology');
+INSERT works_for VALUES('000000001','University of California, San Francisco');
+INSERT works_for VALUES('000000042','Stanford University');
+INSERT works_for VALUES('000000140','University of California, San Francisco');
+INSERT works_for VALUES('000000335','Stanford University');
+INSERT works_for VALUES('000000132','ViaCyte, Inc.');
+INSERT works_for VALUES('000000494','University of California, Los Angeles');
+INSERT works_for VALUES('000000583','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000333','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000448','Palo Alto Veterans Institute for Research');
+INSERT works_for VALUES('000000297','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000431','iPierian, Inc.');
+INSERT works_for VALUES('000000547','University of California, Berkeley');
+INSERT works_for VALUES('000000416','University of California, Los Angeles');
+INSERT works_for VALUES('000000244','Stanford University');
+INSERT works_for VALUES('000000246','University of California, Davis');
+INSERT works_for VALUES('000000471','Parkinson\'s Institute');
+INSERT works_for VALUES('000000159','Cellular Biomedicine Group, Inc.');
+INSERT works_for VALUES('000000185','University of California, Berkeley');
+INSERT works_for VALUES('000000215','Humboldt State University');
+INSERT works_for VALUES('000000312','University of California, San Francisco');
+INSERT works_for VALUES('000000313','University of California, San Diego');
+INSERT works_for VALUES('000000237','Stanford University');
+INSERT works_for VALUES('000000362','Scripps Research Institute');
+INSERT works_for VALUES('000000475','University of California, Davis');
+INSERT works_for VALUES('000000602','Geron Corporation');
+INSERT works_for VALUES('000000155','University of California, Irvine');
+INSERT works_for VALUES('000000324','University of California, San Francisco');
+INSERT works_for VALUES('000000285','University of California, San Francisco');
+INSERT works_for VALUES('000000181','Scripps Research Institute');
+INSERT works_for VALUES('000000442','University of California, San Francisco');
+INSERT works_for VALUES('000000192','Stanford University');
+INSERT works_for VALUES('000000133','Humacyte, Inc.');
+INSERT works_for VALUES('000000515','University of California, San Francisco');
+INSERT works_for VALUES('000000290','University of California, San Francisco');
+INSERT works_for VALUES('000000261','Biocom Institute');
+INSERT works_for VALUES('000000540','University of California, Merced');
+INSERT works_for VALUES('000000202','University of California, San Francisco');
+INSERT works_for VALUES('000000332','University of California, San Francisco');
+INSERT works_for VALUES('000000033','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000411','GMR Epigenetics');
+INSERT works_for VALUES('000000402','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000482','Cal Poly Pomona');
+INSERT works_for VALUES('000000472','Stanford University');
+INSERT works_for VALUES('000000309','Stanford University');
+INSERT works_for VALUES('000000303','University of California, San Diego');
+INSERT works_for VALUES('000000406','TriFoil Imaging, Inc.');
+INSERT works_for VALUES('000000387','Stanford University');
+INSERT works_for VALUES('000000391','Scripps Research Institute');
+INSERT works_for VALUES('000000502','University of California, Santa Cruz');
+INSERT works_for VALUES('000000100','University of California, Los Angeles');
+INSERT works_for VALUES('000000124','Human BioMolecular Research Institute');
+INSERT works_for VALUES('000000166','University of California, Los Angeles');
+INSERT works_for VALUES('000000572','Stanford University');
+INSERT works_for VALUES('000000417','iPierian, Inc.');
+INSERT works_for VALUES('000000300','Numerate, Inc.');
+INSERT works_for VALUES('000000527','Stanford University');
+INSERT works_for VALUES('000000373','Samumed, LLC');
+INSERT works_for VALUES('000000346','University of California, Davis');
+INSERT works_for VALUES('000000399','University of California, San Francisco');
+INSERT works_for VALUES('000000222','University of California, San Diego');
+INSERT works_for VALUES('000000445','University of California, San Francisco');
+INSERT works_for VALUES('000000532','University of California, Merced');
+INSERT works_for VALUES('000000405','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000041','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000071','University of California, San Diego');
+INSERT works_for VALUES('000000198','University of California, Davis');
+INSERT works_for VALUES('000000269','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000311','University of California, San Diego');
+INSERT works_for VALUES('000000238','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000092','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000005','Immune-Onc Therapeutics');
+INSERT works_for VALUES('000000098','Stanford University');
+INSERT works_for VALUES('000000271','University of California, Santa Cruz');
+INSERT works_for VALUES('000000355','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000062','Stanford University');
+INSERT works_for VALUES('000000110','Loma Linda University');
+INSERT works_for VALUES('000000521','Stanford University');
+INSERT works_for VALUES('000000167','University of California, San Francisco');
+INSERT works_for VALUES('000000301','Stanford University');
+INSERT works_for VALUES('000000150','Scaled Biolabs Inc.');
+INSERT works_for VALUES('000000012','University of Southern California');
+INSERT works_for VALUES('000000310','University of California, San Diego');
+INSERT works_for VALUES('000000262','University of California, Merced');
+INSERT works_for VALUES('000000050','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000024','University of California, San Diego');
+INSERT works_for VALUES('000000068','University of California, San Francisco');
+INSERT works_for VALUES('000000378','University of California, San Francisco');
+INSERT works_for VALUES('000000548','Stanford University');
+INSERT works_for VALUES('000000118','University of California, San Diego');
+INSERT works_for VALUES('000000408','University of California, San Diego');
+INSERT works_for VALUES('000000381','Stanford University');
+INSERT works_for VALUES('000000206','University of California, San Francisco');
+INSERT works_for VALUES('000000337','University of California, Los Angeles');
+INSERT works_for VALUES('000000360','University of Southern California');
+INSERT works_for VALUES('000000078','Stanford University');
+INSERT works_for VALUES('000000480','University of California, Los Angeles');
+INSERT works_for VALUES('000000443','Stanford University');
+INSERT works_for VALUES('000000183','ViaCyte, Inc.');
+INSERT works_for VALUES('000000022','University of California, Berkeley');
+INSERT works_for VALUES('000000059','Rocket Pharmaceuticals, Inc.');
+INSERT works_for VALUES('000000503','University of California, Davis');
+INSERT works_for VALUES('000000584','Stanford University');
+INSERT works_for VALUES('000000125','Calibr');
+INSERT works_for VALUES('000000397','Scripps Research Institute');
+INSERT works_for VALUES('000000491','VistaGen Therapeutics, Inc.');
+INSERT works_for VALUES('000000049','Brain Neurotherapy Bio');
+INSERT works_for VALUES('000000400','University of California, San Diego');
+INSERT works_for VALUES('000000451','University of California, San Diego');
+INSERT works_for VALUES('000000108','Stanford University');
+INSERT works_for VALUES('000000595','University of California, Irvine');
+INSERT works_for VALUES('000000353','University of California, Davis');
+INSERT works_for VALUES('000000500','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000529','University of California, Davis');
+INSERT works_for VALUES('000000248','University of California, Davis');
+INSERT works_for VALUES('000000200','University of California, San Diego');
+INSERT works_for VALUES('000000545','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000252','University of California, Los Angeles');
+INSERT works_for VALUES('000000004','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000253','Gordon Research Conferences');
+INSERT works_for VALUES('000000173','Orchard Therapeutics plc');
+INSERT works_for VALUES('000000064','University of California, Irvine');
+INSERT works_for VALUES('000000080','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000002','University of California, Los Angeles');
+INSERT works_for VALUES('000000213','San Francisco State University');
+INSERT works_for VALUES('000000511','University of California, Berkeley');
+INSERT works_for VALUES('000000365','University of California, Santa Barbara');
+INSERT works_for VALUES('000000187','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000551','University of California, San Francisco');
+INSERT works_for VALUES('000000199','Capricor, Inc');
+INSERT works_for VALUES('000000549','University of California, Santa Cruz');
+INSERT works_for VALUES('000000278','University of California, Irvine');
+INSERT works_for VALUES('000000212','Cal State Univ, Sacramento');
+INSERT works_for VALUES('000000210','Cal State Univ, Long Beach');
+INSERT works_for VALUES('000000514','University of California, San Francisco');
+INSERT works_for VALUES('000000462','University of California, Los Angeles');
+INSERT works_for VALUES('000000085','University of California, Irvine');
+INSERT works_for VALUES('000000273','University of California, San Diego');
+INSERT works_for VALUES('000000323','University of California, San Diego');
+INSERT works_for VALUES('000000415','Fluidigm Corporation');
+INSERT works_for VALUES('000000372','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000193','Vitalant Research Institute');
+INSERT works_for VALUES('000000534','University of California, Santa Cruz');
+INSERT works_for VALUES('000000449','University of California, Irvine');
+INSERT works_for VALUES('000000327','Research for Cure');
+INSERT works_for VALUES('000000275','Stanford University');
+INSERT works_for VALUES('000000020','University of California, San Diego');
+INSERT works_for VALUES('000000283','University of California, San Francisco');
+INSERT works_for VALUES('000000601','Forty Seven Inc.');
+INSERT works_for VALUES('000000052','University of Southern California');
+INSERT works_for VALUES('000000580','Stanford University');
+INSERT works_for VALUES('000000144','Stanford University');
+INSERT works_for VALUES('000000057','University of California, San Francisco');
+INSERT works_for VALUES('000000289','University of California, Davis');
+INSERT works_for VALUES('000000423','University of California, Davis');
+INSERT works_for VALUES('000000148','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000418','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000463','University of Southern California');
+INSERT works_for VALUES('000000370','University of California, Davis');
+INSERT works_for VALUES('000000468','Scripps Research Institute');
+INSERT works_for VALUES('000000453','University of California, San Diego');
+INSERT works_for VALUES('000000413','University of California, Los Angeles');
+INSERT works_for VALUES('000000375','University of California, Los Angeles');
+INSERT works_for VALUES('000000526','Buck Institute for Age Research');
+INSERT works_for VALUES('000000011','University of California, Irvine');
+INSERT works_for VALUES('000000302','OCTANe Foundation for Innovation');
+INSERT works_for VALUES('000000130','Stanford University');
+INSERT works_for VALUES('000000127','Poseida Therapeutics, Inc.');
+INSERT works_for VALUES('000000053','University of California, Davis');
+INSERT works_for VALUES('000000479','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000396','Stanford University');
+INSERT works_for VALUES('000000329','Stanford University');
+INSERT works_for VALUES('000000530','University of California, Irvine');
+INSERT works_for VALUES('000000172','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000516','Stanford University');
+INSERT works_for VALUES('000000037','University of California, San Francisco');
+INSERT works_for VALUES('000000496','University of California, Los Angeles');
+INSERT works_for VALUES('000000565','University of California, Riverside');
+INSERT works_for VALUES('000000126','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000401','University of California, Berkeley');
+INSERT works_for VALUES('000000266','Stanford University');
+INSERT works_for VALUES('000000464','University of California, Los Angeles');
+INSERT works_for VALUES('000000474','BioTime, Inc.');
+INSERT works_for VALUES('000000294','Stanford University');
+INSERT works_for VALUES('000000260','University of California, Irvine');
+INSERT works_for VALUES('000000318','Stanford University');
+INSERT works_for VALUES('000000330','University of California, San Francisco');
+INSERT works_for VALUES('000000272','University of California, San Diego');
+INSERT works_for VALUES('000000460','University of California, Davis');
+INSERT works_for VALUES('000000454','University of California, San Francisco');
+INSERT works_for VALUES('000000537','Mohammad Pashmforoush');
+INSERT works_for VALUES('000000088','University of California, San Francisco');
+INSERT works_for VALUES('000000347','University of California, Davis');
+INSERT works_for VALUES('000000156','American Association of Blood Banks');
+INSERT works_for VALUES('000000074','University of Southern California');
+INSERT works_for VALUES('000000112','Palo Alto Veterans Institute for Research');
+INSERT works_for VALUES('000000447','Scripps Research Institute');
+INSERT works_for VALUES('000000219','Cal State Univ, San Bernadino');
+INSERT works_for VALUES('000000207','Cal State Univ, Fullerton');
+INSERT works_for VALUES('000000205','Cal State Univ, Channel Island');
+INSERT works_for VALUES('000000425','University of California, Los Angeles');
+INSERT works_for VALUES('000000467','ViaCyte, Inc.');
+INSERT works_for VALUES('000000224','Gordon Research Conferences');
+INSERT works_for VALUES('000000495','University of California, Irvine');
+INSERT works_for VALUES('000000191','University of California, Los Angeles');
+INSERT works_for VALUES('000000470','Jackson Labs');
+INSERT works_for VALUES('000000216','Pasadena City College');
+INSERT works_for VALUES('000000498','Vala Sciences, Inc.');
+INSERT works_for VALUES('000000204','Angiocrine Bioscience, Inc.');
+INSERT works_for VALUES('000000510','University of California, Davis');
+INSERT works_for VALUES('000000280','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000369','California Institute of Technology');
+INSERT works_for VALUES('000000171','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000208','Stanford University');
+INSERT works_for VALUES('000000245','University of Southern California');
+INSERT works_for VALUES('000000197','University of California, Los Angeles');
+INSERT works_for VALUES('000000287','University of California, Davis');
+INSERT works_for VALUES('000000600','University of California, Irvine');
+INSERT works_for VALUES('000000421','University of California, Santa Barbara');
+INSERT works_for VALUES('000000268','University of California, Irvine');
+INSERT works_for VALUES('000000587','University of Southern California');
+INSERT works_for VALUES('000000184','IQVIA, Inc.');
+INSERT works_for VALUES('000000228','Calibr');
+INSERT works_for VALUES('000000055','University of California, San Francisco');
+INSERT works_for VALUES('000000073','Stanford University');
+INSERT works_for VALUES('000000359','Children\'s Hospital of Orange County');
+INSERT works_for VALUES('000000188','Stanford University');
+INSERT works_for VALUES('000000038','ExCellThera Inc.');
+INSERT works_for VALUES('000000499','University of Southern California');
+INSERT works_for VALUES('000000030','University of Southern California');
+INSERT works_for VALUES('000000550','University of California, Riverside');
+INSERT works_for VALUES('000000247','University of Southern California');
+INSERT works_for VALUES('000000234','University of Southern California');
+INSERT works_for VALUES('000000403','Parkinson\'s Institute');
+INSERT works_for VALUES('000000352','Capricor, Inc');
+INSERT works_for VALUES('000000174','San Diego State University Foundation');
+INSERT works_for VALUES('000000138','BrainStorm Cell Therapeutics');
+INSERT works_for VALUES('000000561','University of California, San Francisco');
+INSERT works_for VALUES('000000236','University of California, Davis');
+INSERT works_for VALUES('000000599','University of California, Berkeley');
+INSERT works_for VALUES('000000292','University of California, San Francisco');
+INSERT works_for VALUES('000000518','Stanford University');
+INSERT works_for VALUES('000000320','University of California, Los Angeles');
+INSERT works_for VALUES('000000512','San Diego State University Foundation');
+INSERT works_for VALUES('000000410','University of California, Los Angeles');
+INSERT works_for VALUES('000000368','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000459','University of California, Los Angeles');
+INSERT works_for VALUES('000000230','Caladrius Biosciences');
+INSERT works_for VALUES('000000525','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000319','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000505','University of California, San Francisco');
+INSERT works_for VALUES('000000013','University of California, Irvine');
+INSERT works_for VALUES('000000485','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000486','University of Southern California');
+INSERT works_for VALUES('000000432','Stanford University');
+INSERT works_for VALUES('000000596','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000295','University of California, Los Angeles');
+INSERT works_for VALUES('000000374','Stanford University');
+INSERT works_for VALUES('000000177','University of California, San Diego');
+INSERT works_for VALUES('000000344','University of California, Berkeley');
+INSERT works_for VALUES('000000429','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000364','University of Southern California');
+INSERT works_for VALUES('000000163','Stanford University');
+INSERT works_for VALUES('000000367','International Symposium on Neural Regeneration, Inc.');
+INSERT works_for VALUES('000000203','Mosaic Event Management, Inc.');
+INSERT works_for VALUES('000000081','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000383','University of California, Irvine');
+INSERT works_for VALUES('000000045','Stanford University');
+INSERT works_for VALUES('000000232','University of California, Davis');
+INSERT works_for VALUES('000000380','University of California, San Diego');
+INSERT works_for VALUES('000000281','University of California, Los Angeles');
+INSERT works_for VALUES('000000517','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000563','University of California, San Francisco');
+INSERT works_for VALUES('000000157','Stanford University');
+INSERT works_for VALUES('000000242','Stanford University');
+INSERT works_for VALUES('000000105','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000051','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000102','University of California, Los Angeles');
+INSERT works_for VALUES('000000554','University of California, Los Angeles');
+INSERT works_for VALUES('000000390','Stanford University');
+INSERT works_for VALUES('000000120','University of California, San Francisco');
+INSERT works_for VALUES('000000194','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000564','Salk Institute for Biological Studies');
+INSERT works_for VALUES('000000363','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000241','University of California, San Diego');
+INSERT works_for VALUES('000000229','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000263','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000178','Vitalant Research Institute');
+INSERT works_for VALUES('000000308','University of California, San Diego');
+INSERT works_for VALUES('000000394','University of California, Los Angeles');
+INSERT works_for VALUES('000000103','University of California, San Francisco');
+INSERT works_for VALUES('000000243','University of California, San Diego');
+INSERT works_for VALUES('000000539','University of California, Los Angeles');
+INSERT works_for VALUES('000000227','University of California, Irvine');
+INSERT works_for VALUES('000000031','University of California, Los Angeles');
+INSERT works_for VALUES('000000158','University of California, Los Angeles');
+INSERT works_for VALUES('000000544','University of Southern California');
+INSERT works_for VALUES('000000153','University of California, San Francisco');
+INSERT works_for VALUES('000000048','University of California, Los Angeles');
+INSERT works_for VALUES('000000014','University of California, Los Angeles');
+INSERT works_for VALUES('000000350','University of California, Los Angeles');
+INSERT works_for VALUES('000000560','Stanford University');
+INSERT works_for VALUES('000000054','University of California, San Diego');
+INSERT works_for VALUES('000000354','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000161','St. Jude Children\'s Research Hospital');
+INSERT works_for VALUES('000000028','University of California, San Diego');
+INSERT works_for VALUES('000000441','Stanford University');
+INSERT works_for VALUES('000000407','University of California, Berkeley');
+INSERT works_for VALUES('000000018','University of California, San Francisco');
+INSERT works_for VALUES('000000082','University of California, Los Angeles');
+INSERT works_for VALUES('000000254','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000087','University of California, San Francisco');
+INSERT works_for VALUES('000000069','University of California, Los Angeles');
+INSERT works_for VALUES('000000293','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000036','Scripps Research Institute');
+INSERT works_for VALUES('000000576','University of California, San Francisco');
+INSERT works_for VALUES('000000465','Stanford University');
+INSERT works_for VALUES('000000255','University of California, San Francisco');
+INSERT works_for VALUES('000000151','Cellerant Therapeutics, Inc.');
+INSERT works_for VALUES('000000483','University of California, San Diego');
+INSERT works_for VALUES('000000101','University of California, San Diego');
+INSERT works_for VALUES('000000015','University of California, San Diego');
+INSERT works_for VALUES('000000316','University of California, Los Angeles');
+INSERT works_for VALUES('000000162','University of California, San Francisco');
+INSERT works_for VALUES('000000440','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000094','Keystone Symposia on Molecular and Cellular Biology');
+INSERT works_for VALUES('000000575','University of California, San Francisco');
+INSERT works_for VALUES('000000409','Stanford University');
+INSERT works_for VALUES('000000058','University of California, Los Angeles');
+INSERT works_for VALUES('000000070','Stanford University');
+INSERT works_for VALUES('000000135','University of California, San Diego');
+INSERT works_for VALUES('000000590','University of California, Irvine');
+INSERT works_for VALUES('000000314','Cellular Dynamics International');
+INSERT works_for VALUES('000000284','Palo Alto Veterans Institute for Research');
+INSERT works_for VALUES('000000567','Stanford University');
+INSERT works_for VALUES('000000128','RUNX1 Research Program');
+INSERT works_for VALUES('000000371','OncoMed Pharmaceuticals, Inc.');
+INSERT works_for VALUES('000000570','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000142','University of California, San Francisco');
+INSERT works_for VALUES('000000543','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000258','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000436','Palo Alto Veterans Institute for Research');
+INSERT works_for VALUES('000000239','University of Southern California');
+INSERT works_for VALUES('000000072','Children\'s Hospital of Los Angeles');
+INSERT works_for VALUES('000000211','Cal Poly Corporation, an Auxiliary of California Polytechnic State University, San Luis Obispo');
+INSERT works_for VALUES('000000214','San Jose State University');
+INSERT works_for VALUES('000000489','Scripps Research Institute');
+INSERT works_for VALUES('000000032','University of California, Los Angeles');
+INSERT works_for VALUES('000000264','University of California, San Francisco');
+INSERT works_for VALUES('000000361','Childrens Hospital of Oakland Research Institute');
+INSERT works_for VALUES('000000115','Zenobia Therapeutics');
+INSERT works_for VALUES('000000348','University of California, Davis');
+INSERT works_for VALUES('000000067','Pathways to Stem Cell Science');
+INSERT works_for VALUES('000000366','Buck Institute for Age Research');
+INSERT works_for VALUES('000000588','University of California, Irvine');
+INSERT works_for VALUES('000000552','Stanford University');
+INSERT works_for VALUES('000000221','Cedars-Sinai Medical Center');
+INSERT works_for VALUES('000000357','University of California, Davis');
+INSERT works_for VALUES('000000461','University of Southern California');
+INSERT works_for VALUES('000000469','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000522','Ludwig Institute for Cancer Research');
+INSERT works_for VALUES('000000274','University of California, San Diego');
+INSERT works_for VALUES('000000063','Jasper Therapeutics, Inc.');
+INSERT works_for VALUES('000000392','University of California, Los Angeles');
+INSERT works_for VALUES('000000430','University of California, Davis');
+INSERT works_for VALUES('000000160','Caladrius Biosciences');
+INSERT works_for VALUES('000000257','University of California, Berkeley');
+INSERT works_for VALUES('000000422','Buck Institute for Age Research');
+INSERT works_for VALUES('000000029','Celularity Inc');
+INSERT works_for VALUES('000000099','University of California, Riverside');
+INSERT works_for VALUES('000000146','X-Therma Inc.');
+INSERT works_for VALUES('000000276','Stanford University');
+INSERT works_for VALUES('000000076','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000170','Gladstone Institutes, J. David');
+INSERT works_for VALUES('000000106','University of California, San Diego');
+INSERT works_for VALUES('000000016','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000393','University of California, Los Angeles');
+INSERT works_for VALUES('000000493','University of California, San Diego');
+INSERT works_for VALUES('000000061','Ankasa Regenerative Therapeutics');
+INSERT works_for VALUES('000000439','University of California, Los Angeles');
+INSERT works_for VALUES('000000143','City of Hope, Beckman Research Institute');
+INSERT works_for VALUES('000000044','University of California, Los Angeles');
+INSERT works_for VALUES('000000296','University of California, Los Angeles');
+INSERT works_for VALUES('000000520','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000577','Sanford Burnham Prebys Medical Discovery Institute');
+INSERT works_for VALUES('000000569','University of California, Los Angeles');
+
