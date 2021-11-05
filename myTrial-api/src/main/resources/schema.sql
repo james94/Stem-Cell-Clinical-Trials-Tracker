@@ -76,10 +76,10 @@ CREATE TABLE r_disease_area (
     foreign key (researcher_id) references researcher (researcher_id)
 );
 
-CREATE TABLE grants
+CREATE TABLE ct_grant
 	(grant_number		varchar(8), 
 	 grant_title		varchar(20), 
-         trial_id		varchar(9), 
+         trial_id		varchar(9) DEFAULT -1, 
 	 disease_focus		varchar(20),
      start_date			date,
      end_date			date,
@@ -90,18 +90,17 @@ CREATE TABLE grants
      amount			decimal(10,2) check (amount > 0),		
 	 primary key (grant_number),
 		foreign key (trial_id) references trial(trial_id)
-		on delete cascade
+		on delete set default
 	);
     
     
 CREATE TABLE r_watchlist
 	( name			    varchar(20), 
-	 researcher_id		    varchar(9), 
-     	 trial_id		    varchar(9), 
+	 researcher_id		    varchar(9) DEFAULT -1, 
 	 disease_area		    varchar(20),
 	 primary key (name, researcher_id),
 	 foreign key (researcher_id) references researcher(researcher_id)
-		on delete cascade
+		on delete set default
 	);
 
 -- INSERT into Database TABLES
