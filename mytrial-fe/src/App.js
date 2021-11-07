@@ -12,6 +12,7 @@ import ResearcherHomePage from './components/ResearcherHomePage';
 import TrialsPage from './components/TrialsPage';
 import TrialInfoPage from './components/TrialInfoPage';
 import CreateTrialPage from './components/CreateTrialPage';
+import EditPatients from './components/EditPatients';
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/addtrial">
             <CreateTrialPage />
+          </Route>
+          <Route path='/editpatients'>
+            <EditPatients />
           </Route>
           <Route path="/">
             <LandingPage />
