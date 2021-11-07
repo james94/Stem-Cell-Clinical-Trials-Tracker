@@ -39,15 +39,16 @@ cd $pwd/Stem-Cell-Clinical-Trials-Tracker/mytrial-fe
 sudo docker build -t mytrial-fe:dev .
 ~~~
 
-4\. Launch a Docker container named **scct_tracker** for our ReactJS app with code based from **mytrial-fe** folder:
+4\. Launch a Docker container named **mytrial_rjs_client** for our ReactJS app with code based from **mytrial-fe** folder:
 
 ~~~bash
 sudo docker run -it \
-    --name scct_tracker_fe \
+    --name mytrial_rjs_client \
     -v ${PWD}:/mytrial-fe \
     -v /mytrial-fe/node_modules \
     -p 3001:3000 \
     -e CHOKIDAR_USEPOLLINNG=true \
+    --network=frontend \
     mytrial-fe:dev
 ~~~
 
