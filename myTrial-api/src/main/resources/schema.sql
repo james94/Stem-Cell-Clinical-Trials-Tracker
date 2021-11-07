@@ -137,13 +137,12 @@ CREATE TABLE ct_grant (
     on delete set default
 );
 
---resizing the data type of disease_area to match the data size
+-- added disease_area to primary key since a researcher can watch multiple disease areas
 CREATE TABLE r_watchlist (
     name			    varchar(20), 
 	researcher_id		varchar(9) default -1, 
--- 	disease_area		varchar(20),
-	disease_area		varchar(150),
-	primary key (name, researcher_id),
+	disease_area		varchar(300),
+	primary key (name, researcher_id, disease_area),
 	foreign key (researcher_id) references researcher(researcher_id)
 	on delete set default
 );
@@ -2685,6 +2684,73 @@ INSERT t_disease_area VALUES
 ('000000069','Type 1 diabetes'),
 ('000000070','X-linked Chronic Granulomatous Disease');
 
+INSERT INTO r_watchlist VALUES
+('Mark Humayun','000000052','Age-related macular degeneration'),
+('Tippi MacKenzie','000000142','Alpha Thalassemia Major'),
+('Ralph Kern','000000138','Amyotrophic Lateral Sclerosis'),
+('Clive Svendsen','000000047','Amyotrophic Lateral Sclerosis'),
+('Crystal Mackall','000000089','B cell cancers, Leukemia'),
+('Thomas  Kipps','000000135','B cell cancers, Leukemia'),
+('Bettina Cockroft','000000090','Beta Thalassemia'),
+('Edward Kavalerchik','000000066','Blood Cancer'),
+('Michael Pulsipher','000000126','Blood Cancer, Bone Marrow Transplant and Viral Infection'),
+('Irving Weissman','000000244','Blood Cancer, Solid Tumors'),
+('Thomas  Kipps','000000135','Blood Cancer'),
+('Gayatri Rao','000000019','Bone or Cartilage Disease'),
+('Christine Brown','000000134','Brain Cancer'),
+('Saul Priceman','000000051','Brain Cancer, Breast Cancer'),
+('Leo Wang','000000004','Brain Cancer'),
+('Anthony Gringeri','000000225','Brain Cancer'),
+('Mark Chao','000000601','Colon Cancer'),
+('Sophie Deng','000000048','Corneal Damage'),
+('Xiaokui Zhang','000000029','COVID-19'),
+('John Zaia','000000041','COVID-19'),
+('Michael Matthay','000000037','COVID-19'),
+('Linda Marban','000000199','Heart disease associated with Duchenne muscular dystrophy'),
+('Rachel Smith','000000352','Heart failure'),
+('Mehrdad Abedi','000000053','HIV-related Lymphoma, HIV/AIDS'),
+('Geoff Symonds','000000457','HIV/AIDS'),
+('John Zaia','000000041','HIV/AIDS'),
+('Steven Deeks','000000018','HIV/AIDS'),
+('Vicki Wheelock','000000348','Huntington\'s Disease'),
+('Jeffrey Lawson','000000133','Kidney Failure'),
+('Daniel Brennan','000000093','Kidney Failure'),
+('Everett Meyer','000000065','Kidney Failure'),
+('Samuel Strober','000000157','Kidney Failure'),
+('Stephanie Cherqui','000000054','Kidney Failure'),
+('Mark Chao','000000601','Leukemia, Acute Myeloid (AML)'),
+('Joseph Woodard','000000005','Leukemia, Acute Myeloid (AML)'),
+('Colleen Delaney','000000131','Leukemia, Acute Myeloid (AML)'),
+('Kinnari Patel','000000059','Leukocyte Adhesion Deficiency'),
+('Steven Dubinett','000000082','Lung Cancer'),
+('Robert  Dillman','000000230','Melanoma'),
+('Antoni Ribas','000000345','Melanoma, Skin cancer'),
+('Matthew Spear','000000127','Multiple Myeloma'),
+('Kristen Johnson','000000125','Osteoarthritis'),
+('Nancy Lane','000000347','Osteonecrosis'),
+('Krystof Bankiewicz','000000049','Parkinson\'s Disease'),
+('Michael Lewis','000000172','Pulmonary Hypertension'),
+('Clive Svendsen','000000047','Retinitis Pigmentosa'),
+('Henry Klassen','000000046','Retinitis Pigmentosa'),
+('Theodore  Nowicki','000000058','Sarcoma'),
+('Donald Kohn','000000008','Severe Combined Immunodeficiency, Adenosine deaminase-deficient (ADA-SCID)'),
+('Morton Cowan','000000088','Severe Combined Immunodeficiency, Artemis deficient (ART-SCID)'),
+('Stephen Gottschalk','000000161','Severe Combined Immunodeficiency, X-linked (X-SCID)'),
+('Judith  Shizuru','000000062','Severe Combined Immunodeficiency, X-linked (X-SCID)'),
+('David  Williams','000000017','Sickle Cell Disease'),
+('Joseph Rosenthal','000000092','Sickle Cell Disease'),
+('Pierre Caudrelier','000000038','Sickle Cell Disease'),
+('Donald Kohn','000000008','Sickle Cell Disease'),
+('Dennis Slamon','000000288','Solid Tumors'),
+('Diana Farmer','000000006','Spina Bifida'),
+('Jane Lebkowski','000000602','Spinal Cord Injury'),
+('Francois Binette','000000259','Spinal Cord Injury'),
+('Bijan Nejadnik','000000141','Stroke'),
+('William Sietsema','000000160','Type 1 diabetes'),
+('Peter Stock','000000055','Type 1 diabetes'),
+('Howard Foyt','000000132','Type 1 diabetes'),
+('Donald Kohn','000000008','X-linked Chronic Granulomatous Disease');
+
 INSERT ct_grant VALUES
 ('TRAN1-12245','Development of novel synNotch CART cell therapy in patients with recurrent EGFRvIII+ glioblastoma',NULL,'Brain Cancer, Cancer, Solid Tumors',NULL,NULL,'Therapeutic Translational Research Projects','Pre-Active','University of California, San Francisco','Somatic Cell','2663144'),
 ('TRAN1-12250','HSC-Engineered Off-The-Shelf CAR-iNKT Cell Therapy for Multiple Myeloma',NULL,'Blood Cancer, Cancer, Multiple Myeloma',NULL,NULL,'Therapeutic Translational Research Projects','Pre-Active','University of California, Los Angeles','Adult Stem Cell','5949651'),
@@ -3760,75 +3826,3 @@ INSERT ct_grant VALUES
 ('T2-00004','Burnham Institute CIRM Stem Cell Training Grant (Type II)',NULL,'','Apr 1, 2006','Aug 31, 2009','Training Grant I-2','Closed','Sanford Burnham Prebys Medical Discovery Institute','','1061865'),
 ('T2-00005','Training Grant 1',NULL,'','Apr 1, 2006','Mar 31, 2010','Training Grant I-2','Closed','Children\'s Hospital of Los Angeles','','2173872'),
 ('T2-00006','Training in Stem Cell Biology at CIT',NULL,'','Apr 1, 2006','Mar 31, 2010','Training Grant I-2','Closed','California Institute of Technology','','1817214');
-
---r_watchlist insert script
-insert into r_watchlist values("Mark Humayun",000000052,"Age-related macular degeneration");
-insert into r_watchlist values("Tippi MacKenzie",000000142,"Alpha Thalassemia Major");
-insert into r_watchlist values("Ralph Kern",000000138,"Amyotrophic Lateral Sclerosis");
-insert into r_watchlist values("Clive Svendsen",000000047,"Amyotrophic Lateral Sclerosis");
-insert into r_watchlist values("Crystal Mackall",000000089,"B cell cancers, Leukemia");
-insert into r_watchlist values("Thomas  Kipps",000000135,"B cell cancers, Leukemia");
-insert into r_watchlist values("Bettina Cockroft",000000090,"Beta Thalassemia");
-insert into r_watchlist values("Edward Kavalerchik",000000066,"Blood Cancer");
-insert into r_watchlist values("Edward Kavalerchik",000000066,"Blood Cancer");
-insert into r_watchlist values("Michael Pulsipher",000000126,"Blood Cancer, Bone Marrow Transplant and Viral Infection");
-insert into r_watchlist values("Irving Weissman",000000244,"Blood Cancer, Solid Tumors");
-insert into r_watchlist values("Thomas  Kipps",000000135,"Blood Cancer");
-insert into r_watchlist values("Gayatri Rao",000000019,"Bone or Cartilage Disease");
-insert into r_watchlist values("Christine Brown",000000134,"Brain Cancer");
-insert into r_watchlist values("Saul Priceman",000000051,"Brain Cancer, Breast Cancer");
-insert into r_watchlist values("Leo Wang",000000004,"Brain Cancer");
-insert into r_watchlist values("Anthony Gringeri",000000225,"Brain Cancer");
-insert into r_watchlist values("Mark Chao",000000601,"Colon Cancer");
-insert into r_watchlist values("Sophie Deng",000000048,"Corneal Damage");
-insert into r_watchlist values("Xiaokui Zhang",000000029,"COVID-19");
-insert into r_watchlist values("John Zaia",000000041,"COVID-19");
-insert into r_watchlist values("Michael Matthay",000000037,"COVID-19");
-insert into r_watchlist values("Linda Marban",000000199,"Heart disease associated with Duchenne muscular dystrophy");
-insert into r_watchlist values("Rachel Smith",000000352,"Heart failure");
-insert into r_watchlist values("Mehrdad Abedi",000000053,"HIV-related Lymphoma, HIV/AIDS");
-insert into r_watchlist values("Geoff Symonds",000000457,"HIV/AIDS");
-insert into r_watchlist values("John Zaia",000000041,"HIV/AIDS");
-insert into r_watchlist values("Steven Deeks",000000018,"HIV/AIDS");
-insert into r_watchlist values("Vicki Wheelock",000000348,"Huntington's Disease");
-insert into r_watchlist values("Jeffrey Lawson",000000133,"Kidney Failure");
-insert into r_watchlist values("Jeffrey Lawson",000000133,"Kidney Failure");
-insert into r_watchlist values("Daniel Brennan",000000093,"Kidney Failure");
-insert into r_watchlist values("Everett Meyer",000000065,"Kidney Failure");
-insert into r_watchlist values("Samuel Strober",000000157,"Kidney Failure");
-insert into r_watchlist values("Stephanie Cherqui",000000054,"Kidney Failure");
-insert into r_watchlist values("Mark Chao",000000601,"Leukemia, Acute Myeloid (AML)");
-insert into r_watchlist values("Joseph Woodard",000000005,"Leukemia, Acute Myeloid (AML)");
-insert into r_watchlist values("Colleen Delaney",000000131,"Leukemia, Acute Myeloid (AML)");
-insert into r_watchlist values("Kinnari Patel",000000059,"Leukocyte Adhesion Deficiency");
-insert into r_watchlist values("Steven Dubinett",000000082,"Lung Cancer");
-insert into r_watchlist values("Robert  Dillman",000000230,"Melanoma");
-insert into r_watchlist values("Antoni Ribas",000000345,"Melanoma, Skin cancer");
-insert into r_watchlist values("Matthew Spear",000000127,"Multiple Myeloma");
-insert into r_watchlist values("Kristen Johnson",000000125,"Osteoarthritis");
-insert into r_watchlist values("Nancy Lane",000000347,"Osteonecrosis");
-insert into r_watchlist values("Krystof Bankiewicz",000000049,"Parkinson's Disease");
-insert into r_watchlist values("Michael Lewis",000000172,"Pulmonary Hypertension");
-insert into r_watchlist values("Clive Svendsen",000000047,"Retinitis Pigmentosa");
-insert into r_watchlist values("Henry Klassen",000000046,"Retinitis Pigmentosa");
-insert into r_watchlist values("Henry Klassen",000000046,"Retinitis Pigmentosa");
-insert into r_watchlist values("Henry Klassen",000000046,"Retinitis Pigmentosa");
-insert into r_watchlist values("Theodore  Nowicki",000000058,"Sarcoma");
-insert into r_watchlist values("Donald Kohn",000000008,"Severe Combined Immunodeficiency, Adenosine deaminase-deficient (ADA-SCID)");
-insert into r_watchlist values("Morton Cowan",000000088,"Severe Combined Immunodeficiency, Artemis deficient (ART-SCID)");
-insert into r_watchlist values("Stephen Gottschalk",000000161,"Severe Combined Immunodeficiency, X-linked (X-SCID)");
-insert into r_watchlist values("Judith  Shizuru",000000062,"Severe Combined Immunodeficiency, X-linked (X-SCID)");
-insert into r_watchlist values("David  Williams",000000017,"Sickle Cell Disease");
-insert into r_watchlist values("Joseph Rosenthal",000000092,"Sickle Cell Disease");
-insert into r_watchlist values("Pierre Caudrelier",000000038,"Sickle Cell Disease");
-insert into r_watchlist values("Donald Kohn",000000008,"Sickle Cell Disease");
-insert into r_watchlist values("Dennis Slamon",000000288,"Solid Tumors");
-insert into r_watchlist values("Diana Farmer",000000006,"Spina Bifida");
-insert into r_watchlist values("Jane Lebkowski",000000602,"Spinal Cord Injury");
-insert into r_watchlist values("Francois Binette",000000259,"Spinal Cord Injury");
-insert into r_watchlist values("Bijan Nejadnik",000000141,"Stroke");
-insert into r_watchlist values("William Sietsema",000000160,"Type 1 diabetes");
-insert into r_watchlist values("Peter Stock",000000055,"Type 1 diabetes");
-insert into r_watchlist values("Howard Foyt",000000132,"Type 1 diabetes");
-insert into r_watchlist values("Howard Foyt",000000132,"Type 1 diabetes");
-insert into r_watchlist values("Donald Kohn",000000008,"X-linked Chronic Granulomatous Disease");
