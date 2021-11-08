@@ -22,10 +22,16 @@ public class DiscussionForumRepository {
 		return forums;
 	}
 
-	public DiscussionForum getDiscussionById(String df_id) {
+	public DiscussionForum getDiscussionById(int df_id) {
 		System.out.println("Reached repo");
 		String sql = "select * from discussion_forum where df_id = ?";
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class), df_id);
+	}
+
+	public int addDiscussion(String df_name, String details, String researcher_id) {
+		System.out.println("repo: add new discussion topic");
+		String sql = "insert discussion_forum (df_name, details, researcher_id) values (?, ?, ?)";
+		return jdbc.update(sql, df_name, details, researcher_id);
 	}
 
 }

@@ -62,7 +62,7 @@ CREATE TABLE p_watchlist (
 );
 
 CREATE TABLE discussion_forum (
-    df_id varchar(9) not null,
+    df_id INT not null AUTO_INCREMENT,
     df_name varchar(60) not null,
     df_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     details varchar(600) not null,
@@ -98,7 +98,7 @@ CREATE TABLE reply (
     reply_id      INT NOT NULL AUTO_INCREMENT,
     r_timestamp   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     content       VARCHAR(300),
-    df_id         VARCHAR(9),
+    df_id         INT,
     researcher_id VARCHAR(9) NOT NULL,
     PRIMARY KEY (reply_id),
     FOREIGN KEY (df_id) REFERENCES discussion_forum(df_id),
