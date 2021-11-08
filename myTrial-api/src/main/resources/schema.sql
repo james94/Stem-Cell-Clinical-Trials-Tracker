@@ -66,7 +66,9 @@ CREATE TABLE discussion_forum (
     df_name varchar(60) not null,
     df_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     details varchar(600) not null,
-    primary key (df_id)
+    researcher_id varchar(9) not null,
+    primary key (df_id),
+    foreign key (researcher_id) references researcher (researcher_id)
 );
 
 CREATE TABLE investigates (
