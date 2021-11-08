@@ -35,3 +35,7 @@ Check out the **mytrial-full-stack** [docker-compose.yml](./docker-compose.yml) 
 cd $pwd/Stem-Cell-Clinical-Trials-Tracker/
 docker-compose up
 ~~~ -->
+
+## Save Ubuntu VM
+
+Let's save the Ubuntu VM, so later we can import it, which will already come pre-loaded with the installed Docker containers: MySQL Server container, SpringBoot container, and ReactJS container.
