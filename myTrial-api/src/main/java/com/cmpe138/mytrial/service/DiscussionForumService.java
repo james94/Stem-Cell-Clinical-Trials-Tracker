@@ -8,5 +8,7 @@ public interface DiscussionForumService {
 
 	List<DiscussionForum> getAll();
 
-	DiscussionForum getDiscussionById(String df_id);
+	DiscussionForum getDiscussionById(int df_id);
+
+	int addDiscussion(String df_name, String details, String researcher_id);
 }

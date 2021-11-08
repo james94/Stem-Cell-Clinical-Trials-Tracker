@@ -1,17 +1,17 @@
 package com.cmpe138.mytrial.model;
 
 public class DiscussionForum {
-	private String df_id;
+	private int df_id;
 	private String df_name;
 	private java.sql.Timestamp df_timestamp;
 	private String details;
 	private String researcher_id;
 
-	public String getDf_id() {
+	public int getDf_id() {
 		return df_id;
 	}
 
-	public void setDf_id(String df_id) {
+	public void setDf_id(int df_id) {
 		this.df_id = df_id;
 	}
 

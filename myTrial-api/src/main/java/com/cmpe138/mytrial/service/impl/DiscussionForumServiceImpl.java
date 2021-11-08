@@ -21,8 +21,13 @@ public class DiscussionForumServiceImpl implements DiscussionForumService {
 	}
 
 	@Override
-	public DiscussionForum getDiscussionById(String df_id) {
+	public DiscussionForum getDiscussionById(int df_id) {
 		return discussionRepo.getDiscussionById(df_id);
+	}
+
+	@Override
+	public int addDiscussion(String df_name, String details, String researcher_id) {
+		return discussionRepo.addDiscussion(df_name, details, researcher_id);
 	}
 
 }
