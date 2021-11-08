@@ -1,14 +1,14 @@
 package com.cmpe138.mytrial.model;
 
 public class Patient {
-	String patient_id;
-	String disease;
-	String phase;
-	String p_status;
-	String trial_id;
-	String p_username;
-	String p_password;
-	String researcher_id;
+	private String patient_id;
+	private String disease;
+	private String phase;
+	private String p_status;
+	private String trial_id;
+	private String p_username;
+	private String p_password;
+	private String researcher_id;
 
 	public String getPatient_id() {
 		return patient_id;
