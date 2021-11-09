@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cmpe138.mytrial.model.DiscussionForum;
 import com.cmpe138.mytrial.repository.DiscussionForumRepository;
+import com.cmpe138.mytrial.repository.ReplyRepository;
 import com.cmpe138.mytrial.service.DiscussionForumService;
 
 @Service
@@ -14,6 +15,9 @@ public class DiscussionForumServiceImpl implements DiscussionForumService {
 
 	@Autowired
 	DiscussionForumRepository discussionRepo;
+	
+	@Autowired
+	ReplyRepository replyRepo;
 
 	@Override
 	public List<DiscussionForum> getAll() {
@@ -22,7 +26,9 @@ public class DiscussionForumServiceImpl implements DiscussionForumService {
 
 	@Override
 	public DiscussionForum getDiscussionById(int df_id) {
-		return discussionRepo.getDiscussionById(df_id);
+		DiscussionForum data;
+		data = discussionRepo.getDiscussionById(df_id);
+		return data;
 	}
 
 	@Override

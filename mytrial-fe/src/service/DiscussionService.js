@@ -8,20 +8,20 @@ class DiscussionService {
         return axios.get(DISCUSSION_API_BASE_URL);
     }
 
-    createDiscussion(Discussion) {
-        return axios.post(DISCUSSION_API_BASE_URL, Discussion);
+    createDiscussion(discussion) {
+        return axios.post(DISCUSSION_API_BASE_URL, discussion);
     }
 
-    getDiscussionById(DiscussionId) {
-        return axios.get(DISCUSSION_API_BASE_URL + '/' + DiscussionId);
+    getDiscussionById(discussionId) {
+        return axios.get(DISCUSSION_API_BASE_URL + '/' + discussionId);
     }
 
-    updateDiscussion(Discussion, DiscussionId) {
-        return axios.put(DISCUSSION_API_BASE_URL + '/' + DiscussionId, Discussion);
+    updateDiscussion(discussion, discussionId) {
+        return axios.put(DISCUSSION_API_BASE_URL + '/' + discussionId, discussion);
     }
 
-    deleteDiscussion(DiscussionId) {
-        return axios.delete(DISCUSSION_API_BASE_URL + '/' + DiscussionId);
+    deleteDiscussion(discussionId) {
+        return axios.delete(DISCUSSION_API_BASE_URL + '/' + discussionId);
     }
 }
 

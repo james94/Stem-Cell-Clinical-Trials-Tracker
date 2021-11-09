@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cmpe138.mytrial.model.DiscussionForum;
@@ -32,7 +32,7 @@ public class DiscussionForumController {
 	}
 
 	@GetMapping("/discussion/{id}")
-	public DiscussionForum getDiscussionForumById(@RequestHeader(value = "id", required = false) int df_id) {
+	public DiscussionForum getDiscussionForumById(@PathVariable(value = "id", required = true) Integer df_id) {
 		return discussionService.getDiscussionById(df_id);
 	}
 

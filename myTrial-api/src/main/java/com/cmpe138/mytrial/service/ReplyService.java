@@ -11,4 +11,6 @@ public interface ReplyService {
 	List<Reply> getReplyByResearcherId(String researcher_id);
 
 	Reply getReplyId(String reply_id);
+
+	int addReply(String content, String df_id, String researcher_id);
 }

@@ -44,7 +44,7 @@ class DiscussionForumPage extends React.Component {
             <div>
                 {/* discussion list */}
                 <ul>
-                    {this.state.discussions.map((e, i) => <li key={i}><Link to={{ pathname: `/discussions/${e.df_id}` }}>{e.df_name}</Link></li>)}
+                    {this.state.discussions.map((e, i) => <li key={i}><Link to={{ pathname: `/discussion/${e.df_id}` }}>{e.df_name}</Link></li>)}
                 </ul>
                 {/* create new discussion */}
                 <form onSubmit={this.handleSubmit}>

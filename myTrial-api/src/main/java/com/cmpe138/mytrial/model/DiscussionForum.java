@@ -1,11 +1,15 @@
 package com.cmpe138.mytrial.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DiscussionForum {
 	private int df_id;
 	private String df_name;
 	private java.sql.Timestamp df_timestamp;
 	private String details;
 	private String researcher_id;
+	private List<Reply> replies = new ArrayList<Reply>();
 
 	public int getDf_id() {
 		return df_id;
@@ -47,10 +51,18 @@ public class DiscussionForum {
 		this.researcher_id = researcher_id;
 	}
 
+	public List<Reply> getReplies() {
+		return replies;
+	}
+
+	public void setReplies(List<Reply> replies) {
+		this.replies = replies;
+	}
+
 	@Override
 	public String toString() {
 		return "DiscussionForum [df_id=" + df_id + ", df_name=" + df_name + ", df_timestamp=" + df_timestamp
-				+ ", details=" + details + ", researcher_id=" + researcher_id + "]";
+				+ ", details=" + details + ", researcher_id=" + researcher_id + ", replies=" + replies + "]";
 	}
 
 }

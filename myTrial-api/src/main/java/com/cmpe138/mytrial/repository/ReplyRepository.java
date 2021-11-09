@@ -32,6 +32,16 @@ public class ReplyRepository {
 		return jdbc.queryForObject(sql, this::mapRowToReply, reply_id);
 	}
 
+	public List<Reply> getReplyByDf_id(String df_id) {
+		String sql = "select * from reply where df_id = ?";
+		return jdbc.query(sql, this::mapRowToReply, df_id);
+	}
+
+	public int addReply(String content, String df_id, String researcher_id) {
+		String sql = "insert reply (content, df_id, researcher_id) values (?, ?, ?)";
+		return jdbc.update(sql, content, df_id, researcher_id);
+	}
+
 	private Reply mapRowToReply(ResultSet rs, int rowNum) throws SQLException {
 		Reply reply = new Reply();
 		reply.setReply_id(rs.getString("reply_id"));
@@ -41,4 +51,5 @@ public class ReplyRepository {
 		reply.setResearcher_id(rs.getString("researcher_id"));
 		return reply;
 	}
+
 }
