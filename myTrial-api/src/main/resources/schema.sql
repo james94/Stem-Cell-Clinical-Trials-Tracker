@@ -49,8 +49,10 @@ CREATE TABLE donor (
     patient_id varchar(9) not null,
     name varchar(50) not null,
     email varchar(50),
+    trial_id varchar(9) not null,
     primary key (patient_id, name),
-    foreign key (patient_id) references patient (patient_id)
+    foreign key (patient_id) references patient (patient_id),
+    foreign key (trial_id) references trial (trial_id)
 );
 
 CREATE TABLE p_watchlist (
