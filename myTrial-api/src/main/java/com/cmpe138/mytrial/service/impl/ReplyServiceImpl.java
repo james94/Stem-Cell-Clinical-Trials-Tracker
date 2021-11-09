@@ -30,4 +30,9 @@ public class ReplyServiceImpl implements ReplyService {
 		return replyRepo.getReplyById(reply_id);
 	}
 
+	@Override
+	public int addReply(String content, String df_id, String researcher_id) {
+		return replyRepo.addReply(content, df_id, researcher_id);
+	}
+
 }
