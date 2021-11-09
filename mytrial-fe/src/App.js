@@ -12,8 +12,8 @@ import ResearcherHomePage from './components/ResearcherHomePage';
 import TrialsPage from './components/TrialsPage';
 import TrialInfoPage from './components/TrialInfoPage';
 import CreateTrialPage from './components/CreateTrialPage';
-
-
+import DiscussionForumPage from './components/DiscussionForumPage'
+import DiscussionForumInfoPage from './components/DiscussionForumInfoPage'
 function App() {
   return (
     <Router>
@@ -36,6 +36,12 @@ function App() {
           </Route>
           <Route path="/addtrial">
             <CreateTrialPage />
+          </Route>
+          <Route path="/discussion/:id" component={DiscussionForumInfoPage}>
+            {/* <DiscussionForumInfoPage /> */}
+          </Route>
+          <Route path="/discussion">
+            <DiscussionForumPage />
           </Route>
           <Route path="/">
             <LandingPage />
