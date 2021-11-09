@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +29,10 @@ public class ReplyController {
 	@GetMapping("/reply/{id}")
 	public Reply getReply(@PathVariable String reply_id) {
 		return replyService.getReplyId(reply_id);
+	}
+
+	@PostMapping("/reply")
+	public Integer addReply(@RequestBody Reply reply) {
+		return replyService.addReply(reply.getContent(), reply.getDf_id(), reply.getResearcher_id());
 	}
 }
