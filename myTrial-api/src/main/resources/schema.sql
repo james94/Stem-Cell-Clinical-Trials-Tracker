@@ -40,7 +40,7 @@ CREATE TABLE patient (
     p_status varchar(25) not null,
     trial_id varchar(9) not null,
     p_username varchar(30) not null,
-    p_password varchar(20) not null,
+    p_password blob not null,
     researcher_id varchar(9) not null,
     primary key (patient_id),
     foreign key (trial_id) references trial (trial_id),
