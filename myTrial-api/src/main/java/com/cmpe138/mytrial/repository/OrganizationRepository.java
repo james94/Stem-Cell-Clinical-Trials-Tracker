@@ -18,7 +18,7 @@ public class OrganizationRepository {
 
 	public List<Organization> findAll() {
 		System.out.println("Reached repo");
-		return jdbc.query("select * from organization", this::mapRowToOrganization);
+		return jdbc.query("select * from org", this::mapRowToOrganization);
 	}
 
 	private Organization mapRowToOrganization(ResultSet rs, int rowNum) throws SQLException {

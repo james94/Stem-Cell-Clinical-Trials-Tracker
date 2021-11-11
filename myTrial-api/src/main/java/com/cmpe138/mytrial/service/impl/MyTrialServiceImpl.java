@@ -27,7 +27,7 @@ public class MyTrialServiceImpl implements MyTrialService {
 	}
 	
 	@Override
-	public List<Trial> getResearcherTrials(String researcher_id) {
+	public List<Trial> getTrialsByResearcherId(String researcher_id) {
 		return trialRepository.findByResearcherId(researcher_id);
 	}
 	
@@ -43,6 +43,11 @@ public class MyTrialServiceImpl implements MyTrialService {
 	@Override
 	public Trial getTrialById(String trial_id) {
 		return trialRepository.findById(trial_id);
+	}
+	
+	@Override
+	public List<Trial> getTrialsByDiseaseArea(String disease_area) {
+		return trialRepository.findByDiseaseArea(disease_area);
 	}
 
 }
