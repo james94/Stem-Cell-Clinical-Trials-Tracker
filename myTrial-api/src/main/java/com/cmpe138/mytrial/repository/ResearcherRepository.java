@@ -7,8 +7,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.cmpe138.mytrial.model.Patient;
 import com.cmpe138.mytrial.model.Researcher;
 
 @Repository
@@ -19,12 +19,12 @@ public class ResearcherRepository {
 	public List<Researcher> findAll() {
 		System.out.println("Reached repo");
 		String sql = "select * from researcher";
-		List<Researcher> forums = jdbc.query(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class));
-		return forums;
+		List<Researcher> researchers = jdbc.query(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class));
+		return researchers;
 	}
 
 	public Researcher getResearcherById(String researcher_id) {
-		System.out.println("Reached repo");
+		System.out.println("Reached researcher repo:" + researcher_id);
 		String sql = "select * from researcher where researcher_id = ?";
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class), researcher_id);
 	}

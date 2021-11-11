@@ -18,6 +18,8 @@ import PatientHomePage from './components/PatientHomePage';
 import PatientPage from './components/PatientPage';
 import PatientInfoPage from './components/PatientInfoPage';
 import PatientWatchlistsPage from './components/PatientWatchlistsPage';
+import ResearcherPage from './components/ResearcherPage';
+import ResearcherInfoPage from './components/ResearcherInfoPage';
 
 function App() {
   return (
@@ -59,6 +61,12 @@ function App() {
           </Route>
           <Route path="/pwatchlists/:id">
             <PatientWatchlistsPage />
+          </Route>
+          <Route path="/researcher/:id" component={ResearcherInfoPage}>
+            {/* <ResearcherInfoPage /> */}
+          </Route>
+          <Route path="/researcher">
+            <ResearcherPage />
           </Route>
           <Route path="/">
             <LandingPage />
