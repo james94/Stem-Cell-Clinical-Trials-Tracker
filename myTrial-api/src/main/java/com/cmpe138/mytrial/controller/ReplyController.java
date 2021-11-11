@@ -26,8 +26,8 @@ public class ReplyController {
 		return replyService.getReplyByResearcherId(researcher_id);
 	}
 
-	@GetMapping("/reply/{id}")
-	public Reply getReply(@PathVariable String reply_id) {
+	@GetMapping("/reply/{reply_id}")
+	public Reply getReply(@PathVariable(value="reply_id") String reply_id) {
 		return replyService.getReplyId(reply_id);
 	}
 
