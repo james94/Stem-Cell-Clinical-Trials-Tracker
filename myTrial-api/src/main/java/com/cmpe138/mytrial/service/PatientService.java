@@ -9,4 +9,6 @@ public interface PatientService {
 	List<Patient> getAll();
 
 	Patient getPatientById(String patient_id);
+	
+	Patient getPatientByUsernamePassword(String username, String password);
 }
