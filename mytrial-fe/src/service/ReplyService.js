@@ -1,6 +1,6 @@
 import axios from 'axios';
 const MYTRIAL_API = 'http://127.0.0.1:8080';
-const REPLY_API_BASE_URL = `${MYTRIAL_API}/patient/`;
+const REPLY_API_BASE_URL = `${MYTRIAL_API}/reply/`;
 
 class ReplyService {
 

@@ -16,6 +16,8 @@ import DiscussionForumPage from './components/DiscussionForumPage'
 import DiscussionForumInfoPage from './components/DiscussionForumInfoPage'
 import PatientPage from './components/PatientPage'
 import PatientInfoPage from './components/PatientInfoPage'
+import ResearcherPage from './components/ResearcherPage';
+import ResearcherInfoPage from './components/ResearcherInfoPage';
 function App() {
   return (
     <Router>
@@ -50,6 +52,12 @@ function App() {
           </Route>
           <Route path="/patient">
             <PatientPage />
+          </Route>
+          <Route path="/researcher/:id" component={ResearcherInfoPage}>
+            {/* <ResearcherInfoPage /> */}
+          </Route>
+          <Route path="/researcher">
+            <ResearcherPage/>
           </Route>
           <Route path="/">
             <LandingPage />
