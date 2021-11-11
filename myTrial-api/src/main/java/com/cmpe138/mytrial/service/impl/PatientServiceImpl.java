@@ -28,4 +28,8 @@ public class PatientServiceImpl implements PatientService {
 		return patientRepo.getPatientById(patient_id);
 	}
 
+	@Override
+	public Patient getPatientByUsernamePassword(String username, String password) {
+		return patientRepo.getPatientByUsernamePassword(username, password);
+	}
 }
