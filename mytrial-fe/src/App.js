@@ -14,6 +14,8 @@ import TrialInfoPage from './components/TrialInfoPage';
 import CreateTrialPage from './components/CreateTrialPage';
 import DiscussionForumPage from './components/DiscussionForumPage'
 import DiscussionForumInfoPage from './components/DiscussionForumInfoPage'
+import PatientPage from './components/PatientPage'
+import PatientInfoPage from './components/PatientInfoPage'
 function App() {
   return (
     <Router>
@@ -42,6 +44,12 @@ function App() {
           </Route>
           <Route path="/discussion">
             <DiscussionForumPage />
+          </Route>
+          <Route path="/patient/:id" component={PatientInfoPage}>
+            {/* <PatientInfoPage /> */}
+          </Route>
+          <Route path="/patient">
+            <PatientPage />
           </Route>
           <Route path="/">
             <LandingPage />

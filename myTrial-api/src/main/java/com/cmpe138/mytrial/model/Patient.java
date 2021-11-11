@@ -5,10 +5,15 @@ public class Patient {
 	private String disease;
 	private String phase;
 	private String p_status;
+	// fk
 	private String trial_id;
 	private String p_username;
 	private String p_password;
+	// fk
 	private String researcher_id;
+
+	private Trial trial;
+	private Researcher researcher;
 
 	public String getPatient_id() {
 		return patient_id;
@@ -74,11 +79,27 @@ public class Patient {
 		this.researcher_id = researcher_id;
 	}
 
+	public Trial getTrial() {
+		return trial;
+	}
+
+	public void setTrial(Trial trial) {
+		this.trial = trial;
+	}
+
+	public Researcher getResearcher() {
+		return researcher;
+	}
+
+	public void setResearcher(Researcher researcher) {
+		this.researcher = researcher;
+	}
+
 	@Override
 	public String toString() {
 		return "Patient [patient_id=" + patient_id + ", disease=" + disease + ", phase=" + phase + ", p_status="
 				+ p_status + ", trial_id=" + trial_id + ", p_username=" + p_username + ", p_password=" + p_password
-				+ ", researcher_id=" + researcher_id + "]";
+				+ ", researcher_id=" + researcher_id + ", trial=" + trial + ", researcher=" + researcher + "]";
 	}
 
 }
