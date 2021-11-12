@@ -10,7 +10,11 @@ public interface ReplyService {
 
 	List<Reply> getReplyByResearcherId(String researcher_id);
 
-	Reply getReplyId(String reply_id);
+	Reply getReplyId(int reply_id);
 
-	int addReply(String content, String df_id, String researcher_id);
+	int addReply(String content, int reply_id, String researcher_id);
+	
+	int updateReply(int reply_id, String content, String researcher_id);
+
+	boolean deleteReply(int reply_id);
 }

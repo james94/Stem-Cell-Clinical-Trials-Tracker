@@ -96,7 +96,7 @@ CREATE TABLE reply (
     researcher_id VARCHAR(9) NOT NULL,
     PRIMARY KEY (reply_id),
     FOREIGN KEY (df_id) REFERENCES discussion_forum(df_id),
-    FOREIGN KEY (researcher_id) REFERENCES researcher(researcher_id)
+    FOREIGN KEY (researcher_id) REFERENCES researcher(researcher_id) ON DELETE CASCADE
 );
 
 

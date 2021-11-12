@@ -27,27 +27,37 @@ public class ReplyRepository {
 
 	}
 
-	public Reply getReplyById(String reply_id) {
+	public Reply getReplyById(int reply_id) {
 		String sql = "select * from reply where reply_id = ?";
 		return jdbc.queryForObject(sql, this::mapRowToReply, reply_id);
 	}
 
-	public List<Reply> getReplyByDf_id(String df_id) {
+	public List<Reply> getReplyByDf_id(int df_id) {
 		String sql = "select * from reply where df_id = ?";
 		return jdbc.query(sql, this::mapRowToReply, df_id);
 	}
 
-	public int addReply(String content, String df_id, String researcher_id) {
+	public int addReply(String content, int df_id, String researcher_id) {
 		String sql = "insert reply (content, df_id, researcher_id) values (?, ?, ?)";
 		return jdbc.update(sql, content, df_id, researcher_id);
 	}
 
+	public int updateReply(int reply_id, String content) {
+		String sql = "update reply set content = ? where reply_id = ?";
+		return jdbc.update(sql, content, reply_id);
+	}
+
+	public int deleteReply(int reply_id) {
+		String sql = "delete from reply where reply_id = ? ";
+		return jdbc.update(sql, reply_id);
+	}
+
 	private Reply mapRowToReply(ResultSet rs, int rowNum) throws SQLException {
 		Reply reply = new Reply();
-		reply.setReply_id(rs.getString("reply_id"));
+		reply.setReply_id(rs.getInt("reply_id"));
 		reply.setR_timestamp(rs.getTimestamp("r_timestamp"));
 		reply.setContent(rs.getString("content"));
-		reply.setDf_id(rs.getString("df_id"));
+		reply.setDf_id(rs.getInt("df_id"));
 		reply.setResearcher_id(rs.getString("researcher_id"));
 		return reply;
 	}

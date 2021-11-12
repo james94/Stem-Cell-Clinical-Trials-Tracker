@@ -59,6 +59,16 @@ public class DiscussionForumRepository {
 		String sql = "insert discussion_forum (df_name, details, researcher_id) values (?, ?, ?)";
 		return jdbc.update(sql, df_name, details, researcher_id);
 	}
+	
+	public int updateDiscussion(int df_id, String df_name, String details) {
+		String sql = "update discussion_forum set df_name = ?, details = ? where df_id = ? ";
+		return jdbc.update(sql, df_name, details, df_id);
+	}
+	
+	public int deleteDiscussion(int df_id) {
+		String sql = "delete from discussion_forum where df_id = ? ";
+		return jdbc.update(sql,df_id);
+	}
 
 	// RowMapper
 	public class DiscussionForumMapper implements RowMapper<DiscussionForum> {
@@ -78,13 +88,15 @@ public class DiscussionForumRepository {
 		@Override
 		public Reply mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Reply r = new Reply();
-			r.setReply_id(rs.getString("reply_id"));
+			r.setReply_id(rs.getInt("reply_id"));
 			r.setR_timestamp(rs.getTimestamp("r_timestamp"));
 			r.setContent(rs.getString("content"));
-			r.setDf_id(rs.getString("df_id"));
+			r.setDf_id(rs.getInt("df_id"));
 			r.setResearcher_id(rs.getString("researcher_id"));
 			return r;
 		}
 	}
+
+	
 
 }

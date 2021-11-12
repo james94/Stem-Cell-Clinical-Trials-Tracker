@@ -16,8 +16,8 @@ class DiscussionService {
         return axios.get(DISCUSSION_API_BASE_URL + '/' + discussionId);
     }
 
-    updateDiscussion(discussion, discussionId) {
-        return axios.put(DISCUSSION_API_BASE_URL + '/' + discussionId, discussion);
+    updateDiscussion(discussion) {
+        return axios.put(DISCUSSION_API_BASE_URL , discussion);
     }
 
     deleteDiscussion(discussionId) {
