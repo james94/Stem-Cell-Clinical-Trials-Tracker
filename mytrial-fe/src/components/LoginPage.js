@@ -9,16 +9,16 @@ const loginUser = (username, password, history) => {
     fetchMytrial(LOGIN_END_POINT, null, {method: 'POST'}, {username, password})
         .then(data => {
             localStorage.setItem('id', data.id);
+            console.log('Logged in with ' + username + password + localStorage.getItem('role'));
             history.push("/rhome"); // need change for patient's case (retrieve trial id at the time of login)
         })
         .catch(err => {
             history.push("/");
             console.log(err);
         })
-    console.log('Login with ' + username + password + localStorage.getItem('role'));
 }
 
-const FormExampleForm = (props) => {
+const LoginForm = (props) => {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     return (
@@ -40,7 +40,7 @@ const LoginPage = ({ history }) => {
         <div className="myform">
             <p>Login</p>
             <hr />
-            <FormExampleForm history={history}/>
+            <LoginForm history={history}/>
         </div>
     )
 }

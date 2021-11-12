@@ -8,14 +8,19 @@ class DiscussionForumInfoPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            // discussion topic
             details: "",
-            df_id: 0,
+            df_id: "",
             df_name: "",
             df_timestamp: "",
             replies: [],
-            in_reply_content: "",
-            researcher_id: "000000042"
-            // researcher_id: localStorage.getItem('id')
+            // reply form
+            reply_id: "",
+            r_timestamp: "",
+            content: "",
+            researcher_id: '"000000006"',
+            // researcher_id: localStorage.getItem('id'),
+            // role: localStorage.getItem('role')
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,15 +33,56 @@ class DiscussionForumInfoPage extends React.Component {
     }
 
     handleSubmit = (e) => {
-        // alert('Submit ' + this.state);
-        let reply = {
-            content: this.state.in_reply_content,
-            df_id: this.state.df_id,
-            researcher_id: this.state.researcher_id
+        e.preventDefault();
+        let params = {
+            reply_id: "",
+            r_timestamp: "",
+            content: "",
+            df_id: "",
+            researcher_id: ""
         }
-        ReplyService.createReply(reply)
+        Object.assign(params, this.state);
+        if (params.reply_id) { // update
+            ReplyService.updateReply(params)
             .then(data => {
-                console.log(data)
+                console.log(data);
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        } else { // create
+            ReplyService.createReply(params)
+                .then(data => {
+                    console.log(data);
+                    window.location.reload();
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+    }
+
+    updateReply = (e, id) => {
+        alert('Update: ' + id);
+        ReplyService.getReplyById(id)
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    ...data.data
+                });
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    deleteReply = (e, id) => {
+        alert('Delete: ' + id);
+        ReplyService.deleteReply(id)
+            .then(data => {
+                console.log(data);
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err)
@@ -50,12 +96,12 @@ class DiscussionForumInfoPage extends React.Component {
                     <ul>{this.state.df_id}</ul>
                     <ul>{this.state.df_name}</ul>
                     <ul>{this.state.details}</ul>
-                    <ul>{this.state.df_timestamp}</ul>
-                    {this.state.replies.map((e, i) => <li key={i}>{e.reply_id}{e.content}{e.r_timestamp}</li>)}
+                    <ul>{this.state.df_timestamp}</ul><br/>
+                    {this.state.replies.map((e, i) => <li key={i}>{e.reply_id}{e.content}{e.r_timestamp} <button onClick={(event) => { this.updateReply(event, e.reply_id) }}>Update</button><button onClick={(event) => { this.deleteReply(event, e.reply_id) }}>Delete</button></li>)}
                 </div>
                 {/* create new reply */}
                 <form onSubmit={this.handleSubmit}>
-                    <textarea name="in_reply_content" value={this.state.in_reply_content} onChange={this.handleChange} />
+                    <textarea name="content" value={this.state.content} onChange={this.handleChange} />
                     <input type="submit" value="Submit" />
                 </form>
             </div>
@@ -68,7 +114,7 @@ class DiscussionForumInfoPage extends React.Component {
         DiscussionService.getDiscussionById(this.props.match.params.id)
             .then(data => {
                 console.log(data);
-                this.setState(data.data);
+                this.setState({ ...data.data });
             })
             .catch(err => {
                 console.log(err)

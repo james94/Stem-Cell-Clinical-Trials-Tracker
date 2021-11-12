@@ -11,6 +11,15 @@ const LandingPage = () => {
                 <li>
                     <button onClick={() => {localStorage.setItem('role', 'patient')}}><Link to="/register">Patient</Link></button>
                 </li>
+                <li>
+                    <button><Link to="/discussion">Discussion</Link></button>
+                </li>
+                <li>
+                    <button><Link to="/patient">Patient List</Link></button>
+                </li>
+                <li>
+                    <button><Link to="/researcher">Researcher List</Link></button>
+                </li>
             </ul>
         </div>
     )

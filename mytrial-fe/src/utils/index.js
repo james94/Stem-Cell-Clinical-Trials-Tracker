@@ -41,3 +41,24 @@ export const fetchMytrial = async (url, params, request, data, headers) => {
                 throw new Error(err.response.data);
             })
 }
+
+export const fetchMyPWatchlist =  async (url, params, request, data, headers) => {
+    const fetchRequest = {
+        ...request,
+        url,
+        params,
+        data,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            ...headers
+        }
+    }
+    return axios(fetchRequest)
+            .then(res => {
+                return res.data;
+            })
+            .catch(err => {
+                throw new Error(err.response.data);
+            })
+}
