@@ -16,7 +16,7 @@ class PatientWatchlistsPage extends React.Component {
     }
 
     retrievePWatchlist = (url) => {
-        fetchMyPWatchlist(url, null, {method: 'GET'}, null, {'id': '000000001'})
+        fetchMyPWatchlist(url, null, {method: 'GET'}, null, {'id': '000000024'})
         .then(data => {
             console.log(data)
             this.setState({
