@@ -11,4 +11,8 @@ public interface DiscussionForumService {
 	DiscussionForum getDiscussionById(int df_id);
 
 	int addDiscussion(String df_name, String details, String researcher_id);
+	
+	int updateDiscussion(int df_id, String df_name, String details, String researcher_id);
+
+	boolean deleteDiscussion(int df_id);
 }

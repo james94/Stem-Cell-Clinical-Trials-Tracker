@@ -2,16 +2,15 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import ResearcherService from '../service/ResearcherService';
 
-
-const PrettyPrintJson = React.memo(({ data }) => (<div><pre>{JSON.stringify(data, null, 2)}</pre></div>));
-
 class ResearcherInfoPage extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            researcher_id: "000000042"
-            // researcher_id: localStorage.getItem('id')
+            r_name: "",
+            // researcher_id: "000000042"
+            researcher_id: localStorage.getItem('id'),
+            role: localStorage.getItem('role')
         };
         // this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,7 +57,7 @@ class ResearcherInfoPage extends React.Component {
         ResearcherService.getResearcherById(this.props.match.params.id, config)
             .then(data => {
                 console.log(data);
-                this.setState(data.data);
+                this.setState({...data.data});
             })
             .catch(err => {
                 console.log(err)

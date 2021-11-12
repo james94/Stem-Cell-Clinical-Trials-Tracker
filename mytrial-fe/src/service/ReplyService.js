@@ -16,8 +16,8 @@ class ReplyService {
         return axios.get(REPLY_API_BASE_URL + '/' + replyId);
     }
 
-    updateReply(reply, replyId) {
-        return axios.put(REPLY_API_BASE_URL + '/' + replyId, reply);
+    updateReply(reply) {
+        return axios.put(REPLY_API_BASE_URL, reply);
     }
 
     deleteReply(replyId) {
