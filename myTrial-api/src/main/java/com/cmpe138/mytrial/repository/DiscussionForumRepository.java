@@ -2,6 +2,7 @@ package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Repository;
 
 import com.cmpe138.mytrial.model.DiscussionForum;
 import com.cmpe138.mytrial.model.Reply;
-import com.cmpe138.mytrial.model.Trial;
 
 @Repository
 public class DiscussionForumRepository {
@@ -24,8 +24,7 @@ public class DiscussionForumRepository {
 	public List<DiscussionForum> findAll() {
 		System.out.println("Reached repo");
 		String sql = "select * from discussion_forum";
-		List<DiscussionForum> forums = jdbc.query(sql,
-				new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class));
+		List<DiscussionForum> forums = jdbc.query(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class));
 		return forums;
 	}
 
@@ -48,10 +47,27 @@ public class DiscussionForumRepository {
 		}, df_id);
 	}
 
+	public List<DiscussionForum> getDiscussionByReasercherId(String researcher_id) {
+		List<DiscussionForum> list = new ArrayList<DiscussionForum>();
+		String sql = "select * from discussion_forum d left join researcher r on d.researcher_id = r.researcher_id where d.researcher_id = ?";
+		list = jdbc.query(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class), researcher_id);
+		return list;
+	}
+
 	public int addDiscussion(String df_name, String details, String researcher_id) {
 		System.out.println("repo: add new discussion topic");
 		String sql = "insert discussion_forum (df_name, details, researcher_id) values (?, ?, ?)";
 		return jdbc.update(sql, df_name, details, researcher_id);
+	}
+	
+	public int updateDiscussion(int df_id, String df_name, String details) {
+		String sql = "update discussion_forum set df_name = ?, details = ? where df_id = ? ";
+		return jdbc.update(sql, df_name, details, df_id);
+	}
+	
+	public int deleteDiscussion(int df_id) {
+		String sql = "delete from discussion_forum where df_id = ? ";
+		return jdbc.update(sql,df_id);
 	}
 
 	// RowMapper
@@ -72,13 +88,15 @@ public class DiscussionForumRepository {
 		@Override
 		public Reply mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Reply r = new Reply();
-			r.setReply_id(rs.getString("reply_id"));
+			r.setReply_id(rs.getInt("reply_id"));
 			r.setR_timestamp(rs.getTimestamp("r_timestamp"));
 			r.setContent(rs.getString("content"));
-			r.setDf_id(rs.getString("df_id"));
+			r.setDf_id(rs.getInt("df_id"));
 			r.setResearcher_id(rs.getString("researcher_id"));
 			return r;
 		}
 	}
+
+	
 
 }

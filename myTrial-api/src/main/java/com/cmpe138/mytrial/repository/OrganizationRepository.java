@@ -5,9 +5,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.cmpe138.mytrial.model.DiscussionForum;
 import com.cmpe138.mytrial.model.Organization;
 
 @Repository
@@ -19,6 +21,11 @@ public class OrganizationRepository {
 	public List<Organization> findAll() {
 		System.out.println("Reached repo");
 		return jdbc.query("select * from org", this::mapRowToOrganization);
+	}
+	
+	public List<Organization> getOrganizationByResearcherId(String researcher_id) {
+		System.out.println("Reached repo");
+		return jdbc.query("select * from org o join works_for w on o.org_name = w.org_name where w.researcher_id = ?", new BeanPropertyRowMapper<Organization>(Organization.class), researcher_id);
 	}
 
 	private Organization mapRowToOrganization(ResultSet rs, int rowNum) throws SQLException {

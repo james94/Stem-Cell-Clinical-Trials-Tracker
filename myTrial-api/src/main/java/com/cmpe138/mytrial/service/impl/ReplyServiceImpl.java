@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cmpe138.mytrial.model.DiscussionForum;
 import com.cmpe138.mytrial.model.Reply;
 import com.cmpe138.mytrial.repository.ReplyRepository;
 import com.cmpe138.mytrial.service.ReplyService;
@@ -26,13 +27,30 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public Reply getReplyId(String reply_id) {
+	public Reply getReplyId(int reply_id) {
 		return replyRepo.getReplyById(reply_id);
 	}
 
 	@Override
-	public int addReply(String content, String df_id, String researcher_id) {
+	public int addReply(String content, int df_id, String researcher_id) {
 		return replyRepo.addReply(content, df_id, researcher_id);
 	}
 
+	@Override
+	public int updateReply(int reply_id, String content, String researcher_id) {
+		Reply data = replyRepo.getReplyById(reply_id);
+		if (!data.getResearcher_id().equals(researcher_id))
+			return reply_id;
+		return replyRepo.updateReply(reply_id, content);
+	}
+
+	@Override
+	public boolean deleteReply(int reply_id) {
+		int res = replyRepo.deleteReply(reply_id);
+		System.out.println("delete result:" + res);
+		return res == 1; // how many rows
+	}
+
+	
+	
 }

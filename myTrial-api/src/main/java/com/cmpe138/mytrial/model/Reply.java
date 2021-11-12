@@ -2,17 +2,17 @@ package com.cmpe138.mytrial.model;
 
 public class Reply {
 
-	public String reply_id;
+	public int reply_id;
 	public java.sql.Timestamp r_timestamp;
 	public String content;
-	public String df_id;
+	public int df_id;
 	public String researcher_id;
 
-	public String getReply_id() {
+	public int getReply_id() {
 		return reply_id;
 	}
 
-	public void setReply_id(String reply_id) {
+	public void setReply_id(int reply_id) {
 		this.reply_id = reply_id;
 	}
 
@@ -32,11 +32,11 @@ public class Reply {
 		this.content = content;
 	}
 
-	public String getDf_id() {
+	public int getDf_id() {
 		return df_id;
 	}
 
-	public void setDf_id(String df_id) {
+	public void setDf_id(int df_id) {
 		this.df_id = df_id;
 	}
 
@@ -50,8 +50,7 @@ public class Reply {
 
 	@Override
 	public String toString() {
-		return "Reply [reply_id=" + reply_id + ", r_timestamp=" + r_timestamp + ", content=" + content + ", df_id="
-				+ df_id + "]";
+		return "Reply [reply_id=" + reply_id + ", r_timestamp=" + r_timestamp + ", content=" + content + ", df_id=" + df_id + "]";
 	}
 
 }

@@ -4,10 +4,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.cmpe138.mytrial.model.Patient;
 import com.cmpe138.mytrial.model.Researcher;
+import com.cmpe138.mytrial.repository.DiscussionForumRepository;
+import com.cmpe138.mytrial.repository.OrganizationRepository;
+import com.cmpe138.mytrial.repository.PatientRepository;
+import com.cmpe138.mytrial.repository.RDiseaseAreaRepository;
+import com.cmpe138.mytrial.repository.ReplyRepository;
 import com.cmpe138.mytrial.repository.ResearcherRepository;
+import com.cmpe138.mytrial.repository.TrialRepository;
 import com.cmpe138.mytrial.service.ResearcherService;
 
 @Service
@@ -15,6 +21,26 @@ public class ResearcherServiceImpl implements ResearcherService {
 
 	@Autowired
 	ResearcherRepository researcherRepository;
+	
+	@Autowired
+	DiscussionForumRepository dfRepo;
+	
+	@Autowired
+	ReplyRepository replyRepo;
+	
+	@Autowired
+	PatientRepository patientRepo;
+	
+	@Autowired
+	TrialRepository trialRepo;
+	
+	@Autowired
+	OrganizationRepository orgRepo;
+	
+	@Autowired
+	RDiseaseAreaRepository rDiseaseRepo;
+	
+	
 
 	@Override
 	public List<Researcher> getAll() {
@@ -22,8 +48,18 @@ public class ResearcherServiceImpl implements ResearcherService {
 	}
 
 	@Override
+	@Transactional
 	public Researcher getResearchertById(String researcher_id) {
-		return researcherRepository.getResearcherById(researcher_id);
+		Researcher r =  researcherRepository.getResearcherById(researcher_id);
+		
+		r.setDiscussionForums(dfRepo.getDiscussionByReasercherId(researcher_id));
+		r.setReplies(replyRepo.getReplyByResearcherId(researcher_id));
+		r.setPatients(patientRepo.getPatientsByResearcher_id(researcher_id));
+		r.setTrials(trialRepo.findByResearcherId(researcher_id));
+		r.setOrganizations(orgRepo.getOrganizationByResearcherId(researcher_id));
+		r.setRDiseaseAreas(rDiseaseRepo.findByResearcherId(researcher_id));
+		
+		return r;
 	}
 	
 	@Override

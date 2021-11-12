@@ -15,7 +15,7 @@ public class DiscussionForumServiceImpl implements DiscussionForumService {
 
 	@Autowired
 	DiscussionForumRepository discussionRepo;
-	
+
 	@Autowired
 	ReplyRepository replyRepo;
 
@@ -34,6 +34,21 @@ public class DiscussionForumServiceImpl implements DiscussionForumService {
 	@Override
 	public int addDiscussion(String df_name, String details, String researcher_id) {
 		return discussionRepo.addDiscussion(df_name, details, researcher_id);
+	}
+
+	@Override
+	public int updateDiscussion(int df_id, String df_name, String details, String researcher_id) {
+		DiscussionForum data = discussionRepo.getDiscussionById(df_id);
+		if (!data.getResearcher_id().equals(researcher_id))
+			return df_id;
+		return discussionRepo.updateDiscussion(df_id, df_name, details);
+	}
+
+	@Override
+	public boolean deleteDiscussion(int df_id) {
+		int res = discussionRepo.deleteDiscussion(df_id);
+		System.out.println("delete result:" + res);
+		return res == 1; // how many rows
 	}
 
 }
