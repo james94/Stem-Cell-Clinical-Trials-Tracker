@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 import { fetchMytrial } from '../utils';
-import { TRIALS_BY_RESEARCHER_END_POINT, TRIALS_BY_PATIENT_END_POINT} from '../settings';
+import { TRIALS_BY_RESEARCHER_END_POINT } from '../settings';
 
 class Trials extends React.Component {
 
@@ -9,8 +9,21 @@ class Trials extends React.Component {
         trials: []
     };
 
-    retrieveMyTrials = (url) => {
-        fetchMytrial(url, null, {method: 'GET'}, null, {'id': '000000046'})
+    retrieveMyTrialsByUserId = (url) => {
+        fetchMytrial(url, null, {method: 'GET'}, null, {'id': localStorage.getItem('id')})
+        .then(data => {
+            console.log(data)
+            this.setState({
+               trials: data
+            });
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    retrieveMyTrialsByDisease = (url, disease) => {
+        fetchMytrial(url, {'disease': disease}, {method: 'GET'}, null, {'id': localStorage.getItem('id')})
         .then(data => {
             console.log(data)
             this.setState({
@@ -23,9 +36,11 @@ class Trials extends React.Component {
     }
 
     componentDidMount() {
+        const { disease } = this.props.location.state;
+        console.log(disease)
         localStorage.getItem('role') === 'researcher' ? 
                  this.retrieveMyTrials(TRIALS_BY_RESEARCHER_END_POINT) 
-                 : this.retrieveMyTrials(TRIALS_BY_PATIENT_END_POINT);
+                 : this.retrieveMyTrialsByDisease(TRIALS_BY_RESEARCHER_END_POINT, disease);
     }
 
     render() {
@@ -39,4 +54,4 @@ class Trials extends React.Component {
     }
 }
 
-export default Trials;
+export default withRouter(Trials);

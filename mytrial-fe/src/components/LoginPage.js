@@ -2,15 +2,16 @@ import {useState} from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { LOGIN_END_POINT } from '../settings';
 import { fetchMytrial } from '../utils';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 const loginUser = (username, password, history) => {
     // authenticate and then save id in local storage
     fetchMytrial(LOGIN_END_POINT, null, {method: 'POST'}, {username, password})
         .then(data => {
-            localStorage.setItem('id', data.id);
+            localStorage.setItem('id', data);
             console.log('Logged in with ' + username + password + localStorage.getItem('role'));
-            history.push("/rhome"); // need change for patient's case (retrieve trial id at the time of login)
+            if (localStorage.getItem('role') === 'researcher') history.push("/rhome"); 
+            else history.push("/phome"); 
         })
         .catch(err => {
             history.push("/");
@@ -32,6 +33,7 @@ const LoginForm = (props) => {
                 <input placeholder='password' onChange={e => {setPassword(e.target.value)}}/>
             </Form.Field>
             <Button type='submit'>Submit</Button>
+            {localStorage.getItem('role') === 'researcher' && <Link to="/register">No account? Register</Link>}
         </Form>)
 }
 
