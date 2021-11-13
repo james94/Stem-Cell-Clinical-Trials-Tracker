@@ -3833,7 +3833,7 @@ INSERT ct_grant VALUES
 ('T2-00006','Training in Stem Cell Biology at CIT',NULL,'','Apr 1, 2006','Mar 31, 2010','Training Grant I-2','Closed','California Institute of Technology','','1817214');
 
 INSERT patient VALUES
-('000000001','Age-related macular degeneration','Phase 1','Active','000000001','01-Amd1',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector),'000000052'),
+('000000001','Age-related macular degeneration','Phase 1','Active','000000001','01-Amd1',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector),'000000052'), 
 ('000000002','Age-related macular degeneration','Phase 1','Active','000000001','01-Amd2',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector),'000000052'),
 ('000000003','Age-related macular degeneration','Phase 1','Active','000000001','01-Amd3',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector),'000000052'),
 ('000000004','Age-related macular degeneration','Phase 1','Active','000000001','01-Amd4',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector),'000000052'),

@@ -29,19 +29,16 @@ public class RDiseaseAreaRepository {
 		rDiseaseArea.setDisease_name(rs.getString("disease_name"));
 		return rDiseaseArea;
 	}
-<<<<<<< Updated upstream
 
 	public List<RDiseaseArea> findByResearcherId(String researcher_id) {
 		String sql = "select * from r_disease_area where researcher_id = ?";
 		List<RDiseaseArea> list = jdbc.query(sql, new BeanPropertyRowMapper<RDiseaseArea>(RDiseaseArea.class), researcher_id);
 		return list;
 	}
-
-=======
 	
 	public void addRDisease(String r_id, String disease) {
 		String sql = "insert r_disease_area values (?, ?)";
 		jdbc.update(sql, r_id, disease);
 	}
->>>>>>> Stashed changes
+
 }
