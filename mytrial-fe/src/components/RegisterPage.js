@@ -7,6 +7,20 @@ import ResearcherService from '../service/ResearcherService';
 
 const registerUser = (name, organizations, disease_areas, username, password, history) => {
     // authenticate and then save id in local storage
+    // organizations.map((organization) =>
+    //     { console.log(organization); }
+    // );
+
+    // disease_areas.map((disease_area) =>
+    //     { console.log(disease_area); }
+    // );
+
+    // console.log(organizations.length);
+    // console.log(disease_areas.length);
+
+    // console.log(name);
+    // console.log(username);
+    // console.log(password);
     let researcher_data = {
         r_name: name,
         r_username: username,
@@ -15,9 +29,11 @@ const registerUser = (name, organizations, disease_areas, username, password, hi
         disease_area: disease_areas
     }
 
+    // the problem is occurring here, when I call fetchMytrial, it catches error.
     fetchMytrial(REGISTER_END_POINT, null, {method: 'POST'}, researcher_data)
         .then(data => {
-            console.log('Registered with ' + name + username + password + "organization: " + organizations);
+            console.log(data);
+            console.log('Registered with ' + name + username + password);
             history.push("/rhome"); 
         })
         .catch(err => {
@@ -40,18 +56,6 @@ const organizationOptions = [
     { key: 'lineage cell therapeutics inc.', text: 'Lineage Cell Therapeutics Inc.', value: 'Lineage Cell Therapeutics Inc.' }
 ]
 
-// const DropdownDiseaseAreaMultiSelection = () => {
-//     return (
-//         <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseAreaOptions} />
-//     )
-// }
-
-// const OrganizationMultiSelection = () => {
-//     return (
-//         <Dropdown placeholder='organizations' fluid multiple selection options = {organizationOptions} />
-//     )
-// }
-
 const RegisterForm = (props) => {
     const [name, setName] = useState(null);
     const [organizations, setOrganizations] = useState([]);
@@ -59,23 +63,17 @@ const RegisterForm = (props) => {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
 
-    // const handleOrgsChange = (e) => {
-    //     var orgOptions = e.target.options;
-    //     var orgs = [];
-    //     for(var i = 0, l = orgOptions.length; i < l; i++) {
-    //         orgs.concat(orgOptions[i].value);
-    //     }
-    //     setOrganizations(orgs);
-    // }
+    const handleOrgsChange = (e, data) => {
+        // console.log('e.target.value: ' + e.target.value); // undefined
+        console.log(data.value);
+        setOrganizations(data.value);
+    }
 
-    // const handleDiseasesChange = (e) => {
-    //     var disAreasOptions = e.target.options;
-    //     var disAreas = [];
-    //     for(var i = 0, l = disAreasOptions.length; i < l; i++) {
-    //         disAreasOptions.concat(disAreasOptions[i].value);
-    //     }
-    //     setDiseaseAreas(disAreas);
-    // }
+    const handleDiseasesChange = (e, data) => {
+        // console.log('e.target.value: ' + e.target.value); // undefined
+        console.log(data.value);
+        setDiseaseAreas(data.value);
+    }
 
     return (
         <Form onSubmit={() => {registerUser(name, organizations, disease_areas, username, password, props.history)}}>
@@ -85,23 +83,13 @@ const RegisterForm = (props) => {
             </Form.Field>
             <Form.Field>
                 <label>Organizations</label>
-                {/* <OrganizationMultiSelection /> */}
-                {/* <Dropdown placeholder='organizations' fluid multiple selection options = {organizationOptions} 
-                    onChange={handleOrgsChange}/> */}
-
                 <Dropdown placeholder='organizations' fluid multiple selection options = {organizationOptions} 
-                    onChange={e => {setOrganizations(e.target.options)}}/>
-                {/* <input placeholder='organizations' onChange={this.handleChange} /> */}
+                    onChange={handleOrgsChange}/>
             </Form.Field>
             <Form.Field>
                 <label>Disease Areas</label>
-                {/* <DropdownDiseaseAreaMultiSelection /> */}
-                {/* <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseAreaOptions} 
-                    onChange={handleDiseasesChange}/> */}
-
                 <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseAreaOptions} 
-                    onChange={e => {setDiseaseAreas(e.target.options)}}/>
-                {/* <input placeholder='disease areas' onChange={this.handleChange} /> */}
+                    onChange={handleDiseasesChange}/>
             </Form.Field>
             <Form.Field>
                 <label>Username</label>
