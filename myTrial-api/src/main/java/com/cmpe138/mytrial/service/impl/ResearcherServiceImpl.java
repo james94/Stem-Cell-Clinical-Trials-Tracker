@@ -55,13 +55,15 @@ public class ResearcherServiceImpl implements ResearcherService {
 	public Researcher getResearchertById(String researcher_id) {
 		Researcher r =  researcherRepository.getResearcherById(researcher_id);
 		
-		r.setDiscussionForums(dfRepo.getDiscussionByReasercherId(researcher_id));
-		r.setReplies(replyRepo.getReplyByResearcherId(researcher_id));
-		r.setPatients(patientRepo.getPatientsByResearcher_id(researcher_id));
-		r.setTrials(trialRepo.findByResearcherId(researcher_id));
-		r.setOrganizations(orgRepo.getOrganizationByResearcherId(researcher_id));
-		r.setRDiseaseAreas(rDiseaseRepo.findByResearcherId(researcher_id));
-		
+		if(r != null) {
+			r.setDiscussionForums(dfRepo.getDiscussionByReasercherId(researcher_id));
+			r.setReplies(replyRepo.getReplyByResearcherId(researcher_id));
+			r.setPatients(patientRepo.getPatientsByResearcher_id(researcher_id));
+			r.setTrials(trialRepo.findByResearcherId(researcher_id));
+			r.setOrganizations(orgRepo.getOrganizationByResearcherId(researcher_id));
+			r.setRDiseaseAreas(rDiseaseRepo.findByResearcherId(researcher_id));
+		}
+
 		return r;
 	}
 	
