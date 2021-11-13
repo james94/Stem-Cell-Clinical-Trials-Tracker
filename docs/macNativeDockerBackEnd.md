@@ -41,6 +41,8 @@ docker run -d \
     mysql:8.0.27
 ~~~
 
+NOTE: The above approach after turning off docker container may cause data loss in our tables like I noticed this happened with trial table.
+
 Now our Docker container's MySQL server is running. We should be able to login to the MySQL Server running inside the container. Also the volume mount creates a bridge to our **Stem-Cell-Clinical-Trials-Tracker/** folder from our host machine to the a folder **/Stem-Cell-Clinical-Trials-Tracker**, which is like a symlink, so we have access to the project, specifically the mysql db creation code.
 
 Let's execute bash command to enter into the **mytrial-db** Docker container, then login to the container's MySQL server directly:

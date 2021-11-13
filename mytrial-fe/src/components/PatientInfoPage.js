@@ -1,6 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import PatientService from '../service/PatientService';
+import {Button} from "semantic-ui-react";
+import {Link} from "react-router-dom";
 
 class PatientInfoPage extends React.Component {
 
@@ -48,9 +50,17 @@ class PatientInfoPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{margin: "0px auto 20px 10px"}}>
                 {/* patient list */}
-                {this.state.disease}, {this.state.phase}, {this.state.p_status}, {this.state.trial_id},{this.state.researcher_id}
+                <p style={{fontWeight: "bolder", fontSize: "20px"}}>Patient Profile</p>
+                <p>Patient ID: {this.state.patient_id}</p>
+                <p>Disease: {this.state.disease}</p>
+                <p>Phase: {this.state.phase}</p>
+                <p>Status: {this.state.p_status}</p>
+                <p>Trial ID: {this.state.trial_id}</p>
+                <p>Researcher ID: {this.state.researcher_id}</p>
+                <Button color="yellow" style={{marginLeft: "10px"}}><Link to="/addDonor">Add Donor</Link></Button>
+                <Button color="yellow" style={{marginLeft: "10px"}}><Link to="/editPatient">Edit Patient Profile</Link></Button>
                 {/* create new discussion */}
                 {/* update phase */}
                 {/* update disease */}

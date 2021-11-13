@@ -34,4 +34,12 @@ public interface PatientService {
 	 */
 	Patient getPatientByUsernamePassword(String username, String password);
 
+	/**
+	 * For researcher, can update patients under his patient list
+	 * 
+	 * @param researcher_id
+	 * @param patient_id
+	 * @return
+	 */
+	Patient updatePatientById(String researcher_id, String patient_id);
 }

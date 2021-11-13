@@ -65,6 +65,9 @@ function App() {
           <Route path="/patient/:id" component={PatientInfoPage}>
             {/* <PatientInfoPage /> */}
           </Route>
+          <Route path="/editPatient/:id" component={EditPatientPage}>
+            {/* <PatientEditPage /> */}
+          </Route>
           <Route path="/patient">
             <Top />
             <PatientPage />

@@ -18,7 +18,7 @@ class PatientService {
     }
 
     updatePatient(patient, patientId) {
-        return axios.put(PATIIENT_API_BASE_URL + '/' + patientId, patient);
+        return axios.put(PATIIENT_API_BASE_URL + '/' + 'update/' + patientId, patient);
     }
 
     deletePatient(patientId) {

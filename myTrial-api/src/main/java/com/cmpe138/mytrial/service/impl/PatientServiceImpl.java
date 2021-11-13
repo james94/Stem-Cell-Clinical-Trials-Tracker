@@ -45,4 +45,9 @@ public class PatientServiceImpl implements PatientService {
 		return patientRepo.getPatientByUsernamePassword(username, password);
 	}
 
+	@Override
+	public void updatePatientById(String researcher_id, String patient_id) {
+		patientRepo.updatePatientById(patient_id);
+	}
+
 }
