@@ -9,7 +9,7 @@ class SearchPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this._items = [
+        _items = [
             {
                 key: 1,
                 pname: "Name1",
@@ -65,18 +65,6 @@ class SearchPage extends React.Component {
         else if(role == "researcher"){
             return(
                 <div>
-                    {/* <div>
-                        <h2>Search for patient</h2>
-                        <form onSubmit = {this.handleSubmit}>
-                        <input
-                            name="search"
-                            type = "search" 
-                            placeholder = "Search Patient" 
-                            onChange = {this.handleChange}
-                        />
-                        <button type="submit">Search</button>
-                        </form>
-                    </div> */}
                     <div>
                     <TextField
                       label="Search"

@@ -21,6 +21,7 @@ import PatientInfoPage from './components/PatientInfoPage';
 import PatientWatchlistsPage from './components/PatientWatchlistsPage';
 import ResearcherPage from './components/ResearcherPage';
 import ResearcherInfoPage from './components/ResearcherInfoPage';
+import WatchListPage from './components/WatchListPage';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         <Switch>
           <Route path="/search">
             <SearchPage />
+          </Route>
+          <Route path="/watch">
+            <WatchListPage />
           </Route>
           <Route path="/login">
             <LoginPage />
