@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { PATIENTS_ALL_BASE_URL } from "../settings/";
 
-class Example extends React.Component {
+class SearchViewAllPatients extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,16 +62,7 @@ class Example extends React.Component {
         <div className="card" style={{ width: "100%" }}>
           <ul className="list-group list-group-flush">
             {this.state.filteredData.map((i, key) => (
-              <li
-                //         style={{
-                //           width: "100%",
-                //           height: "42px",
-                //           display: "flex",
-                //           justifyContent: "center",
-                //         }}
-                key={key}
-                className="list-group-item"
-              >
+              <li key={key} className="list-group-item">
                 {i.p_username}
                 <br /> Trial id: {i.trial_id}
                 <br />
@@ -89,7 +80,6 @@ class Example extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 mx-auto">
-            {/* <center> */}
             <h1
               className="my-4"
               style={{
@@ -109,7 +99,6 @@ class Example extends React.Component {
               <i className="fas fa-search"></i>
               {searchCode}
             </form>
-            {/* </center> */}
           </div>
         </div>
       </div>
@@ -117,4 +106,4 @@ class Example extends React.Component {
   }
 }
 
-export default Example;
+export default SearchViewAllPatients;
