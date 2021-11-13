@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import LoginPage from './components/LoginPage';
+import SearchPage from './components/SearchPage';
 import RegisterPage from './components/RegisterPage';
 import LandingPage from './components/LandingPage';
 import ResearcherHomePage from './components/ResearcherHomePage';
@@ -19,6 +20,9 @@ function App() {
     <Router>
       <div>
         <Switch>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
           <Route path="/login">
             <LoginPage />
           </Route>
