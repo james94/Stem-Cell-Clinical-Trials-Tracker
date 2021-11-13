@@ -36,11 +36,10 @@ class Trials extends React.Component {
     }
 
     componentDidMount() {
-        const { disease } = this.props.location.state;
-        console.log(disease)
+        //const { disease } = this.props.location ? this.props.location.state : null;
         localStorage.getItem('role') === 'researcher' ? 
-                 this.retrieveMyTrials(TRIALS_BY_RESEARCHER_END_POINT) 
-                 : this.retrieveMyTrialsByDisease(TRIALS_BY_RESEARCHER_END_POINT, disease);
+                 this.retrieveMyTrialsByUserId(TRIALS_BY_RESEARCHER_END_POINT) 
+                 : this.retrieveMyTrialsByDisease(TRIALS_BY_RESEARCHER_END_POINT, this.props.location.state);
     }
 
     render() {
