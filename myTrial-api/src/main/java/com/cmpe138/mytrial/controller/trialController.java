@@ -23,19 +23,24 @@ public class trialController {
 	private MyTrialService myTrial;
 	
 	@GetMapping("/trials")
-	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, @RequestParam(value="trialId", required=false) String trial_id) {
-		if (trial_id == null) {
-			return myTrial.getResearcherTrials(researcher_id);
-		} else {
+	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, 
+			@RequestParam(value="trialId", required=false) String trial_id, 
+			@RequestParam(value="disease", required=false) String disease_area) {
+		if (trial_id != null) {
 			List<Trial> res = new ArrayList<>();
 			res.add(myTrial.getTrialById(trial_id));
 			return res;
+		} else if (disease_area != null) {
+			return myTrial.getTrialsByDiseaseArea(disease_area);
+		} else {
+			return myTrial.getTrialsByResearcherId(researcher_id);
 		}
 	}
 	
 	@PostMapping("/addtrial")
-	public void getTrial(@RequestParam String researcher_id, @RequestBody Trial trial) {
+	public void addTrial(@RequestHeader(value="id") String researcher_id, @RequestBody Trial trial) {
 		myTrial.createTrial(researcher_id, trial.getTrial_status(), trial.getTarget_enrollment(), 
 				 trial.getNCT_no(), trial.getPhase(), trial.getTitle(), trial.getOrganization_name());
 	}
+	
 }

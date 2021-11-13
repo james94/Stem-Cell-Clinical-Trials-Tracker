@@ -1,0 +1,37 @@
+package com.cmpe138.mytrial.service;
+
+import java.util.List;
+
+import com.cmpe138.mytrial.model.Patient;
+
+public interface PatientService {
+
+	List<Patient> getAll();
+
+	List<Patient> getPatientByResearcherId(String researcher_id);
+
+	/**
+	 * For manager using, can get any patient using patient id
+	 * 
+	 * @param patient_id
+	 * @return
+	 */
+	Patient getPatientById(String patient_id);
+
+	/**
+	 * For researcher, can get patients under his patient list
+	 * 
+	 * @param researcher_id
+	 * @param patient_id
+	 * @return
+	 */
+	Patient getPatientById(String researcher_id, String patient_id);
+
+	/**
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	Patient getPatientByUsernamePassword(String username, String password);
+
+}
