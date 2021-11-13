@@ -1,36 +1,57 @@
-# BackEnd: Deploy MySQL and SpringBoot Containers for MyTrials App
+# BackEnd: Deploy MySQL and SpringBoot Containers for MyTrials App (Mac OS Ed)
 
 If you haven't installed Docker, refer to our
-[Ubuntu Docker Install Guide](./dockerInstallUbuntu.md)
+[Mac OS Docker Install Guide](https://docs.docker.com/desktop/mac/install/)
 
 The goal of this guide is to setup the Backend part of the MyTrial's application and connect the MySQL database container with the SpringBoot container using both **jdbc mysql URL** and the **backend docker network**.
 
 ## Create Docker Bridged Network for Backend and Frontend
 
 ~~~bash
-sudo docker network create -d bridge backend
-sudo docker network create -d bridge frontend
+docker network create -d bridge backend
+docker network create -d bridge frontend
 ~~~
 
-## Deploy Docker Container's MySQL Server in Background with Access to Host's mytrial DB
+## Deploy Docker Container's MySQL Server in Background
 
-### Set Up Host's mytrial Database using Host's MySQL Server
-
-Install MySQL Server on your host machine:
+Pull the mysql docker image:
 
 ~~~bash
-sudo apt-get -y update
-sudo apt-get -y install mysql-server
-sudo mysql_secure_installation # set root password, then everything else default
+docker pull mysql:8.0.27
 ~~~
 
-Run the Database creation script `schema.sql` on host machine:
+Launch a Docker container with MySQL Server running:
 
 ~~~bash
-mysql -u root -p # when asked, enter your password
+# Launches Docker container MySQL server, map TCP port 3306 in container to port 3307 on host
+# ${PWD} gets the path to where you are at in your terminal,
+# expected that you are in your project folder, ex:
+# $HOME/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker
 
-# replace ${PWD} with path to your project
-source ${PWD}/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/src/main/resources/schema.sql
+docker run -d \
+    --name mytrial-db \
+    --restart always \
+    -e MYSQL_DATABASE=mytrial \
+    -e MYSQL_USER=mytrial_docker \
+    -e MYSQL_PASSWORD=mytrial_docker \
+    -e MYSQL_ROOT_PASSWORD=root \
+    -p 3307:3306 \
+    -v ${PWD}:/Stem-Cell-Clinical-Trials-Tracker \
+    --network=backend \
+    mysql:8.0.27
+~~~
+
+Now our Docker container's MySQL server is running. We should be able to login to the MySQL Server running inside the container. Also the volume mount creates a bridge to our **Stem-Cell-Clinical-Trials-Tracker/** folder from our host machine to the a folder **/Stem-Cell-Clinical-Trials-Tracker**, which is like a symlink, so we have access to the project, specifically the mysql db creation code.
+
+Let's execute bash command to enter into the **mytrial-db** Docker container, then login to the container's MySQL server directly:
+
+~~~bash
+# Jump into Docker container
+docker exec -it mytrial-db bash
+
+# didn't work. I will use localhost instead of the container's internal ip
+# Inside the container, login to container's MySQL server directly
+mysql -u root -p # when asked, enter password root
 ~~~
 
 Verify if you have **mytrial_docker**  user for your MySQL DB on host machine:
@@ -47,9 +68,6 @@ If that user isn't there, then create that user using your host's MySQL server. 
 -- MySQL server to be able to later access Host's mytrial database tables
 USE mytrial;
 
--- update root host, so any computer can login to mysql server container
-UPDATE mysql.user SET Host='%' WHERE User='root';
-
 -- crate mysql docker user, so any container or server can login to mysql server container
 CREATE USER 'mytrial_docker'@'%' IDENTIFIED BY 'mytrial_docker';
 
@@ -63,74 +81,14 @@ GRANT ALL PRIVILEGES ON * . * TO 'mytrial_docker'@'%';
 quit
 ~~~
 
-Once we are done populating our MySQL mytrial database tables, we can turn off the host's mysql server since only one mysql server can access the mytrial database at a time, so we will be using the Docker container's mysql server to access our host's mytrial database files and directories:
+Run the Database creation script `schema.sql` from within our Docker MySQL Server container:
 
 ~~~bash
-# in host, if mysql server is running, then turn it off
-sudo service mysql status
-
-# in host, turn off mysql server
-sudo service mysql stop
+# replace ${PWD} with path to your project
+source /Stem-Cell-Clinical-Trials-Tracker/myTrial-api/src/main/resources/schema.sql
 ~~~
 
-### Launch Docker Container's MySQL Server to Access Host's mytrial DB
-
-I think I should use a MySQL Client in Docker container???
-
-Pull the mysql docker image:
-
-~~~bash
-sudo docker pull mysql:8.0.27
-~~~
-
-Create a named volume mounted to the host's mysql folder that contains mytrial database and more. This volume is outside the scope of any container:
-
-~~~bash
-# create volume with path to host's mysql folder
-sudo docker volume create --name mytrial-db-data \
-    --opt type=none \
-    --opt device=/var/lib/mysql \
-    --opt o=bind
-~~~
-
-Launch Docker container that runs its own MySQL Server that is separate from the host's MySQL Server. This Docker container will have mytrial-db-data volume mounted, so we can access the host's mysql database tables, users, and everything:
-
-~~~bash
-# Launches Docker container MySQL server, map TCP port 3306 in container to port 3307 on host
-sudo docker run -d \
-    --name mytrial-db \
-    --restart always \
-    -p 3307:3306 \
-    --mount source=mytrial-db-data,target=/var/lib/mysql \
-    --network=backend \
-    mysql:8.0.27
-~~~
-
-Now our Docker container's MySQL server is running. We should be able to login to the MySQL Server running inside the container as the same user we were when we were operating the host's MySQL server since we are accessing those mysql files from the host inside our Docker container.
-
-**Option 1:** Let's login to the MySQL server running inside the container as root user using the same password we used when we were running MySQL server on the host machine:
-
-~~~bash
-# Login to the container's MySQL server using "root" user, enter your password
-sudo docker exec -it mytrial-db mysql -h localhost -u root -p
-
-# Alternatively, you can login to the container's MySQL server using "mytrial_docker" user, 
-# it has same password we set up earlier, when asked, enter password mytrial_docker
-sudo docker exec -it mytrial-db mysql -h localhost -u mytrial_docker -p
-~~~
-
-**Option 2:** You could execute bash command to enter into the **mytrial-db** Docker container, then login to the container's MySQL server directly:
-
-~~~bash
-# Jump into Docker container
-sudo docker exec -it mytrial-db bash
-
-# didn't work. I will use localhost instead of the container's internal ip
-# Inside the container, login to container's MySQL server directly
-mysql -h localhost -u mytrial_docker -p # when asked, enter password mytrial_docker
-~~~
-
-Now we're in our container's MySQL server, lets verify we can see some data in tables that were populated when we ran our DB creation script:
+Lets verify we can see some data in tables that were populated when we ran our DB creation script:
 
 ~~~sql
 -- if not used, make sure use mytrial db
@@ -152,9 +110,28 @@ As long as everything went well, you should see data in the tables above from wi
 1\. Install OpenJDK and Maven:
 
 ~~~bash
-sudo apt -y update
-sudo apt -y install openjdk-17-jre-headless
-sudo apt -y install maven
+# OpenJDK 11
+curl -C - https://download.java.net/java/ga/jdk11/openjdk-11_osx-x64_bin.tar.gz -O openjdk-11_osx-x64_bin.tar.gz
+
+tar xf openjdk-11_osx-x64_bin.tar.gz
+
+sudo mv jdk-11.jdk /Library/Java/JavaVirtualMachines/
+
+java -version
+
+# Maven
+curl -C - https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz -O apache-maven-3.8.3-bin.tar.gz
+
+tar -xvf ~/Downloads/apache-maven-3.8.3-bin.tar.gz
+
+sudo mv ~/Downloads/apache-maven-3.8.3 /Library/apache-maven-3.8.3
+
+# include MAVEN_HOME and $MAVEN_HOME/bin to PATH. in .bash_file
+echo "export MAVEN_HOME=/Library/apache-maven-3.8.3" | tee -a ~/.bash_profile
+echo "export PATH=$MAVEN_HOME/bin:$PATH" | tee -a ~/.bash_profile
+source ~/.bash_profile
+
+mvn -version
 ~~~
 
 2\. Let's change to the **myTrial-api** directory:
@@ -182,7 +159,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 4\. Build and tag the Docker image for our SpringBoot **myTrial-api** app using the Dockerfile:
 
 ~~~bash
-sudo docker build -t mytrial-api:dev .
+docker build -t mytrial-api:dev .
 ~~~
 
 Once docker image is generated any number of containers can be made out of this docker image (Containers are like the instance of Image).
@@ -206,7 +183,7 @@ sudo docker run -b springio/gs-spring-boot-docker
 5\. Launch the Docker container named **mytrial-sb-server:** for our SpringBoot app with the code based from **myTrial-api** folder:
 
 ~~~bash
-sudo docker run -d \
+docker run -d \
     --name mytrial-sb-server \
     -p 8080:8080 \
     -e SPRING_DATASOURCE_URL=jdbc:mysql://mytrial-db:3306/mytrial \
@@ -218,7 +195,7 @@ sudo docker run -d \
 # It seems, can't connect container to multiple networks
 # when creating container, so doing a separate network connect
 # to connect container to frontend network too
-sudo docker network connect frontend mytrial-sb-server
+docker network connect frontend mytrial-sb-server
 ~~~
 
 Access myTrial-api app at `localhost:8080/test`
@@ -374,3 +351,6 @@ mysql -h localhost -u mytrial_docker -p # when asked, enter password mytrial_doc
 - [Stackoverflow: Docker - Container cannot be connected to network endpoints](https://stackoverflow.com/questions/60301221/docker-container-cannot-be-connected-to-network-endpoints): Part on when I found when you launch container, it seems we can't connect to multiple networks just one at that time, we have to manually connect them to remaining networks using "docker network connect"
 
 - [Stackoverflow: How to run SQL script in MySQL?](https://stackoverflow.com/questions/8940230/how-to-run-sql-script-in-mysql)
+
+- [Install OpenJDK 11 on Mac OS](https://gist.github.com/douglarek/bbda8cc23a562cb5d5798717d57bc9e9)
+

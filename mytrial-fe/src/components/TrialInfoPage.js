@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { TRIALS_BY_RESEARCHER_END_POINT } from "../settings";
 import { fetchMytrial } from "../utils";
+import {Button} from "semantic-ui-react";
 
 export const TrialInfoPage = () => {
     const [trial, setTrial] = useState(null);
@@ -14,13 +15,14 @@ export const TrialInfoPage = () => {
     }, [params.id]);
     return (<div>
         {trial ? <TrialInfoComponent trial={trial}/> : null}
-        {localStorage.getItem('role') === 'researcher' ? <button>Patient List</button> : null}
+        {localStorage.getItem('role') === 'researcher' ? <Button color="yellow" style={{marginLeft: "10px"}}>Patient List</Button> : null}
     </div>)
 }
 
 const TrialInfoComponent = (props) => {
-    return (<div>
-        <p>{props.trial.title}</p>
+    return (
+    <div style={{margin: "0px auto 20px 10px"}}>
+        <p style={{fontWeight: "bolder", fontSize: "20px"}}>{props.trial.title}</p>
         <p>Trial status: {props.trial["trial_status"]}</p>
         <p>Target Enrollment: {props.trial["target_enrollment"]}</p>
         <p>Phase: {props.trial["phase"]}</p>

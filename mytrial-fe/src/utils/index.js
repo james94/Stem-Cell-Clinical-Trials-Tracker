@@ -38,7 +38,7 @@ export const fetchMytrial = async (url, params, request, data, headers) => {
                 return res.data;
             })
             .catch(err => {
-                throw new Error(err.response.data);
+                throw err;
             })
 }
 
