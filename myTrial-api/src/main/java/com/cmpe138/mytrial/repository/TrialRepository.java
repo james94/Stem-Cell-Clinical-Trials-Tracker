@@ -23,7 +23,7 @@ public class TrialRepository {
 	}
 	
 	public List<Trial> findByDiseaseArea(String disease_area) {
-		String sql = "SELECT * FROM trial T WHERE T.trial_id IN (SELECT D.trial_id FROM t_disease_area D WHERE D.disease_area = " + disease_area + ")";
+		String sql = "SELECT * FROM trial T WHERE T.trial_id IN (SELECT D.trial_id FROM t_disease_area D WHERE D.disease_name = '"  + disease_area + "')";
 		List<Trial> res = jdbc.query(sql, this::mapRowToTrial);	
 		return res;
 	}

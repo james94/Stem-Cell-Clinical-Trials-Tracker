@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cmpe138.mytrial.model.Researcher;
-<<<<<<< Updated upstream
 import com.cmpe138.mytrial.repository.DiscussionForumRepository;
 import com.cmpe138.mytrial.repository.OrganizationRepository;
 import com.cmpe138.mytrial.repository.PatientRepository;
@@ -16,11 +15,7 @@ import com.cmpe138.mytrial.repository.RDiseaseAreaRepository;
 import com.cmpe138.mytrial.repository.ReplyRepository;
 import com.cmpe138.mytrial.repository.ResearcherRepository;
 import com.cmpe138.mytrial.repository.TrialRepository;
-=======
-import com.cmpe138.mytrial.repository.RDiseaseAreaRepository;
-import com.cmpe138.mytrial.repository.ResearcherRepository;
 import com.cmpe138.mytrial.repository.WorksForRepository;
->>>>>>> Stashed changes
 import com.cmpe138.mytrial.service.ResearcherService;
 
 @Service
@@ -30,7 +25,6 @@ public class ResearcherServiceImpl implements ResearcherService {
 	ResearcherRepository researcherRepository;
 	
 	@Autowired
-<<<<<<< Updated upstream
 	DiscussionForumRepository dfRepo;
 	
 	@Autowired
@@ -48,13 +42,8 @@ public class ResearcherServiceImpl implements ResearcherService {
 	@Autowired
 	RDiseaseAreaRepository rDiseaseRepo;
 	
-	
-=======
-	WorksForRepository worksForRepository;
-	
 	@Autowired
-	RDiseaseAreaRepository rDiseaseAreaRepository;
->>>>>>> Stashed changes
+	WorksForRepository worksForRepository;
 
 	@Override
 	public List<Researcher> getAll() {
@@ -92,7 +81,7 @@ public class ResearcherServiceImpl implements ResearcherService {
 			worksForRepository.createWorksFor(r_id, org);
 		}
 		for (String disease : disease_areas) {
-			rDiseaseAreaRepository.addRDisease(r_id, disease);
+			rDiseaseRepo.addRDisease(r_id, disease);
 		}
 	}
 

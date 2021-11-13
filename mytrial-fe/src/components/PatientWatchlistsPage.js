@@ -16,7 +16,7 @@ class PatientWatchlistsPage extends React.Component {
     }
 
     retrievePWatchlist = (url) => {
-        fetchMyPWatchlist(url, null, {method: 'GET'}, null, {'id': '000000024'})
+        fetchMyPWatchlist(url, null, {method: 'GET'}, null, {'id': localStorage.getItem('id')})
         .then(data => {
             console.log(data)
             this.setState({
@@ -61,7 +61,8 @@ class PatientWatchlistsPage extends React.Component {
                 <h1>Patient's Watchlist</h1>
                 <ul>
                     {this.state.watchlists.map((e,i) => <li key={i}>
-                        <Link to={{pathname: `/watchlists/${e.id}`}}>{e.name}</Link>   
+                        {console.log(e)}
+                        <Link to={{pathname:'/trials', state:{disease: e.diseaseArea}}} >{e.name}</Link>   
                     </li>)}
                 </ul>
             </div>

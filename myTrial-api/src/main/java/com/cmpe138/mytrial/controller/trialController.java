@@ -23,7 +23,9 @@ public class trialController {
 	private MyTrialService myTrial;
 	
 	@GetMapping("/trials")
-	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, @RequestParam(value="trialId", required=false) String trial_id, @RequestParam(value="disease", required=false) String disease_area) {
+	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, 
+			@RequestParam(value="trialId", required=false) String trial_id, 
+			@RequestParam(value="disease", required=false) String disease_area) {
 		if (trial_id != null) {
 			List<Trial> res = new ArrayList<>();
 			res.add(myTrial.getTrialById(trial_id));
