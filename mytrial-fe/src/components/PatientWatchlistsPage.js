@@ -61,7 +61,6 @@ class PatientWatchlistsPage extends React.Component {
                 <h1>Patient's Watchlist</h1>
                 <ul>
                     {this.state.watchlists.map((e,i) => <li key={i}>
-                        {console.log(e)}
                         <Link to={{pathname:'/trials', state:{disease: e.diseaseArea}}} >{e.name}</Link>   
                     </li>)}
                 </ul>
