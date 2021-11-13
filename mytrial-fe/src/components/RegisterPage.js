@@ -3,9 +3,8 @@ import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { REGISTER_END_POINT } from '../settings';
 import { fetchMytrial } from '../utils';
 import { withRouter } from 'react-router-dom';
-import ResearcherService from '../service/ResearcherService';
 
-const registerUser = (name, organizations, disease_areas, username, password, history) => {
+const registerUser = (r_name, organization, disease_area, r_username, r_password, history) => {
     // authenticate and then save id in local storage
     // organizations.map((organization) =>
     //     { console.log(organization); }
@@ -21,19 +20,19 @@ const registerUser = (name, organizations, disease_areas, username, password, hi
     // console.log(name);
     // console.log(username);
     // console.log(password);
-    let researcher_data = {
-        r_name: name,
-        r_username: username,
-        r_password: password,
-        organization: organizations,
-        disease_area: disease_areas
-    }
+    // let researcher_data = {
+    //     r_name: name,
+    //     r_username: username,
+    //     r_password: password,
+    //     organization: organizations,
+    //     disease_area: disease_areas
+    // }
 
     // the problem is occurring here, when I call fetchMytrial, it catches error.
-    fetchMytrial(REGISTER_END_POINT, null, {method: 'POST'}, researcher_data)
+    fetchMytrial(REGISTER_END_POINT, null, {method: 'POST'}, { r_name, r_username, r_password, organization, disease_area })
         .then(data => {
             console.log(data);
-            console.log('Registered with ' + name + username + password);
+            console.log('Registered with ' + r_name + r_username + r_password);
             history.push("/rhome"); 
         })
         .catch(err => {
@@ -113,4 +112,4 @@ const RegisterPage = ({ history }) => {
     )
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
