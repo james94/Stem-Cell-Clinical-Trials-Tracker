@@ -2,8 +2,9 @@ import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { useState } from 'react';
 import { ADD_TRIAL_END_POINT } from '../settings';
 import { fetchMytrial } from '../utils';
+import { withRouter } from 'react-router-dom';
 
-const createTrial = (title, organization, phase, nctNum, status, targetEnroll) => {
+const createTrial = (title, organization, phase, nctNum, status, targetEnroll, history) => {
     console.log(title, organization, phase, nctNum, status, targetEnroll);
     if (title && organization && phase && nctNum && status && targetEnroll) {
         // create a trial on the backend
@@ -15,7 +16,10 @@ const createTrial = (title, organization, phase, nctNum, status, targetEnroll) =
             trial_status: status,
             target_enrollment: targetEnroll
         };
-        fetchMytrial(ADD_TRIAL_END_POINT, null, {method: 'POST'}, data, {'id': '000000046'})
+        fetchMytrial(ADD_TRIAL_END_POINT, null, {method: 'POST'}, data, {'id': localStorage.getItem('id')})
+        .then(res => {
+            history.push('/trials');
+        })
         .catch(err => {
             console.log(err)
         });
@@ -23,6 +27,29 @@ const createTrial = (title, organization, phase, nctNum, status, targetEnroll) =
         alert('Please fill in all required fields');
     }
 }
+
+const orgOptions = [
+    {
+        key: 'Jackson Labs',
+        text: 'Jackson Labs',
+        value: 'Jackson Labs'
+    },
+    {
+        key: 'California State University, Channel Islands',
+        text: 'California State University, Channel Islands',
+        value: 'California State University, Channel Islands'
+    },
+    {
+        key: 'SJSU Research Foundation',
+        text: 'SJSU Research Foundation',
+        value: 'SJSU Research Foundation'
+    },
+    {
+        key: 'UCSF Benioff Children’s Hospital Oakland',
+        text: 'UCSF Benioff Children’s Hospital Oakland',
+        value: 'UCSF Benioff Children’s Hospital Oakland'
+    }
+];
 
 const phaseOptions = [
     {
@@ -80,7 +107,7 @@ const statusOptions = [
     }
 ];
 
-const CreateTrialPage = () => {
+const CreateTrialPage = ({history}) => {
     const [title, setTitle] = useState(null);
     const [organization, setOrganization] = useState(null);
     const [phase, setPhase] = useState(null);
@@ -89,7 +116,7 @@ const CreateTrialPage = () => {
     const [targetEnroll, setTargetEnroll] = useState(0);
     return (
         <div className="myform">
-        <Form onSubmit={() => {createTrial(title, organization, phase, nctNum, status, targetEnroll)}}>
+        <Form onSubmit={() => {createTrial(title, organization, phase, nctNum, status, targetEnroll, history)}}>
             <p style={{fontSize: "30px", textAlign: "center"}}>Create a New Trial</p>
             <Form.Field required>
                 <label>Title</label>
@@ -97,7 +124,15 @@ const CreateTrialPage = () => {
             </Form.Field>
             <Form.Field required>
                 <label>Organization</label>
-                <input placeholder='organization' onChange={e => {setOrganization(e.target.value)}}/>
+                <Dropdown
+                    placeholder='Select Phase'
+                    fluid
+                    selection
+                    options={orgOptions}
+                    value={organization}
+                    onChange={(_, obj) => {setOrganization(obj.value)}}
+                />
+                {/* <input placeholder='organization' onChange={e => {setOrganization(e.target.value)}}/> */}
             </Form.Field>
             <Form.Field required>
                 <label>Phase</label>
@@ -135,4 +170,4 @@ const CreateTrialPage = () => {
     );
 }
 
-export default CreateTrialPage;
+export default withRouter(CreateTrialPage);
