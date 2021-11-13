@@ -16,7 +16,7 @@ class EditPatients extends Component {
       alert('A name was submitted: ' + this.state.value);
       event.preventDefault();
     }
-    
+    //
     render() {
         var x;
         if(this.state.value==='edit'){
