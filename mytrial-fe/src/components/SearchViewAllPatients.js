@@ -96,7 +96,6 @@ class SearchViewAllPatients extends React.Component {
                 value={this.state.query}
                 onChange={this.handleInputChange}
               />
-              <i className="fas fa-search"></i>
               {searchCode}
             </form>
           </div>
