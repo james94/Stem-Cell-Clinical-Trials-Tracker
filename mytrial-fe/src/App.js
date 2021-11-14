@@ -51,8 +51,9 @@ function App() {
             <Top />
             <CreateTrialPage />
           </Route>
-          <Route path="/discussion/:id" component={DiscussionForumInfoPage}>
-            {/* <DiscussionForumInfoPage /> */}
+          <Route path="/discussion/:id">
+            <Top />
+            <DiscussionForumInfoPage />
           </Route>
           <Route path="/discussion">
             <Top />
@@ -62,8 +63,9 @@ function App() {
             <Top />
             <PatientHomePage />
           </Route>
-          <Route path="/patient/:id" component={PatientInfoPage}>
-            {/* <PatientInfoPage /> */}
+          <Route path="/patient/:id">
+            <Top />
+            <PatientInfoPage />
           </Route>
           <Route path="/patient">
             <Top />
@@ -73,8 +75,9 @@ function App() {
             <Top />
             <PatientWatchlistsPage />
           </Route>
-          <Route path="/researcher/:id" component={ResearcherInfoPage}>
-            {/* <ResearcherInfoPage /> */}
+          <Route path="/researcher/:id">
+            <Top />
+            <ResearcherInfoPage />
           </Route>
           <Route path="/researcher">
             <Top />
