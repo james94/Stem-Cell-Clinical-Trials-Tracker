@@ -60,7 +60,7 @@ class PatientInfoPage extends React.Component {
                 <p>Trial ID: {this.state.trial_id}</p>
                 <p>Researcher ID: {this.state.researcher_id}</p>
                 <Button color="yellow" style={{marginLeft: "10px"}}><Link to="/addDonor">Add Donor</Link></Button>
-                <Button color="yellow" style={{marginLeft: "10px"}}><Link to="/editPatient">Edit Patient Profile</Link></Button>
+                <Button color="yellow" style={{marginLeft: "10px"}}><Link to={{pathname: `/editPatient/${this.props.match.params.id}`}}>Edit Patient Profile</Link></Button>
                 {/* create new discussion */}
                 {/* update phase */}
                 {/* update disease */}

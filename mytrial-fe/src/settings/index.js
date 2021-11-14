@@ -5,6 +5,6 @@ export const ADD_TRIAL_END_POINT = `${MYTRIAL_API}/addtrial`;
 export const LOGIN_END_POINT = `${MYTRIAL_API}/login`;
 export const REGISTER_END_POINT = `${MYTRIAL_API}/register`;
 export const PWATCHLISTS_API_BASE_URL = `${MYTRIAL_API}/watchlists/`;
-
-
+export const PATIIENT_API_BASE_URL = `${MYTRIAL_API}/patient/`;
+export const EDIT_PATIENT_END_POINT = `${MYTRIAL_API}/updatePatient/`;
 
