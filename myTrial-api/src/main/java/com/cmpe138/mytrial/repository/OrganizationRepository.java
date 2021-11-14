@@ -19,12 +19,10 @@ public class OrganizationRepository {
 	private JdbcTemplate jdbc;
 
 	public List<Organization> findAll() {
-		System.out.println("Reached repo");
 		return jdbc.query("select * from org", this::mapRowToOrganization);
 	}
 	
 	public List<Organization> getOrganizationByResearcherId(String researcher_id) {
-		System.out.println("Reached repo");
 		return jdbc.query("select * from org o join works_for w on o.org_name = w.org_name where w.researcher_id = ?", new BeanPropertyRowMapper<Organization>(Organization.class), researcher_id);
 	}
 
