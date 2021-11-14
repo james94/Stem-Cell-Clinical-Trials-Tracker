@@ -25,7 +25,6 @@ public class ResearcherController {
 
 	@GetMapping("/researcher/{researcher_id}")
 	public Researcher getResearchersById(@PathVariable(value = "researcher_id") String researcher_id) {
-		System.out.println(researcher_id);
 		return researcherService.getResearchertById(researcher_id);
 	}
 

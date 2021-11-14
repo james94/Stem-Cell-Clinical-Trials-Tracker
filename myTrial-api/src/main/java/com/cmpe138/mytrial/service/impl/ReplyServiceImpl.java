@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.cmpe138.mytrial.model.DiscussionForum;
 import com.cmpe138.mytrial.model.Reply;
+import com.cmpe138.mytrial.model.Researcher;
 import com.cmpe138.mytrial.repository.ReplyRepository;
+import com.cmpe138.mytrial.repository.ResearcherRepository;
 import com.cmpe138.mytrial.service.ReplyService;
 
 @Service
@@ -15,6 +17,8 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Autowired
 	ReplyRepository replyRepo;
+	@Autowired
+	ResearcherRepository researcherRepo;
 
 	@Override
 	public List<Reply> getAllReply() {
@@ -26,9 +30,16 @@ public class ReplyServiceImpl implements ReplyService {
 		return replyRepo.getReplyByResearcherId(researcher_id);
 	}
 
+	@Transactional
 	@Override
 	public Reply getReplyId(int reply_id) {
-		return replyRepo.getReplyById(reply_id);
+		Reply r;
+		r = replyRepo.getReplyById(reply_id);
+		if (r == null)
+			return null;
+		Researcher re = researcherRepo.getResearcherById(r.getResearcher_id());
+		r.setResearcher(re);
+		return r;
 	}
 
 	@Override
@@ -47,10 +58,7 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public boolean deleteReply(int reply_id) {
 		int res = replyRepo.deleteReply(reply_id);
-		System.out.println("delete result:" + res);
 		return res == 1; // how many rows
 	}
 
-	
-	
 }

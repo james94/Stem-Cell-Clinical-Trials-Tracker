@@ -2,6 +2,9 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import DiscussionService from '../service/DiscussionService';
 import ReplyService from '../service/ReplyService';
+import { Grid, List, Button, Form } from 'semantic-ui-react';
+import { withRouter } from "react-router";
+
 
 class DiscussionForumInfoPage extends React.Component {
 
@@ -18,9 +21,9 @@ class DiscussionForumInfoPage extends React.Component {
             reply_id: "",
             r_timestamp: "",
             content: "",
-            researcher_id: '"000000006"',
-            // researcher_id: localStorage.getItem('id'),
-            // role: localStorage.getItem('role')
+            researcher: {},
+            researcher_id: localStorage.getItem('id'),
+            role: localStorage.getItem('role')
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,25 +39,26 @@ class DiscussionForumInfoPage extends React.Component {
         e.preventDefault();
         let params = {
             reply_id: "",
-            r_timestamp: "",
             content: "",
             df_id: "",
             researcher_id: ""
         }
-        Object.assign(params, this.state);
+        params.reply_id = this.state.reply_id;
+        params.content = this.state.content;
+        params.df_id = this.state.df_id;
+        params.researcher_id = localStorage.getItem('id');
+
         if (params.reply_id) { // update
             ReplyService.updateReply(params)
-            .then(data => {
-                console.log(data);
-                window.location.reload();
-            })
-            .catch(err => {
-                console.log(err)
-            })
+                .then(data => {
+                    window.location.reload();
+                })
+                .catch(err => {
+                    console.log(err)
+                })
         } else { // create
             ReplyService.createReply(params)
                 .then(data => {
-                    console.log(data);
                     window.location.reload();
                 })
                 .catch(err => {
@@ -67,7 +71,6 @@ class DiscussionForumInfoPage extends React.Component {
         alert('Update: ' + id);
         ReplyService.getReplyById(id)
             .then(data => {
-                console.log(data);
                 this.setState({
                     ...data.data
                 });
@@ -81,7 +84,6 @@ class DiscussionForumInfoPage extends React.Component {
         alert('Delete: ' + id);
         ReplyService.deleteReply(id)
             .then(data => {
-                console.log(data);
                 window.location.reload();
             })
             .catch(err => {
@@ -92,18 +94,66 @@ class DiscussionForumInfoPage extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <ul>{this.state.df_id}</ul>
-                    <ul>{this.state.df_name}</ul>
-                    <ul>{this.state.details}</ul>
-                    <ul>{this.state.df_timestamp}</ul><br/>
-                    {this.state.replies.map((e, i) => <li key={i}>{e.reply_id}{e.content}{e.r_timestamp} <button onClick={(event) => { this.updateReply(event, e.reply_id) }}>Update</button><button onClick={(event) => { this.deleteReply(event, e.reply_id) }}>Delete</button></li>)}
-                </div>
+                <Grid celled>
+                    <Grid.Row>
+                        <Grid.Column width={2}>
+                            {this.state.df_id}
+                        </Grid.Column>
+                        <Grid.Column width={10}>
+                            {this.state.df_name}
+                        </Grid.Column>
+                        <Grid.Column width={4}>
+                            <Grid.Row>{this.state.researcher.r_name}</Grid.Row>
+                            <Grid.Row>{this.state.df_timestamp}</Grid.Row>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <pre>
+                                {this.state.details}
+                            </pre>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+                <List>
+                    {
+                        this.state.replies.map((e, i) =>
+                            <List.Item key={i}>
+                                <List.Content>
+                                    <Grid celled>
+                                        <Grid.Row>
+                                            <Grid.Column width={1}>{i + 1}</Grid.Column>
+                                            <Grid.Column width={10}>{e.content}</Grid.Column>
+                                            <Grid.Column width={3}>
+                                                {e.researcher.r_name}<br />
+                                                {e.r_timestamp}
+                                            </Grid.Column>
+                                            <Grid.Column width={2}>
+                                                {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.updateReply(event, e.reply_id) }}>Update</Button>}
+                                                {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.deleteReply(event, e.reply_id) }}>Delete</Button>}
+                                            </Grid.Column>
+                                        </Grid.Row>
+                                    </Grid>
+                                </List.Content>
+                            </List.Item>
+                        )
+                    }
+                </List>
                 {/* create new reply */}
-                <form onSubmit={this.handleSubmit}>
-                    <textarea name="content" value={this.state.content} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
-                </form>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field required>
+                        <label>Reply</label>
+                        <Form.TextArea
+                            required
+                            name="content"
+                            value={this.state.content}
+                            placeholder='your reply'
+                            onChange={this.handleChange}>
+                        </Form.TextArea>
+                    </Form.Field>
+                    <Button type='submit' >Submit</Button>
+                </Form>
+
             </div>
         )
     }
@@ -113,7 +163,6 @@ class DiscussionForumInfoPage extends React.Component {
         // show reply list
         DiscussionService.getDiscussionById(this.props.match.params.id)
             .then(data => {
-                console.log(data);
                 this.setState({ ...data.data });
             })
             .catch(err => {
@@ -122,4 +171,4 @@ class DiscussionForumInfoPage extends React.Component {
     }
 }
 
-export default DiscussionForumInfoPage;
+export default withRouter(DiscussionForumInfoPage);

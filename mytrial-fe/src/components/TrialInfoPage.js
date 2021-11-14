@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { Link } from 'react-router-dom';
 import { TRIALS_BY_RESEARCHER_END_POINT } from "../settings";
 import { fetchMytrial } from "../utils";
 import {Button} from "semantic-ui-react";
@@ -15,7 +16,8 @@ export const TrialInfoPage = () => {
     }, [params.id]);
     return (<div>
         {trial ? <TrialInfoComponent trial={trial}/> : null}
-        {localStorage.getItem('role') === 'researcher' ? <Button color="yellow" style={{marginLeft: "10px"}}>Patient List</Button> : null}
+        {localStorage.getItem('role') === 'researcher' ? 
+        <Button as={Link} to={"/patient"}>Patient List</Button> : null}
     </div>)
 }
 

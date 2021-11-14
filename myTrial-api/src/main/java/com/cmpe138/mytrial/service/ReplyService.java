@@ -13,8 +13,9 @@ public interface ReplyService {
 	Reply getReplyId(int reply_id);
 
 	int addReply(String content, int reply_id, String researcher_id);
-	
+
 	int updateReply(int reply_id, String content, String researcher_id);
 
 	boolean deleteReply(int reply_id);
+
 }

@@ -15,4 +15,6 @@ public interface DiscussionForumService {
 	int updateDiscussion(int df_id, String df_name, String details, String researcher_id);
 
 	boolean deleteDiscussion(int df_id);
+
+	List<DiscussionForum> findByResearcherId(String researcher_id);
 }
