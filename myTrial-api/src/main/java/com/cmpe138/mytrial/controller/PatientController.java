@@ -25,8 +25,12 @@ public class PatientController {
 	}
 
 	@GetMapping("/patient")
-	public List<Patient> getPatientByResearcherId(@RequestHeader(value = "researcher_id", required = false) String researcher_id) {
-		return patientService.getPatientByResearcherId(researcher_id);
+	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id, @RequestHeader(value = "researcher_id", required = false) String researcher_id) {
+		if (!trial_id.isEmpty()) {
+			return patientService.getPatientByTrialId(trial_id);
+		} else {
+			return patientService.getPatientByResearcherId(researcher_id);
+		}
 	}
 
 }
