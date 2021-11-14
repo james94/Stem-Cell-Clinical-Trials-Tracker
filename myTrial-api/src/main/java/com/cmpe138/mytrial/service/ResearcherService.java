@@ -14,5 +14,7 @@ public interface ResearcherService {
 	
 	Researcher getResearcherByUsernamePassword(String username, String password);
 	
+	List<String> getResearcherByTrialId(String trial_id);
+	
 	void createResearcher(String r_name, String r_username, String r_password, List<String> organizations, List<String> disease_areas);
 }

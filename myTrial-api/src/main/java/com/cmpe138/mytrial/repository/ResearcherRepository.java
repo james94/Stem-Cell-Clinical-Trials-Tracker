@@ -39,6 +39,15 @@ public class ResearcherRepository {
 			return null;
 		}
 	}
+	
+	public List<Researcher> getResearcherByTrialId(String t_id) {
+		String sql = "select * from researcher R where R.researcher_id in (select I.researcher_id from investigates I where I.trial_id = ?)";
+		try {
+			return jdbc.query(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class), t_id);
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
 
 	public void createResearcher(String r_id, String r_name, String r_username, String r_password) {
 		String sql = "insert researcher values (?, ?, ?, AES_ENCRYPT(?, SHA2('The secret passphrase',512), RANDOM_BYTES(16)))";
