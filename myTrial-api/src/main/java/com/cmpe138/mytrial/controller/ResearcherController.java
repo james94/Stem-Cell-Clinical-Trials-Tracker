@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cmpe138.mytrial.model.Researcher;
@@ -27,5 +28,11 @@ public class ResearcherController {
 	public Researcher getResearchersById(@PathVariable(value = "researcher_id") String researcher_id) {
 		return researcherService.getResearchertById(researcher_id);
 	}
+	
+	@GetMapping("/researcher_names")
+	public List<String> getResearcherNamesByTrialId(@RequestParam(value = "trialId") String trial_id) {
+		return researcherService.getResearcherByTrialId(trial_id);
+	}
+	
 
 }

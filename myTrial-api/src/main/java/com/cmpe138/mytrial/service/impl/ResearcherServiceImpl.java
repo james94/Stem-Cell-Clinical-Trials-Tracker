@@ -1,5 +1,6 @@
 package com.cmpe138.mytrial.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,16 @@ public class ResearcherServiceImpl implements ResearcherService {
 		return researcherRepository.getResearcherByUsernamePassword(username, password);
 	}
 
+	@Override
+	public List<String> getResearcherByTrialId(String trial_id) {
+		List<Researcher> researchers = researcherRepository.getResearcherByTrialId(trial_id);
+		List<String> names = new ArrayList<>();
+		for (Researcher r : researchers) {
+			names.add(r.getR_name());
+		}
+		return names;
+	}
+	
 	@Override
 	public void createResearcher(String r_name, String r_username, String r_password, List<String> organizations, List<String> disease_areas) {
 		String r_id = String.valueOf((int) (Math.random() * 999999999));
