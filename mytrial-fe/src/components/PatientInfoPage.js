@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from "semantic-ui-react";
 import PatientService from '../service/PatientService';
 import { withRouter } from "react-router";
 
@@ -19,6 +20,13 @@ class PatientInfoPage extends React.Component {
     render() {
         return (
             <div>
+                {
+                    (this.state.donor) ?
+                        <h2>Donor: {this.state.donor.name}</h2> :
+                        <Link to="#">
+                            <Button>Add Donor</Button>
+                        </Link>
+                }
                 <h2>Patient Data</h2>
                 <pre>
                     {JSON.stringify(this.state.patientToShow, null, 2)}
@@ -39,6 +47,9 @@ class PatientInfoPage extends React.Component {
                 <pre>
                     {JSON.stringify(this.state.researcherToShow, null, 2)}
                 </pre>
+                <Link to="#">
+                    <Button>Edit Profile</Button>
+                </Link>
             </div>
         )
     }

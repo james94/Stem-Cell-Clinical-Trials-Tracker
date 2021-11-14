@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import PatientService from '../service/PatientService';
 
 class PatientPage extends React.Component {
@@ -20,6 +21,9 @@ class PatientPage extends React.Component {
                 <ul>
                     {this.state.patients.map((e, i) => <li key={i}><Link to={{ pathname: `/patient/${e.patient_id}` }}>Patient{e.patient_id}</Link></li>)}
                 </ul>
+                <Link to='#'>
+                    <Button>Add Patient</Button>
+                </Link>
             </div>
         )
     }

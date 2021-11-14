@@ -70,7 +70,7 @@ CREATE TABLE discussion_forum (
     details varchar(600) not null,
     researcher_id varchar(9) not null,
     primary key (df_id),
-    foreign key (researcher_id) references researcher (researcher_id)
+    foreign key (researcher_id) references researcher (researcher_id) ON DELETE CASCADE
 );
 
 CREATE TABLE investigates (
@@ -95,11 +95,9 @@ CREATE TABLE reply (
     df_id         INT,
     researcher_id VARCHAR(9) NOT NULL,
     PRIMARY KEY (reply_id),
-    FOREIGN KEY (df_id) REFERENCES discussion_forum(df_id),
+    FOREIGN KEY (df_id) REFERENCES discussion_forum(df_id) ON DELETE CASCADE,
     FOREIGN KEY (researcher_id) REFERENCES researcher(researcher_id) ON DELETE CASCADE
 );
-
-
 
 CREATE TABLE works_for (
     researcher_id varchar(9) not null,

@@ -7,5 +7,7 @@ export const LOGIN_END_POINT = `${MYTRIAL_API}/login`;
 export const REGISTER_END_POINT = `${MYTRIAL_API}/register`;
 export const PWATCHLISTS_API_BASE_URL = `${MYTRIAL_API}/watchlists/`;
 
+export default MYTRIAL_API;
+
 
 
