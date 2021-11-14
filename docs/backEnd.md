@@ -47,14 +47,19 @@ If that user isn't there, then create that user using your host's MySQL server. 
 -- MySQL server to be able to later access Host's mytrial database tables
 USE mytrial;
 
--- specify mysql docker user, container name where user is
-CREATE USER 'mytrial_docker'@'localhost' IDENTIFIED BY 'mytrial_docker';
+-- update root host, so any computer can login to mysql server container
+UPDATE mysql.user SET Host='%' WHERE User='root';
+
+-- crate mysql docker user, so any container or server can login to mysql server container
+CREATE USER 'mytrial_docker'@'%' IDENTIFIED BY 'mytrial_docker';
+
+CREATE USER 'mytrial_docker'@'mytrial-sb-server' IDENTIFIED BY 'mytrial_docker';
 
 -- If you need to Delete user, use the following sql:
--- DROP USER 'mytrial_docker'@'localhost';
+-- DROP USER 'mytrial_docker'@'%';
 
 -- Provide new user mytrial_docker with full access all dbs & tables, etc
-GRANT ALL PRIVILEGES ON * . * TO 'mytrial_docker'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'mytrial_docker'@'%';
 
 -- exit from mysql server service
 quit

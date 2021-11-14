@@ -15,5 +15,8 @@ RUN npm install react-scripts -g
 # add contents of mytrial-fe app to working dir
 COPY . ./
 
+ARG REACT_APP_BASE_URL
+ENV REACT_APP_BASE_URL=${REACT_APP_BASE_URL}
+
 # start mytrial-fe
 CMD ["npm", "start"]
