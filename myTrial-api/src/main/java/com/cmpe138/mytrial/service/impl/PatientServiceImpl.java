@@ -46,8 +46,8 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public void updatePatientById(String researcher_id, String patient_id) {
-		patientRepo.updatePatientById(patient_id);
+	public void updatePatientById(String researcher_id, Patient patient) {
+		patientRepo.updatePatientById(researcher_id, patient);
 	}
 
 }

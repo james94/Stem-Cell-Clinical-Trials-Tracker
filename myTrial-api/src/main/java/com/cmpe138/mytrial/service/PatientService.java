@@ -41,5 +41,5 @@ public interface PatientService {
 	 * @param patient_id
 	 * @return
 	 */
-	Patient updatePatientById(String researcher_id, String patient_id);
+	Patient updatePatientById(String researcher_id, Patient patient);
 }

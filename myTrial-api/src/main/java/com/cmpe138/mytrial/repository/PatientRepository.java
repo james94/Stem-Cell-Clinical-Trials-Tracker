@@ -45,6 +45,20 @@ public class PatientRepository {
 		return patients;
 	}
 
+        // phase: phase,
+        // disease: disease,
+        // status: status,
+        // trial_id: trial_id,
+        // researcher_id: researcher_id
+
+	public void updatePatientById(String researcher_id, Patient patient) {
+		if(patient.getResearcher_id() == researcher_id) {
+			String sql = "update patient set phase = ?, disease = ?, status = ?, trial_id = ? where patient_id = ? and researcher_id = ?";
+			jcbc.update(sql, patient.getPhase(), patient.getDisease(), patient.getP_status(), 
+				patient.getTrial_id(), patient.getPatient_id(), patient.getResearcher_id());
+		}
+	}
+
 	/**
 	 * Patient login
 	 * 

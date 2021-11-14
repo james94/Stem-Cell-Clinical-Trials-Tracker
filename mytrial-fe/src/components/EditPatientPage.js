@@ -5,18 +5,27 @@ import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import PatientService from '../service/PatientService';
 
-const editPatientProfile = (phase, disease, status, trial_id, researcher_id) => {
+// const getPatientData = () => {
+//     PatientService.getPatientById()
+// }
+
+const editPatientProfile = (phase, disease, status, trial_id, history) => {
 
     let patient_data = {
         phase: phase,
         disease: disease,
         status: status,
         trial_id: trial_id,
-        researcher_id: researcher_id
     }
 
+    let config = {
+        headers: {
+            researcher_id: localStorage.getItem('id')
+        }
+    };
+
     // patientId need it.
-    PatientService.updatePatient(patient_data, patientId);
+    PatientService.updatePatient(patient_data, config);
 
     // fetchMytrial(EDIT_PATIENT_END_POINT, null, {method: 'POST'}, patient_data)
     //     .then(data => {
@@ -31,14 +40,13 @@ const editPatientProfile = (phase, disease, status, trial_id, researcher_id) => 
 }
 
 const EditPatientProfileForm = (props) => {
-    const [disease, setDiseaseArea] = useState(null);
+    const [disease, setDisease] = useState(null);
     const [phase, setPhase] = useState(null);
     const [status, setStatus] = useState(null);
     const [trial_id, setTrialId] = useState(null);
-    const [researcher_id, setResearcherId] = useState(null);
 
     return (
-        <Form onSubmit={() => {editPatientProfile(phase, disease, status, trial_id, researcher_id)}}>
+        <Form onSubmit={() => {editPatientProfile(phase, disease, status, trial_id, props.history)}}>
             <Form.Field>
                 <label>Disease</label>
                 <input placeholder='disease' onChange={e => {setDisease(e.target.value)}} />
@@ -54,10 +62,6 @@ const EditPatientProfileForm = (props) => {
             <Form.Field>
                 <label>Trial ID</label>
                 <input placeholder='trial id' onChange={e => {setTrialId(e.target.value)}} />
-            </Form.Field>
-            <Form.Field>
-                <label>Researcher ID</label>
-                <input placeholder='researcher id' onChange={e => {setResearcherId(e.target.value)}} />
             </Form.Field>
             <Button type='submit'>Submit</Button>
         </Form>

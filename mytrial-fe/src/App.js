@@ -17,6 +17,7 @@ import DiscussionForumInfoPage from './components/DiscussionForumInfoPage';
 import PatientHomePage from './components/PatientHomePage';
 import PatientPage from './components/PatientPage';
 import PatientInfoPage from './components/PatientInfoPage';
+import EditPatientPage from './components/EditPatientPage';
 import PatientWatchlistsPage from './components/PatientWatchlistsPage';
 import ResearcherPage from './components/ResearcherPage';
 import ResearcherInfoPage from './components/ResearcherInfoPage';

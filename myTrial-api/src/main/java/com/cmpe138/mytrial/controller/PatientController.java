@@ -29,8 +29,8 @@ public class PatientController {
 		return patientService.getPatientById(researcher_id, patient_id);
 	}
 
-	@PostMapping("/updatePatient/{patient_id}")
-	public Patient updatePatientById(@RequestHeader(value = "researcher_id", required = false), String researcher_id, @PathVariable(value = "patient_id") String patient_id) {
-		return patientService.updatePatientById(researcher_id, patient_id);
+	@PostMapping("/patient/update/")
+	public Patient updatePatientById(@RequestHeader(value = "researcher_id", required = false), String researcher_id, @RequestBody Patient patient) {
+		patientService.updatePatientById(researcher_id, patient);
 	}
 }
