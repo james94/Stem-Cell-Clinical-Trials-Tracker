@@ -26,7 +26,6 @@ public class PatientController {
 
 	@GetMapping("/patient")
 	public List<Patient> getPatientByResearcherId(@RequestHeader(value = "researcher_id", required = false) String researcher_id) {
-		System.out.println(researcher_id);
 		return patientService.getPatientByResearcherId(researcher_id);
 	}
 

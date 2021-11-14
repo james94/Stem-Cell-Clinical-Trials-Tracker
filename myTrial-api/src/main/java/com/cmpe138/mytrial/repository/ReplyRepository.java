@@ -17,7 +17,6 @@ public class ReplyRepository {
 	private JdbcTemplate jdbc;
 
 	public List<Reply> findAll() {
-		System.out.println("Reached repo");
 		return jdbc.query("select * from reply", this::mapRowToReply);
 	}
 

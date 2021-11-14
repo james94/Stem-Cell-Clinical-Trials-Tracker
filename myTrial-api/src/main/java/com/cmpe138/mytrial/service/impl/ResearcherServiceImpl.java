@@ -1,6 +1,5 @@
 package com.cmpe138.mytrial.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,25 +22,25 @@ public class ResearcherServiceImpl implements ResearcherService {
 
 	@Autowired
 	ResearcherRepository researcherRepository;
-	
+
 	@Autowired
 	DiscussionForumRepository dfRepo;
-	
+
 	@Autowired
 	ReplyRepository replyRepo;
-	
+
 	@Autowired
 	PatientRepository patientRepo;
-	
+
 	@Autowired
 	TrialRepository trialRepo;
-	
+
 	@Autowired
 	OrganizationRepository orgRepo;
-	
+
 	@Autowired
 	RDiseaseAreaRepository rDiseaseRepo;
-	
+
 	@Autowired
 	WorksForRepository worksForRepository;
 
@@ -53,9 +52,9 @@ public class ResearcherServiceImpl implements ResearcherService {
 	@Override
 	@Transactional
 	public Researcher getResearchertById(String researcher_id) {
-		Researcher r =  researcherRepository.getResearcherById(researcher_id);
-		
-		if(r != null) {
+		Researcher r = researcherRepository.getResearcherById(researcher_id);
+
+		if (r != null) {
 			r.setDiscussionForums(dfRepo.getDiscussionByReasercherId(researcher_id));
 			r.setReplies(replyRepo.getReplyByResearcherId(researcher_id));
 			r.setPatients(patientRepo.getPatientsByResearcher_id(researcher_id));
@@ -66,17 +65,17 @@ public class ResearcherServiceImpl implements ResearcherService {
 
 		return r;
 	}
-	
+
 	@Override
 	public Researcher getResearcherByUsernamePassword(String username, String password) {
 		return researcherRepository.getResearcherByUsernamePassword(username, password);
 	}
-	
+
 	@Override
 	public void createResearcher(String r_name, String r_username, String r_password, List<String> organizations, List<String> disease_areas) {
-		String r_id = String.valueOf((int)(Math.random() * 999999999));
+		String r_id = String.valueOf((int) (Math.random() * 999999999));
 		while (getResearchertById(r_id) != null) {
-			r_id = String.valueOf((int)(Math.random() * 999999999));
+			r_id = String.valueOf((int) (Math.random() * 999999999));
 		}
 		researcherRepository.createResearcher(r_id, r_name, r_username, r_password);
 		for (String org : organizations) {

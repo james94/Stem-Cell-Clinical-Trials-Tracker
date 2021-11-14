@@ -13,7 +13,6 @@ class ResearcherService {
     }
 
     getResearcherById(researcherId) {
-        console.log(researcherId);
         return axios.get(RESEARCHER_API_BASE_URL + '/' + researcherId);
     }
 

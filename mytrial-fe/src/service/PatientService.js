@@ -5,7 +5,6 @@ const PATIIENT_API_BASE_URL = `${MYTRIAL_API}/patient/`;
 class PatientService {
     // config has researcher_id
     getPatients(config) {
-        console.log(PATIIENT_API_BASE_URL)
         return axios.get(PATIIENT_API_BASE_URL, config);
     }
 

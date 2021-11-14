@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PatientService from '../service/PatientService';
+import { withRouter } from "react-router";
 
 class PatientInfoPage extends React.Component {
 
@@ -20,7 +21,6 @@ class PatientInfoPage extends React.Component {
             <div>
                 <h2>Patient Data</h2>
                 <pre>
-                    { }
                     {JSON.stringify(this.state.patientToShow, null, 2)}
                 </pre>
                 {/* go to disease page */}
@@ -28,18 +28,14 @@ class PatientInfoPage extends React.Component {
                 <hr />
                 {/* go to trial page */}
                 <h2>Trial Data</h2>
-                {
-                    <Link to={{ pathname: `/trial/${this.state.trialToShow.trial_id}` }}>{this.state.trialToShow.title}</Link>
-                }
+                {<Link to={{ pathname: `/trial/${this.state.trialToShow.trial_id}` }}>{this.state.trialToShow.title}</Link>}
                 <pre>
                     {JSON.stringify(this.state.trialToShow, null, 2)}
                 </pre>
                 <hr />
                 {/* go to researcher page */}
                 <h2>Researcher Data</h2>
-                {
-                    <Link to={{ pathname: `/researcher/${this.state.researcherToShow.researcher_id}` }}>{this.state.researcherToShow.r_name}</Link>
-                }
+                {<Link to={{ pathname: `/researcher/${this.state.researcherToShow.researcher_id}` }}>{this.state.researcherToShow.r_name}</Link>}
                 <pre>
                     {JSON.stringify(this.state.researcherToShow, null, 2)}
                 </pre>
@@ -50,19 +46,9 @@ class PatientInfoPage extends React.Component {
     componentDidMount() {
         let config = {
             headers: {
-                researcher_id: "000000052"
+                researcher_id: localStorage.getItem('id')
             }
         };
-        console.log('aaa:' + this.state.trialToShow.title)
-        // let dataToShow = {
-        //     patient_id: "",
-        //     disease: "",
-        //     phase: "",
-        //     p_status: "",
-        //     trial: {},
-        //     researcher: {}
-        // }
-        // show discussion list
         PatientService.getPatientById(this.props.match.params.id, config)
             .then(data => {
                 // this.setState({ ...data.data });
@@ -78,4 +64,4 @@ class PatientInfoPage extends React.Component {
     }
 }
 
-export default PatientInfoPage;
+export default withRouter(PatientInfoPage);
