@@ -17,7 +17,6 @@ class DiscussionForumPage extends React.Component {
             replies: [],
             researcher_id: localStorage.getItem('id'),
             role: localStorage.getItem('role'),
-
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,11 +35,13 @@ class DiscussionForumPage extends React.Component {
             df_id: "",
             df_name: "",
             details: "",
-            df_timestamp: "",
-            replies: [],
-            researcher_id: "",
+            researcher_id: ""
         }
-        Object.assign(params, this.state);
+        params.df_id = this.state.df_id;
+        params.df_name = this.state.df_name;
+        params.df_name = this.state.df_name;
+        params.details = this.state.details;
+        params.researcher_id = localStorage.getItem('id');
         if (params.df_id) { // update
             DiscussionService.updateDiscussion(params)
                 .then(data => {
@@ -85,44 +86,43 @@ class DiscussionForumPage extends React.Component {
             })
     }
 
-
-
     render() {
         return (
             <div>
                 {/* discussion list */}
-                <List>
-                    {
-                        this.state.discussions.map((e, i) =>
-                            <List.Item key={i}>
-                                <List.Content>
-                                    <Grid colums={3} celled>
-                                        <Grid.Row>
-                                            <Grid.Column width={10}>
-                                                <List.Header
-                                                    as={Link}
-                                                    content={e.df_name}
-                                                    to={{ pathname: `/discussion/${e.df_id}` }}
-                                                />
-                                                <List.Description
-                                                    content={e.details}
-                                                />
-                                            </Grid.Column>
-                                            <Grid.Column width={4}>
-                                                {e.researcher.r_name} <br />
-                                                {e.df_timestamp}
-                                            </Grid.Column>
-                                            <Grid.Column width={2}>
-                                                {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.updateTopic(event, e.df_id) }}>Update</Button>}
-                                                {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.deleteTopic(event, e.df_id) }}>Delete</Button>}
-                                            </Grid.Column>
-                                        </Grid.Row>
-                                    </Grid>
-                                </List.Content>
-                            </List.Item>
-                        )
-                    }
-                </List>
+                {(this.state.discussions.length > 0) ?
+                    (<List>
+                        {
+                            this.state.discussions.map((e, i) =>
+                                <List.Item key={i}>
+                                    <List.Content>
+                                        <Grid colums={3} celled>
+                                            <Grid.Row>
+                                                <Grid.Column width={10}>
+                                                    <List.Header
+                                                        as={Link}
+                                                        content={e.df_name}
+                                                        to={{ pathname: `/discussion/${e.df_id}` }}
+                                                    />
+                                                    <List.Description
+                                                        content={e.details}
+                                                    />
+                                                </Grid.Column>
+                                                <Grid.Column width={4}>
+                                                    {e.researcher.r_name} <br />
+                                                    {e.df_timestamp}
+                                                </Grid.Column>
+                                                <Grid.Column width={2}>
+                                                    {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.updateTopic(event, e.df_id) }}>Update</Button>}
+                                                    {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.deleteTopic(event, e.df_id) }}>Delete</Button>}
+                                                </Grid.Column>
+                                            </Grid.Row>
+                                        </Grid>
+                                    </List.Content>
+                                </List.Item>
+                            )
+                        }
+                    </List>) : ''}
                 {/* create new discussion */}
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field required>
