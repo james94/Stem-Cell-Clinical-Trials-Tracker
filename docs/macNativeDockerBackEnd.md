@@ -17,7 +17,11 @@ docker network create -d bridge frontend
 Pull the mysql docker image:
 
 ~~~bash
-docker pull mysql:8.0.27
+cd ${PWD}/Stem-Cell-Clinical-Trials-Tracker/myTrial-mysql-db
+
+docker build -t mytrial-mysql-db:dev .
+
+# docker pull mysql:8.0.27
 ~~~
 
 Launch a Docker container with MySQL Server running:
@@ -31,17 +35,12 @@ Launch a Docker container with MySQL Server running:
 docker run -d \
     --name mytrial-db \
     --restart always \
-    -e MYSQL_DATABASE=mytrial \
-    -e MYSQL_USER=mytrial_docker \
-    -e MYSQL_PASSWORD=mytrial_docker \
-    -e MYSQL_ROOT_PASSWORD=root \
     -p 3307:3306 \
-    -v ${PWD}:/Stem-Cell-Clinical-Trials-Tracker \
     --network=backend \
-    mysql:8.0.27
+    mytrial-mysql-db:dev
 ~~~
 
-Now our Docker container's MySQL server is running. We should be able to login to the MySQL Server running inside the container. Also the volume mount creates a bridge to our **Stem-Cell-Clinical-Trials-Tracker/** folder from our host machine to the a folder **/Stem-Cell-Clinical-Trials-Tracker**, which is like a symlink, so we have access to the project, specifically the mysql db creation code.
+Now our Docker container's MySQL server is running. We should be able to login to the MySQL Server running inside the container.
 
 Let's execute bash command to enter into the **mytrial-db** Docker container, then login to the container's MySQL server directly:
 
@@ -49,9 +48,8 @@ Let's execute bash command to enter into the **mytrial-db** Docker container, th
 # Jump into Docker container
 docker exec -it mytrial-db bash
 
-# didn't work. I will use localhost instead of the container's internal ip
 # Inside the container, login to container's MySQL server directly
-mysql -u root -p # when asked, enter password root
+mysql -u mytrial_docker -p # when asked, enter password mytrial_docker
 ~~~
 
 Verify if you have **mytrial_docker**  user for your MySQL DB on host machine:
@@ -61,6 +59,7 @@ Verify if you have **mytrial_docker**  user for your MySQL DB on host machine:
 SELECT User, Host FROM mysql.user;
 ~~~
 
+<!-- 
 If that user isn't there, then create that user using your host's MySQL server. Later we'll be using that user from the Docker container's MySQL server to access this host's mytrial database:
 
 ~~~sql
@@ -79,16 +78,18 @@ GRANT ALL PRIVILEGES ON * . * TO 'mytrial_docker'@'%';
 
 -- exit from mysql server service
 quit
-~~~
+~~~ -->
+
+<!-- 
 
 Run the Database creation script `schema.sql` from within our Docker MySQL Server container:
 
 ~~~bash
 # replace ${PWD} with path to your project
 source /Stem-Cell-Clinical-Trials-Tracker/myTrial-api/src/main/resources/schema.sql
-~~~
+~~~ -->
 
-Lets verify we can see some data in tables that were populated when we ran our DB creation script:
+Lets verify we can see some data in tables within our **mytrial** database that was created when we built the docker image earlier. Let's look at org and trial tables:
 
 ~~~sql
 -- if not used, make sure use mytrial db
@@ -162,9 +163,18 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 docker build -t mytrial-api:dev .
 ~~~
 
+When the docker image **mytrial-api** is built, environment variables are created for 
+
+- **SPRING_DATASOURCE_URL**=jdbc:mysql://mytrial-db:3306/mytrial
+- **SPRING_DATASOURCE_USERNAME**=mytrial_docker
+- **SPRING_DATASOURCE_PASSWORD**=mytrial_docker
+
+Therefore, we don't have to pass them as arguments when we launch our docker image as a container.
+
+<!-- 
 Once docker image is generated any number of containers can be made out of this docker image (Containers are like the instance of Image).
 
-<!-- 4\. Use only one of the following **docker run** commands:
+4\. Use only one of the following **docker run** commands:
 
 A.) Lets launch the docker container with the image we have:
 
@@ -186,9 +196,6 @@ sudo docker run -b springio/gs-spring-boot-docker
 docker run -d \
     --name mytrial-sb-server \
     -p 8080:8080 \
-    -e SPRING_DATASOURCE_URL=jdbc:mysql://mytrial-db:3306/mytrial \
-    -e SPRING_DATASOURCE_USERNAME=mytrial_docker \
-    -e SPRING_DATASOURCE_PASSWORD=mytrial_docker \
     --network=backend \
     mytrial-api:dev
 

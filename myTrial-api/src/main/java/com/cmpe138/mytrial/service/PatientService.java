@@ -38,4 +38,10 @@ public interface PatientService {
 
 	List<Patient> getPatientByTrialId(String trial_id);
 
+	/**
+	 * For researcher, can delete a patient by patient ID
+	 * @param patient_id
+	 * @return
+	 */
+	boolean deletePatientById(int patient_id);
 }
