@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cmpe138.mytrial.model.Department;
 import com.cmpe138.mytrial.model.Trial;
@@ -36,12 +37,14 @@ public class MyTrialServiceImpl implements MyTrialService {
 	}
 	
 	@Override
+	@Transactional
 	public void createTrial(String r_id, List<String> diseases, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
 		String trial_id = String.valueOf((int)(Math.random() * 999999999));
 		while (getTrialById(trial_id) != null) {
 			trial_id = String.valueOf((int)(Math.random() * 999999999));
 		}
-		trialRepository.addTrial(r_id, trial_id, trial_status, target_enrollment, nct_no, phase, title, org_name);
+		trialRepository.addTrial(r_id, trial_id, trial_status, target_enrollment, 
+				nct_no, phase, title, org_name);
 		for (String disease : diseases) {
 			tDiseaseAreaRepository.addTDisease(trial_id, disease);
 		}
