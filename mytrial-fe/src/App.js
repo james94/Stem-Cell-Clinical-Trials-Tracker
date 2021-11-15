@@ -14,6 +14,7 @@ import PatientHomePage from "./components/PatientHomePage";
 import PatientPage from "./components/PatientPage";
 import PatientInfoPage from "./components/PatientInfoPage";
 import PatientWatchlistsPage from "./components/PatientWatchlistsPage";
+import SearchViewAllPatients from './components/SearchViewAllPatients';
 import ResearcherPage from "./components/ResearcherPage";
 import ResearcherInfoPage from "./components/ResearcherInfoPage";
 import Top from "./components/Top";
@@ -83,6 +84,10 @@ function App() {
           <Route path="/researcher">
             <Top />
             <ResearcherPage />
+          </Route>
+          <Route path="/searchpatients">
+            <Top />
+            <SearchViewAllPatients />
           </Route>
           <Route path="/">
             <Top />

@@ -36,4 +36,6 @@ public interface PatientService {
 	
 	void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id);
 
+	List<Patient> getPatientByTrialId(String trial_id);
+
 }

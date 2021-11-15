@@ -32,7 +32,7 @@ public class PatientRepository {
 	}
 
 	public List<Patient> getPatientsByTrialId(String trial_id) {
-		String sql = "select * from patient where tiral_id = ?";
+		String sql = "select * from patient where trial_id = ?";
 		List<Patient> patients = jdbc.query(sql, new BeanPropertyRowMapper<Patient>(Patient.class), trial_id);
 		return patients;
 	}

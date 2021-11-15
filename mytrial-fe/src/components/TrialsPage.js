@@ -49,9 +49,9 @@ class Trials extends React.Component {
                 <ul>
                     {this.state.trials.map((e, i) => <li key={i}><Link to={{ pathname: `/trials/${e.trial_id}` }}>{e.title}</Link></li>)}
                 </ul>
-                <Link to='/addtrial'>
+                {localStorage.getItem('role') === 'researcher' && <Link to='/addtrial'>
                     <Button>Create New Trial</Button>
-                </Link>
+                </Link>}
             </div>
         )
     }
