@@ -61,4 +61,9 @@ public class PatientServiceImpl implements PatientService {
 		return patientRepo.getPatientByUsernamePassword(username, password);
 	}
 
+	@Override
+	public List<Patient> getPatientByTrialId(String trial_id) {
+		return patientRepo.getPatientsByTrialId(trial_id);
+	}
+
 }
