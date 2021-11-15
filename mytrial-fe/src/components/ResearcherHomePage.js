@@ -7,6 +7,7 @@ const ResearcherHomePage = () => {
             <button>My Watchlists</button>
             <button><Link to="/discussion">Discussion</Link></button>
             <button><Link to="/researcher">Researcher List</Link></button>
+            <button><Link to="/searchpatients">Search Patients</Link></button>
         </div>
     )
 }

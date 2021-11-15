@@ -27,7 +27,8 @@ public class PatientServiceImpl implements PatientService {
 	public List<Patient> getAll() {
 		return patientRepo.findAll();
 	}
-
+	
+	
 	@Override
 	public List<Patient> getPatientByResearcherId(String researcher_id) {
 		return patientRepo.getPatientsByResearcher_id(researcher_id);
