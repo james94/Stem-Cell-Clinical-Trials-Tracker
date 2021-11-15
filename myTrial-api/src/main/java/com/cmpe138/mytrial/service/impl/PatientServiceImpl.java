@@ -75,4 +75,10 @@ public class PatientServiceImpl implements PatientService {
 		return patientRepo.getPatientsByTrialId(trial_id);
 	}
 
+	@Override
+	public boolean deletePatientById(int patient_id) {
+		int rowsDeleted = patientRepo.deletePatientById(patient_id);
+		return rowsDeleted == 1; // how many rows
+	}
+
 }
