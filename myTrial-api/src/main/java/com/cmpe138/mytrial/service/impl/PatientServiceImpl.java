@@ -37,7 +37,9 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getPatientById(String patient_id) {
 		// TODO Auto-generated method stub
-		return null;
+		Patient p = patientRepo.getPatientById(patient_id);
+		System.out.println(p);
+		return p;
 	}
 
 	@Override
@@ -60,6 +62,12 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getPatientByUsernamePassword(String username, String password) {
 		return patientRepo.getPatientByUsernamePassword(username, password);
+	}
+	
+	@Override
+	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+		patientRepo.updatePatientUsingPatientID(disease, phase, status, trial_id, patient_id);
+		System.out.println("Completed calling the repo function from updatePatientUsingPatientID, service file");
 	}
 
 	@Override

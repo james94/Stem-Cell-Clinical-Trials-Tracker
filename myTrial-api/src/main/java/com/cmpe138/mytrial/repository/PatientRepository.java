@@ -58,4 +58,24 @@ public class PatientRepository {
 			return null;
 		}
 	}
+	
+	/**
+	 * Editing Patient Details
+	 * 
+	 * @param disease
+	 * @param phase
+	 * @param status
+	 * @param trial_id
+	 * @param patient_id
+	 * @return
+	 */
+	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+		System.out.println("in the repo, about to prepare the statement");
+		String sql = "update patient set disease = ?, phase = ?, p_status = ?, trial_id = ? where patient_id = ?";
+		try {
+			jdbc.update(sql,disease, phase, status, trial_id, patient_id);
+		} catch (EmptyResultDataAccessException e) {
+			System.out.println("There is an error in the repo function, updatePatientUsingPatientID");
+		}
+	}
 }

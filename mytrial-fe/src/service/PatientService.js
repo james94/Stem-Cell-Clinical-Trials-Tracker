@@ -1,6 +1,5 @@
 import axios from 'axios';
-import MYTRIAL_API from '../settings/index'
-const PATIIENT_API_BASE_URL = `${MYTRIAL_API}/patient/`;
+import { PATIIENT_API_BASE_URL } from '../settings/index'
 
 class PatientService {
     // config has researcher_id

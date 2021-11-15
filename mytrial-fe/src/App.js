@@ -1,27 +1,23 @@
-
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import LandingPage from './components/LandingPage';
-import ResearcherHomePage from './components/ResearcherHomePage';
-import TrialsPage from './components/TrialsPage';
-import TrialInfoPage from './components/TrialInfoPage';
-import CreateTrialPage from './components/CreateTrialPage';
-import DiscussionForumPage from './components/DiscussionForumPage';
-import DiscussionForumInfoPage from './components/DiscussionForumInfoPage';
-import PatientHomePage from './components/PatientHomePage';
-import PatientPage from './components/PatientPage';
-import PatientInfoPage from './components/PatientInfoPage';
-import PatientWatchlistsPage from './components/PatientWatchlistsPage';
-import ResearcherPage from './components/ResearcherPage';
-import ResearcherInfoPage from './components/ResearcherInfoPage';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import LandingPage from "./components/LandingPage";
+import ResearcherHomePage from "./components/ResearcherHomePage";
+import TrialsPage from "./components/TrialsPage";
+import TrialInfoPage from "./components/TrialInfoPage";
+import CreateTrialPage from "./components/CreateTrialPage";
+import EditPatient from "./components/EditPatient";
+import DiscussionForumPage from "./components/DiscussionForumPage";
+import DiscussionForumInfoPage from "./components/DiscussionForumInfoPage";
+import PatientHomePage from "./components/PatientHomePage";
+import PatientPage from "./components/PatientPage";
+import PatientInfoPage from "./components/PatientInfoPage";
+import PatientWatchlistsPage from "./components/PatientWatchlistsPage";
 import SearchViewAllPatients from './components/SearchViewAllPatients';
-import Top from './components/Top';
+import ResearcherPage from "./components/ResearcherPage";
+import ResearcherInfoPage from "./components/ResearcherInfoPage";
+import Top from "./components/Top";
 
 function App() {
   return (
@@ -52,6 +48,11 @@ function App() {
             <Top />
             <CreateTrialPage />
           </Route>
+
+          <Route path="/editpatient/:id" component={EditPatient}>
+            {/* <EditPatient /> */}
+          </Route>
+
           <Route path="/discussion/:id">
             <Top />
             <DiscussionForumInfoPage />
@@ -85,6 +86,7 @@ function App() {
             <ResearcherPage />
           </Route>
           <Route path="/searchpatients">
+            <Top />
             <SearchViewAllPatients />
           </Route>
           <Route path="/">
