@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 import { PATIENTS_ALL_BASE_URL } from "../settings/";
 
 class SearchViewAllPatients extends React.Component {
@@ -8,6 +9,8 @@ class SearchViewAllPatients extends React.Component {
     this.state = {
       query: "",
       data: [],
+      researcher_id: localStorage.getItem('id'),
+      role: localStorage.getItem('role'),
       filteredData: [],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -30,8 +33,14 @@ class SearchViewAllPatients extends React.Component {
   };
 
   getData = () => {
+    let config = {
+      headers: {
+          researcher_id: this.state.researcher_id,
+          search: true
+      }
+    };
     axios
-      .get(PATIENTS_ALL_BASE_URL)
+      .get(PATIENTS_ALL_BASE_URL, config)
       .then((response) => {
         const query = this.state;
         const filteredData = response.data.filter((element) => {
@@ -105,4 +114,4 @@ class SearchViewAllPatients extends React.Component {
   }
 }
 
-export default SearchViewAllPatients;
+export default withRouter(SearchViewAllPatients);

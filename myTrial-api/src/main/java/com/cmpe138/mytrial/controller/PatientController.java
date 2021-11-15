@@ -26,11 +26,19 @@ public class PatientController {
 	}
 
 	@GetMapping("/patient")
-	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id, @RequestHeader(value = "researcher_id", required = false) String researcher_id) {
-		if (!trial_id.isEmpty()) {
-			return patientService.getPatientByTrialId(trial_id);
-		} else {
-			return patientService.getPatientByResearcherId(researcher_id);
+	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id, @RequestHeader(value = "researcher_id", required = false) String researcher_id, @RequestHeader(value = "search", required = false) boolean search) {
+		try {
+			if ((!researcher_id.isEmpty()) && search == true) {
+				return patientService.getAll();
+			} else if (!trial_id.isEmpty()) {
+				return patientService.getPatientByTrialId(trial_id);
+			} else {
+				return patientService.getPatientByResearcherId(researcher_id);
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+			System.err.println("Failed to Get Patients! At least one header arg 'trial_id' or 'researcher_id' or 'search' needs to be passed in header!");
+			return null;
 		}
 	}
 
