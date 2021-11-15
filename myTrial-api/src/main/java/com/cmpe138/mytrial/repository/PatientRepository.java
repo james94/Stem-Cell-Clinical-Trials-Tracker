@@ -71,7 +71,7 @@ public class PatientRepository {
 	 */
 	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
 		System.out.println("in the repo, about to prepare the statement");
-		String sql = "update Patient set disease = ?, phase = ?, p_status = ?, trial_id = ? where patient_id = ?";
+		String sql = "update patient set disease = ?, phase = ?, p_status = ?, trial_id = ? where patient_id = ?";
 		try {
 			jdbc.update(sql,disease, phase, status, trial_id, patient_id);
 		} catch (EmptyResultDataAccessException e) {

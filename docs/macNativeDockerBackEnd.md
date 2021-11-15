@@ -202,6 +202,14 @@ Access myTrial-api app at `localhost:8080/test`
 
 So now not only the docker host has access to the docker container, the other remote computers have access to the docker container too.
 
+If you need to see the log of your SpringBoot server, you can run `tail -f` in your docker container from your host machine with the following docker command:
+
+~~~bash
+docker exec -it mytrial-sb-server tail -f myapplication.log
+~~~
+
+Since our Spring Boot server is now configured to writing all the logs to **myapplication.log**, we can tail it.
+
 ## Appendix
 
 ### Running VirtualBox, Set Up Port Forwarding
@@ -353,4 +361,6 @@ mysql -h localhost -u mytrial_docker -p # when asked, enter password mytrial_doc
 - [Stackoverflow: How to run SQL script in MySQL?](https://stackoverflow.com/questions/8940230/how-to-run-sql-script-in-mysql)
 
 - [Install OpenJDK 11 on Mac OS](https://gist.github.com/douglarek/bbda8cc23a562cb5d5798717d57bc9e9)
+
+- [SpringBoot Logging: File and Console](https://docs.spring.io/spring-boot/docs/1.5.x/reference/html/howto-logging.html)
 

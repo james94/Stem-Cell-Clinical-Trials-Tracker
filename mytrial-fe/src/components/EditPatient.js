@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { EDIT_PATIENT } from "../settings/";
+import { PATIIENT_API_BASE_URL, EDIT_PATIENT } from "../settings/";
 import { Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
 
 class EditPatient extends Component {
   constructor(props) {
@@ -17,7 +16,6 @@ class EditPatient extends Component {
       p_username: "",
       p_password: "",
       researcher_id: "",
-      redirect: false,
     };
     this.setDisease = this.setDisease.bind(this);
     this.setPhase = this.setPhase.bind(this);
@@ -25,9 +23,17 @@ class EditPatient extends Component {
     this.setStatus = this.setStatus.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  // get patient data using PATIENTS_ALL_BASE_URL ending in "/patient/{patient_id}"
   getData = () => {
+    let config_header = {
+      headers: {
+        researcher_id: localStorage.getItem('id')
+      }
+    };
+
     axios
-      .get(EDIT_PATIENT + this.props.match.params.id)
+      .get(PATIIENT_API_BASE_URL + this.props.match.params.id, config_header)
       .then((response) => {
         this.setState({
           patient_id: response.data.patient_id,
@@ -76,20 +82,14 @@ class EditPatient extends Component {
       .then((data) => {
         console.log("the data after sending the post req is " + data);
         window.location.reload();
-        // this.props.history.push(`"/patient/${this.props.match.params.id}"`);
       })
       .catch((err) => {
         console.log("the error after sending the post req is " + err);
       });
-
-    this.setState({ redirect: true });
   };
 
   render() {
     let href_link_submit = "/patient/" + this.props.match.params.id;
-    // if (this.state.redirect) {
-    //   <Redirect to={href_link_submit} />;
-    // }
 
     return (
       <div className="col-md-8 mx-auto m-5">
@@ -129,7 +129,6 @@ class EditPatient extends Component {
           <center>
             <button
               className="btn btn-outline-primary m-3"
-              // onSubmit={this.handleSubmit}
               type="submit"
             >
               Update data for Patient {this.state.patient_id}

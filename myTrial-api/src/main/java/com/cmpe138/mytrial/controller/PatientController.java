@@ -27,18 +27,12 @@ public class PatientController {
 		return patientService.getPatientById(researcher_id, patient_id);
 	}
 	
-	// @GetMapping({"/patient/{patient_id}", "/editpatient/{patient_id}"})
-	// public Patient getPatientById(@PathVariable(value = "patient_id") String patient_id) {
-	// 	return patientService.getPatientById(patient_id);
-	// }
-	
 	@PostMapping("/editpatient/{patient_id}")
 	public void updatePatient(@PathVariable(value = "patient_id") String patient_id, @RequestBody Patient p) {
 		p.setPatient_id(patient_id);
 		patientService.updatePatientUsingPatientID(p.getDisease(), p.getPhase(), p.getP_status(), p.getTrial_id(), p.getPatient_id());
 	}
 	
-
 	@GetMapping("/patient")
 	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id, @RequestHeader(value = "researcher_id", required = false) String researcher_id, @RequestHeader(value = "search", required = false) boolean search) {
 		try {

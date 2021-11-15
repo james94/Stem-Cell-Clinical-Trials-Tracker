@@ -47,9 +47,9 @@ class PatientInfoPage extends React.Component {
                 <pre>
                     {JSON.stringify(this.state.researcherToShow, null, 2)}
                 </pre>
-                <Link to="#">
-                    <Button to={{pathname: `/editPatient/${this.props.match.params.id}`}}>Edit Profile</Button>
-                </Link>
+                <Button>
+                    <Link to={`/editPatient/${this.props.match.params.id}`}>Edit Profile</Link>
+                </Button>
             </div>
         )
     }
