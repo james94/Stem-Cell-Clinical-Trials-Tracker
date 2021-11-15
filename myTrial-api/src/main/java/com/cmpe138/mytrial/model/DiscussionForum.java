@@ -10,6 +10,7 @@ public class DiscussionForum {
 	private String details;
 	private String researcher_id;
 	private List<Reply> replies = new ArrayList<Reply>();
+	private Researcher researcher;
 
 	public int getDf_id() {
 		return df_id;
@@ -59,10 +60,17 @@ public class DiscussionForum {
 		this.replies = replies;
 	}
 
+	public Researcher getResearcher() {
+		return researcher;
+	}
+
+	public void setResearcher(Researcher researcher) {
+		this.researcher = researcher;
+	}
+
 	@Override
 	public String toString() {
-		return "DiscussionForum [df_id=" + df_id + ", df_name=" + df_name + ", df_timestamp=" + df_timestamp
-				+ ", details=" + details + ", researcher_id=" + researcher_id + ", replies=" + replies + "]";
+		return "DiscussionForum [df_id=" + df_id + ", df_name=" + df_name + ", df_timestamp=" + df_timestamp + ", details=" + details + ", researcher_id=" + researcher_id + ", replies=" + replies + "]";
 	}
 
 }

@@ -2,20 +2,25 @@ import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { useState } from 'react';
 import { ADD_TRIAL_END_POINT } from '../settings';
 import { fetchMytrial } from '../utils';
+import { withRouter } from 'react-router-dom';
 
-const createTrial = (title, organization, phase, nctNum, status, targetEnroll) => {
-    console.log(title, organization, phase, nctNum, status, targetEnroll);
-    if (title && organization && phase && nctNum && status && targetEnroll) {
+const createTrial = (title, diseases, organization, phase, nctNum, status, targetEnroll, history) => {
+    console.log(title, diseases, organization, phase, nctNum, status, targetEnroll);
+    if (title && diseases && organization && phase && nctNum && status && targetEnroll) {
         // create a trial on the backend
         const data = {
             title,
+            diseases,
             organization_name: organization,
             phase,
             nct_no: nctNum,
             trial_status: status,
             target_enrollment: targetEnroll
         };
-        fetchMytrial(ADD_TRIAL_END_POINT, null, {method: 'POST'}, data, {'id': '000000046'})
+        fetchMytrial(ADD_TRIAL_END_POINT, null, {method: 'POST'}, data, {'id': localStorage.getItem('id')})
+        .then(res => {
+            history.push('/trials');
+        })
         .catch(err => {
             console.log(err)
         });
@@ -23,6 +28,29 @@ const createTrial = (title, organization, phase, nctNum, status, targetEnroll) =
         alert('Please fill in all required fields');
     }
 }
+
+const orgOptions = [
+    {
+        key: 'Jackson Labs',
+        text: 'Jackson Labs',
+        value: 'Jackson Labs'
+    },
+    {
+        key: 'California State University, Channel Islands',
+        text: 'California State University, Channel Islands',
+        value: 'California State University, Channel Islands'
+    },
+    {
+        key: 'SJSU Research Foundation',
+        text: 'SJSU Research Foundation',
+        value: 'SJSU Research Foundation'
+    },
+    {
+        key: 'UCSF Benioff Children’s Hospital Oakland',
+        text: 'UCSF Benioff Children’s Hospital Oakland',
+        value: 'UCSF Benioff Children’s Hospital Oakland'
+    }
+];
 
 const phaseOptions = [
     {
@@ -80,8 +108,33 @@ const statusOptions = [
     }
 ];
 
-const CreateTrialPage = () => {
+const diseaseOptions = [
+    {
+        key: 'Age-related macular degeneration',
+        text: 'Age-related macular degeneration',
+        value: 'Age-related macular degeneration'
+    },
+    {
+        key: 'Blood Cancer',
+        text: 'Blood Cancer',
+        value: 'Blood Cancer'
+    },
+    {
+        key: 'Corneal Damage',
+        text: 'Corneal Damage',
+        value: 'Corneal Damage'
+    },
+    {
+        key: 'Spinal Cord Injury',
+        text: 'Spinal Cord Injury',
+        value: 'Spinal Cord Injury'
+    }
+];
+
+
+const CreateTrialPage = ({history}) => {
     const [title, setTitle] = useState(null);
+    const [disease, setDisease] = useState([]);
     const [organization, setOrganization] = useState(null);
     const [phase, setPhase] = useState(null);
     const [nctNum, setNctNum] = useState(null);
@@ -89,15 +142,28 @@ const CreateTrialPage = () => {
     const [targetEnroll, setTargetEnroll] = useState(0);
     return (
         <div className="myform">
-        <Form onSubmit={() => {createTrial(title, organization, phase, nctNum, status, targetEnroll)}}>
+        <Form onSubmit={() => {createTrial(title, disease, organization, phase, nctNum, status, targetEnroll, history)}}>
             <p style={{fontSize: "30px", textAlign: "center"}}>Create a New Trial</p>
             <Form.Field required>
                 <label>Title</label>
                 <input placeholder='title' onChange={e => {setTitle(e.target.value)}} />
             </Form.Field>
             <Form.Field required>
+                <label>Disease Area</label>
+                <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseOptions} 
+                    onChange={(_, obj) => {setDisease(obj.value)}} 
+                />               
+            </Form.Field>
+            <Form.Field required>
                 <label>Organization</label>
-                <input placeholder='organization' onChange={e => {setOrganization(e.target.value)}}/>
+                <Dropdown
+                    placeholder='Select Organization'
+                    fluid
+                    selection
+                    options={orgOptions}
+                    value={organization}
+                    onChange={(_, obj) => {setOrganization(obj.value)}}
+                />
             </Form.Field>
             <Form.Field required>
                 <label>Phase</label>
@@ -135,4 +201,4 @@ const CreateTrialPage = () => {
     );
 }
 
-export default CreateTrialPage;
+export default withRouter(CreateTrialPage);

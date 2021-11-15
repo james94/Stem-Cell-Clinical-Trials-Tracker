@@ -16,14 +16,12 @@ public class PatientRepository {
 	private JdbcTemplate jdbc;
 
 	public List<Patient> findAll() {
-		System.out.println("Reached repo");
 		String sql = "select * from patient";
 		List<Patient> patients = jdbc.query(sql, new BeanPropertyRowMapper<Patient>(Patient.class));
 		return patients;
 	}
 
 	public Patient getPatientById(String patient_id) {
-		System.out.println("Reached repo");
 		String sql = "select * from patient where patient_id = ?";
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<Patient>(Patient.class), patient_id);
 	}
@@ -34,7 +32,7 @@ public class PatientRepository {
 	}
 
 	public List<Patient> getPatientsByTrialId(String trial_id) {
-		String sql = "select * from patient where tiral_id = ?";
+		String sql = "select * from patient where trial_id = ?";
 		List<Patient> patients = jdbc.query(sql, new BeanPropertyRowMapper<Patient>(Patient.class), trial_id);
 		return patients;
 	}

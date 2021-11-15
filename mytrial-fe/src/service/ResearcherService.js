@@ -1,5 +1,5 @@
 import axios from 'axios';
-const MYTRIAL_API = 'http://127.0.0.1:8080';
+import MYTRIAL_API from '../settings/index'
 const RESEARCHER_API_BASE_URL = `${MYTRIAL_API}/researcher`;
 
 class ResearcherService {
@@ -13,7 +13,6 @@ class ResearcherService {
     }
 
     getResearcherById(researcherId) {
-        console.log(researcherId);
         return axios.get(RESEARCHER_API_BASE_URL + '/' + researcherId);
     }
 

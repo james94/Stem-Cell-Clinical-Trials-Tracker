@@ -1,14 +1,14 @@
-import {Link} from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 const ResearcherHomePage = () => {
     return (
-        <div>
-            <button><Link path='/trials'>My Trials</Link></button>
-            <button><link path='/addtrial'>Create New Trial</link></button>
+        <div style={{ marginLeft: "10px" }}>
+            <button><Link to='/trials'>My Trials</Link></button>
             <button>My Watchlists</button>
-            <button>Discussion Forum</button> 
+            <button><Link to="/discussion">Discussion</Link></button>
+            <button><Link to="/researcher">Researcher List</Link></button>
         </div>
-    ) 
+    )
 }
 
 export default ResearcherHomePage;

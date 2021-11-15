@@ -9,7 +9,7 @@ public interface MyTrialService {
 	
 	List<Trial> getTrialsByResearcherId(String researcher_id);
 	
-	void createTrial(String r_id, String trial_status, int target_enrollment, 
+	void createTrial(String r_id, List<String> diseases, String trial_status, int target_enrollment, 
 			String nct_no, String phase, String title, String org_name);
 	
 	Trial getTrialById(String t_id);

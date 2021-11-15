@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cmpe138.mytrial.model.Trial;
 import com.cmpe138.mytrial.service.MyTrialService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @CrossOrigin
 @RestController
@@ -23,7 +27,9 @@ public class trialController {
 	private MyTrialService myTrial;
 	
 	@GetMapping("/trials")
-	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, @RequestParam(value="trialId", required=false) String trial_id, @RequestParam(value="disease", required=false) String disease_area) {
+	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id, 
+			@RequestParam(value="trialId", required=false) String trial_id, 
+			@RequestParam(value="disease", required=false) String disease_area) {
 		if (trial_id != null) {
 			List<Trial> res = new ArrayList<>();
 			res.add(myTrial.getTrialById(trial_id));
@@ -36,9 +42,21 @@ public class trialController {
 	}
 	
 	@PostMapping("/addtrial")
-	public void addTrial(@RequestHeader(value="id") String researcher_id, @RequestBody Trial trial) {
-		myTrial.createTrial(researcher_id, trial.getTrial_status(), trial.getTarget_enrollment(), 
-				 trial.getNCT_no(), trial.getPhase(), trial.getTitle(), trial.getOrganization_name());
+	public ResponseEntity<String> addTrial(@RequestHeader(value="id") String researcher_id, @RequestBody ObjectNode trial) {
+		List<String> diseases = new ArrayList<>();
+		try {
+			JsonNode diseasesNode = trial.get("diseases");
+			for (JsonNode disease : diseasesNode) {
+				diseases.add(disease.asText());
+			}
+			myTrial.createTrial(researcher_id, diseases, trial.get("trial_status").asText(), trial.get("target_enrollment").asInt(), 
+					 trial.get("nct_no").asText(), trial.get("phase").asText(), trial.get("title").asText(), trial.get("organization_name").asText());
+		} catch (Exception e) {
+			System.out.println(e);
+			return new ResponseEntity<>("Trial creation failed!", HttpStatus.BAD_REQUEST);
+		}
+		System.out.println("Trial creation success!");
+		return new ResponseEntity<>("Trial creation success!", HttpStatus.OK);
 	}
 	
 }

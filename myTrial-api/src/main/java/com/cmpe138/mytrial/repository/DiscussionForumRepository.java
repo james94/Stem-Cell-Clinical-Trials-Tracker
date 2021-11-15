@@ -22,29 +22,14 @@ public class DiscussionForumRepository {
 	private JdbcTemplate jdbc;
 
 	public List<DiscussionForum> findAll() {
-		System.out.println("Reached repo");
 		String sql = "select * from discussion_forum";
 		List<DiscussionForum> forums = jdbc.query(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class));
 		return forums;
 	}
 
 	public DiscussionForum getDiscussionById(int df_id) {
-		System.out.println("Reached repo");
-		String sql = "select * from discussion_forum d left join reply r on d.df_id = r.df_id where d.df_id = ?";
-		return jdbc.query(sql, new ResultSetExtractor<DiscussionForum>() {
-			public DiscussionForum extractData(ResultSet rs) throws SQLException, DataAccessException {
-				DiscussionForum d = null;
-				int row = 0;
-				while (rs.next()) {
-					if (d == null) {
-						d = new DiscussionForumMapper().mapRow(rs, row);
-					}
-					d.getReplies().add(new ReplyMapper().mapRow(rs, row));
-					row++;
-				}
-				return d;
-			}
-		}, df_id);
+		String sql = "select * from discussion_forum where df_id = ?";
+		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class), df_id);
 	}
 
 	public List<DiscussionForum> getDiscussionByReasercherId(String researcher_id) {
@@ -55,7 +40,6 @@ public class DiscussionForumRepository {
 	}
 
 	public int addDiscussion(String df_name, String details, String researcher_id) {
-		System.out.println("repo: add new discussion topic");
 		String sql = "insert discussion_forum (df_name, details, researcher_id) values (?, ?, ?)";
 		return jdbc.update(sql, df_name, details, researcher_id);
 	}
