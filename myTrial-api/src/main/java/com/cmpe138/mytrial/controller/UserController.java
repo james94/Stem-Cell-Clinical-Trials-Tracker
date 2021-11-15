@@ -1,13 +1,11 @@
 package com.cmpe138.mytrial.controller;
 
-import java.nio.channels.NonReadableChannelException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.objenesis.instantiator.basic.NewInstanceInstantiator;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +18,7 @@ import com.cmpe138.mytrial.model.User;
 import com.cmpe138.mytrial.service.PatientService;
 import com.cmpe138.mytrial.service.ResearcherService;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
-import ch.qos.logback.core.joran.conditional.IfAction;
 
 @CrossOrigin
 @RestController

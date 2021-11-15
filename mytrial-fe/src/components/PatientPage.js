@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import PatientService from '../service/PatientService';
+import queryString from 'query-string';
 
 class PatientPage extends React.Component {
 
@@ -8,70 +10,38 @@ class PatientPage extends React.Component {
         super(props);
         this.state = {
             patients: [],
-            // df_name: "",
-            // details: "",
-            researcher_id: "000000042"
-            // researcher_id: localStorage.getItem('id')
+            researcher_id: localStorage.getItem('id'),
+            role: localStorage.getItem('role'),
+            trial_id: queryString.parse(this.props.location.search).trial_id
         };
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // handleChange = (e) => {
-    //     this.setState({
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // handleSubmit = (e) => {
-    //     alert('Submit ' + this.state);
-    //     let discussion = {
-    //         df_name: this.state.df_name,
-    //         details: this.state.details,
-    //         researcher_id: this.state.researcher_id
-    //     }
-    //     DiscussionService.createDiscussion(discussion)
-    //         .then(data => {
-    //             console.log(data)
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
 
     render() {
         return (
             <div>
                 {/* patient list */}
-                <ul>"disease, phase, status, trial_id"
-                    {this.state.patients.map((e, i) => <li key={i}><Link to={{ pathname: `/patient/${e.patient_id}` }}>{e.disease}, {e.phase}, {e.p_status}, {e.trial_id}</Link></li>)}
+                <ul>
+                    {
+                        this.state.patients.map((e, i) =>
+                            <li key={i}>
+                                <Link to={{ pathname: `/patient/${e.patient_id}` }}>
+                                    Patient{e.patient_id}
+                                </Link>
+                            </li>)
+                    }
                 </ul>
-                {/* create new discussion */}
-                {/* <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="df_name" value={this.state.df_name} onChange={this.handleChange} /><br />
-                    <textarea name="details" value={this.state.details} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
-                </form> */}
-
-                {/* private String patient_id;
-                private String disease;
-                private String phase;
-                private String p_status;
-                // fk
-                private String trial_id;
-                private String p_username;
-                private String p_password;
-                // fk
-                private String researcher_id; */}
+                <Link to='#'>
+                    <Button>Add Patient</Button>
+                </Link>
             </div>
         )
     }
 
     componentDidMount() {
-        console.log('asafdasfas');
         let config = {
             headers: {
-                researcher_id: "000000052"
+                researcher_id: this.state.researcher_id,
+                trial_id: this.state.trial_id
             }
         };
         // show discussion list
@@ -87,4 +57,4 @@ class PatientPage extends React.Component {
     }
 }
 
-export default PatientPage;
+export default withRouter(PatientPage);

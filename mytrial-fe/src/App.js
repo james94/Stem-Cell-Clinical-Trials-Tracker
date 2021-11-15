@@ -22,6 +22,8 @@ import PatientWatchlistsPage from './components/PatientWatchlistsPage';
 import ResearcherPage from './components/ResearcherPage';
 import ResearcherInfoPage from './components/ResearcherInfoPage';
 import WatchListPage from './components/WatchListPage';
+import SearchViewAllPatients from './components/SearchViewAllPatients';
+import Top from './components/Top';
 
 function App() {
   return (
@@ -35,48 +37,66 @@ function App() {
             <WatchListPage />
           </Route>
           <Route path="/login">
+            <Top />
             <LoginPage />
           </Route>
           <Route path="/register">
+            <Top />
             <RegisterPage />
           </Route>
           <Route path="/rhome">
+            <Top />
             <ResearcherHomePage />
           </Route>
           <Route path="/trials/:id">
+            <Top />
             <TrialInfoPage />
           </Route>
           <Route path="/trials">
+            <Top />
             <TrialsPage />
           </Route>
           <Route path="/addtrial">
+            <Top />
             <CreateTrialPage />
           </Route>
-          <Route path="/discussion/:id" component={DiscussionForumInfoPage}>
-            {/* <DiscussionForumInfoPage /> */}
+          <Route path="/discussion/:id">
+            <Top />
+            <DiscussionForumInfoPage />
           </Route>
           <Route path="/discussion">
+            <Top />
             <DiscussionForumPage />
           </Route>
           <Route path="/phome">
+            <Top />
             <PatientHomePage />
           </Route>
-          <Route path="/patient/:id" component={PatientInfoPage}>
-            {/* <PatientInfoPage /> */}
+          <Route path="/patient/:id">
+            <Top />
+            <PatientInfoPage />
           </Route>
           <Route path="/patient">
+            <Top />
             <PatientPage />
           </Route>
           <Route path="/pwatchlists/:id">
+            <Top />
             <PatientWatchlistsPage />
           </Route>
-          <Route path="/researcher/:id" component={ResearcherInfoPage}>
-            {/* <ResearcherInfoPage /> */}
+          <Route path="/researcher/:id">
+            <Top />
+            <ResearcherInfoPage />
           </Route>
           <Route path="/researcher">
+            <Top />
             <ResearcherPage />
           </Route>
+          <Route path="/searchpatients">
+            <SearchViewAllPatients />
+          </Route>
           <Route path="/">
+            <Top />
             <LandingPage />
           </Route>
         </Switch>

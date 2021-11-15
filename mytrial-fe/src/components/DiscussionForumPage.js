@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DiscussionService from '../service/DiscussionService';
+import { Button, Input, Form, List, Grid } from 'semantic-ui-react'
 
 class DiscussionForumPage extends React.Component {
 
@@ -14,12 +15,9 @@ class DiscussionForumPage extends React.Component {
             df_name: "",
             df_timestamp: "",
             replies: [],
-            researcher_id: "000000006",
-            // researcher_id: localStorage.getItem('id'),
-            // role: localStorage.getItem('role'),
-
+            researcher_id: localStorage.getItem('id'),
+            role: localStorage.getItem('role'),
         };
-        console.log(localStorage);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,33 +29,30 @@ class DiscussionForumPage extends React.Component {
     }
 
     handleSubmit = (e) => {
-        console.log('Submit ' + this.state);
         e.preventDefault();
         // param object
         let params = {
             df_id: "",
             df_name: "",
             details: "",
-            df_timestamp: "",
-            replies: [],
-            researcher_id: "",
+            researcher_id: ""
         }
-        Object.assign(params, this.state);
+        params.df_id = this.state.df_id;
+        params.df_name = this.state.df_name;
+        params.df_name = this.state.df_name;
+        params.details = this.state.details;
+        params.researcher_id = localStorage.getItem('id');
         if (params.df_id) { // update
-            console.log("params.df_id:" + params.df_id);
             DiscussionService.updateDiscussion(params)
                 .then(data => {
-                    console.log(data);
                     window.location.reload();
                 })
                 .catch(err => {
                     console.log(err)
                 })
         } else { // create
-            console.log("no params.df_id");
             DiscussionService.createDiscussion(params)
                 .then(data => {
-                    console.log(data)
                     window.location.reload();
                 })
                 .catch(err => {
@@ -71,7 +66,6 @@ class DiscussionForumPage extends React.Component {
         alert('Update: ' + id);
         DiscussionService.getDiscussionById(id)
             .then(data => {
-                console.log(data);
                 this.setState({
                     ...data.data
                 });
@@ -85,7 +79,6 @@ class DiscussionForumPage extends React.Component {
         alert('Delete: ' + id);
         DiscussionService.deleteDiscussion(id)
             .then(data => {
-                console.log(data);
                 window.location.reload();
             })
             .catch(err => {
@@ -97,24 +90,76 @@ class DiscussionForumPage extends React.Component {
         return (
             <div>
                 {/* discussion list */}
-                <ul>
-                    {this.state.discussions.map((e, i) => <li key={i}><Link to={{ pathname: `/discussion/${e.df_id}` }}>{e.df_name}</Link><button onClick={(event) => { this.updateTopic(event, e.df_id) }}>Update</button><button onClick={(event) => { this.deleteTopic(event, e.df_id) }}>Delete</button></li>)}
-                </ul>
+                {(this.state.discussions.length > 0) ?
+                    (<List>
+                        {
+                            this.state.discussions.map((e, i) =>
+                                <List.Item key={i}>
+                                    <List.Content>
+                                        <Grid colums={3} celled>
+                                            <Grid.Row>
+                                                <Grid.Column width={10}>
+                                                    <List.Header
+                                                        as={Link}
+                                                        content={e.df_name}
+                                                        to={{ pathname: `/discussion/${e.df_id}` }}
+                                                    />
+                                                    <List.Description
+                                                        content={e.details}
+                                                    />
+                                                </Grid.Column>
+                                                <Grid.Column width={4}>
+                                                    {e.researcher.r_name} <br />
+                                                    {e.df_timestamp}
+                                                </Grid.Column>
+                                                <Grid.Column width={2}>
+                                                    {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.updateTopic(event, e.df_id) }}>Update</Button>}
+                                                    {e.researcher_id === localStorage.getItem('id') && <Button onClick={(event) => { this.deleteTopic(event, e.df_id) }}>Delete</Button>}
+                                                </Grid.Column>
+                                            </Grid.Row>
+                                        </Grid>
+                                    </List.Content>
+                                </List.Item>
+                            )
+                        }
+                    </List>) : ''}
                 {/* create new discussion */}
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="df_name" value={this.state.df_name} onChange={this.handleChange} /><br />
-                    <textarea name="details" value={this.state.details} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field required>
+                        <label>Topic</label>
+                        <Input
+                            required
+                            placeholder='your topic'
+                            name="df_name"
+                            value={this.state.df_name}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Field>
+                    <Form.Field required>
+                        <label>content</label>
+                        <Form.TextArea
+                            required
+                            name="details"
+                            value={this.state.details}
+                            placeholder='your content'
+                            onChange={this.handleChange}>
+                        </Form.TextArea>
+                    </Form.Field>
+                    <Button type='submit' >Submit</Button>
+                </Form>
+            </div >
         )
     }
 
     componentDidMount() {
+        let config = {
+            header: {
+                researcher_id: localStorage.getItem('id')
+            }
+        }
         // show discussion list
-        DiscussionService.getDiscussions()
+        DiscussionService.getDiscussions(config)
             .then(data => {
-                console.log(data.data)
                 this.setState({
                     discussions: data.data
                 });

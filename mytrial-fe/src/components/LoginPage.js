@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { LOGIN_END_POINT } from '../settings';
 import { fetchMytrial } from '../utils';
@@ -6,12 +6,12 @@ import { withRouter, Link } from 'react-router-dom';
 
 const loginUser = (username, password, history) => {
     // authenticate and then save id in local storage
-    fetchMytrial(LOGIN_END_POINT, null, {method: 'POST'}, {username, password})
+    fetchMytrial(LOGIN_END_POINT, null, { method: 'POST' }, { username, password })
         .then(data => {
             localStorage.setItem('id', data);
             console.log('Logged in with ' + username + password + localStorage.getItem('role'));
-            if (localStorage.getItem('role') === 'researcher') history.push("/rhome"); 
-            else history.push("/phome"); 
+            if (localStorage.getItem('role') === 'researcher') history.push("/rhome");
+            else history.push("/phome");
         })
         .catch(err => {
             history.push("/");
@@ -23,17 +23,22 @@ const LoginForm = (props) => {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     return (
-        <Form onSubmit={() => {loginUser(username, password, props.history)}}>
+        <Form onSubmit={() => { loginUser(username, password, props.history) }}>
             <Form.Field>
                 <label>Username</label>
-                <input placeholder='username' onChange={e => {setUsername(e.target.value)}} />
+                <input placeholder='username' onChange={e => { setUsername(e.target.value) }} />
             </Form.Field>
             <Form.Field>
                 <label>Password</label>
-                <input placeholder='password' onChange={e => {setPassword(e.target.value)}}/>
+                <input placeholder='password' onChange={e => { setPassword(e.target.value) }} />
             </Form.Field>
             <Button type='submit'>Submit</Button>
             {localStorage.getItem('role') === 'researcher' && <Link to="/register">No account? Register</Link>}
+            <div>
+                Test Researcher:<br />
+                MarkHumayun<br />
+                MDAwMTIz
+            </div>
         </Form>)
 }
 
@@ -42,7 +47,7 @@ const LoginPage = ({ history }) => {
         <div className="myform">
             <p>Login</p>
             <hr />
-            <LoginForm history={history}/>
+            <LoginForm history={history} />
         </div>
     )
 }
