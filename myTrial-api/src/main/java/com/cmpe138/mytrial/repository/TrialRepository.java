@@ -6,7 +6,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;								
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.cmpe138.mytrial.model.Trial;
 
 
@@ -27,6 +29,7 @@ public class TrialRepository {
 		List<Trial> res = jdbc.query(sql, this::mapRowToTrial);	
 		return res;
 	}
+	
 	
 	public void addTrial(String r_id, String trial_id, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
 		String trial_sql = "INSERT trial VALUES (?, ?, ?, ?, ?, ?, ?)";
