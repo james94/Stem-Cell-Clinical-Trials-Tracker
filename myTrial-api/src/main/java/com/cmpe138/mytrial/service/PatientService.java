@@ -34,4 +34,6 @@ public interface PatientService {
 	 */
 	Patient getPatientByUsernamePassword(String username, String password);
 
+	List<Patient> getPatientByTrialId(String trial_id);
+
 }
