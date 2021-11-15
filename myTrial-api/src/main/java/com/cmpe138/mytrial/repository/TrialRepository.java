@@ -23,14 +23,15 @@ public class TrialRepository {
 	}
 	
 	public List<Trial> findByDiseaseArea(String disease_area) {
-		String sql = "SELECT * FROM trial T WHERE T.trial_id IN (SELECT D.trial_id FROM t_disease_area D WHERE D.disease_area = " + disease_area + ")";
+		String sql = "SELECT * FROM trial T WHERE T.trial_id IN (SELECT D.trial_id FROM t_disease_area D WHERE D.disease_name = '"  + disease_area + "')";
 		List<Trial> res = jdbc.query(sql, this::mapRowToTrial);	
 		return res;
 	}
 	
-	public void createNewTrial(String r_id, String trial_id, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
+	public void addTrial(String r_id, String trial_id, String trial_status, int target_enrollment, String nct_no, String phase, String title, String org_name) {
 		String trial_sql = "INSERT trial VALUES (?, ?, ?, ?, ?, ?, ?)";
-		jdbc.update(trial_sql, trial_id, trial_status, target_enrollment, nct_no, phase, title, org_name);
+		jdbc.update(trial_sql, trial_id, trial_status, target_enrollment, nct_no, 
+				phase, title, org_name);
 		String investigates_sql = "INSERT investigates VALUES (?, ?)";
 		jdbc.update(investigates_sql, r_id, trial_id);
 	}

@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cmpe138.mytrial.model.Patient;
+import com.cmpe138.mytrial.model.Researcher;
+import com.cmpe138.mytrial.model.Trial;
 import com.cmpe138.mytrial.repository.PatientRepository;
+import com.cmpe138.mytrial.repository.ResearcherRepository;
+import com.cmpe138.mytrial.repository.TrialRepository;
 import com.cmpe138.mytrial.service.PatientService;
 
 @Service
@@ -14,6 +18,10 @@ public class PatientServiceImpl implements PatientService {
 
 	@Autowired
 	PatientRepository patientRepo;
+	@Autowired
+	TrialRepository trialRepo;
+	@Autowired
+	ResearcherRepository researcherRepo;
 
 	@Override
 	public List<Patient> getAll() {
@@ -36,9 +44,17 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getPatientById(String researcher_id, String patient_id) {
 		Patient p = patientRepo.getPatientById(patient_id);
-		System.out.println(p);
 //		if (p == null || p.getResearcher_id() != researcher_id)
 //			return new Patient();
+		// add Trial
+		Trial t = trialRepo.findById(p.getTrial_id());
+
+		// add Researcher
+		Researcher r = researcherRepo.getResearcherById(p.getResearcher_id());
+
+		p.setTrial(t);
+		p.setResearcher(r);
+
 		return p;
 	}
 

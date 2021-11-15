@@ -1,101 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import PatientService from "../service/PatientService";
-import axios from "axios";
-import { PATIENT_INFO } from "../settings/";
+import { Button } from "semantic-ui-react";
+import PatientService from "../service/PatientService";
+import { withRouter } from "react-router";
 
 class PatientInfoPage extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
-      patient_id: "",
-      disease: "",
-      phase: "",
-      p_status: "",
-      // fk
-      trial_id: "",
-      p_username: "",
-      p_password: "",
-      // fk
-      // researcher_id: "",
-      researcher_id: "",
+      researcher_id: "000000052",
+      patientToShow: {},
+      trialToShow: {},
+      researcherToShow: {},
       // researcher_id: localStorage.getItem('id')
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  getData = () => {
-    axios
-      .get(PATIENT_INFO + this.props.match.params.id)
-      .then((response) => {
-        this.setState({
-          patient_id: response.data.patient_id,
-          disease: response.data.disease,
-          phase: response.data.phase,
-          p_status: response.data.p_status,
-          trial_id: response.data.trial_id,
-          p_username: response.data.p_username,
-          p_password: response.data.p_password,
-          researcher_id: response.data.researcher_id,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  componentDidMount() {
-    this.getData();
-  }
-  // handleChange = (e) => {
-  //     this.setState({
-  //         [e.target.name]: e.target.value
-  //     })
-  // }
-
-  // handleSubmit = (e) => {
-  //     alert('Submit ' + this.state);
-  //     let discussion = {
-  //         df_name: this.state.df_name,
-  //         details: this.state.details,
-  //         researcher_id: this.state.researcher_id
-  //     }
-  //     DiscussionService.createDiscussion(discussion)
-  //         .then(data => {
-  //             console.log(data)
-  //         })
-  //         .catch(err => {
-  //             console.log(err)
-  //         })
-  // }
 
   render() {
-    let to_link = "/editpatient/" + this.props.match.params.id;
     return (
       <div>
-        <center>
-          <div className="card col-md-4 m-3">
-            Patient ID: {this.state.patient_id} <br />
-            Disease: {this.state.disease}
-            <br />
-            Phase: {this.state.phase}
-            <br />
-            Status: {this.state.p_status}
-            <br />
-            Trial ID: {this.state.trial_id}
-            <br />
-            Researcher ID: {this.state.researcher_id}
-            <br />
-          </div>
-          <Link to={to_link}>
-            <button className="btn btn-outline-primary">Edit</button>
+        {this.state.donor ? (
+          <h2>Donor: {this.state.donor.name}</h2>
+        ) : (
+          <Link to="#">
+            <Button>Add Donor</Button>
           </Link>
-        </center>
+        )}
+        <h2>Patient Data</h2>
+        <pre>{JSON.stringify(this.state.patientToShow, null, 2)}</pre>
+        {/* go to disease page */}
+
+        <hr />
+        {/* go to trial page */}
+        <h2>Trial Data</h2>
+        {
+          <Link to={{ pathname: `/trial/${this.state.trialToShow.trial_id}` }}>
+            {this.state.trialToShow.title}
+          </Link>
+        }
+        <pre>{JSON.stringify(this.state.trialToShow, null, 2)}</pre>
+        <hr />
+        {/* go to researcher page */}
+        <h2>Researcher Data</h2>
+        {
+          <Link
+            to={{
+              pathname: `/researcher/${this.state.researcherToShow.researcher_id}`,
+            }}
+          >
+            {this.state.researcherToShow.r_name}
+          </Link>
+        }
+        <pre>{JSON.stringify(this.state.researcherToShow, null, 2)}</pre>
+        <Link to="#">
+          <Button>Edit Profile</Button>
+        </Link>
       </div>
     );
   }
+
+  componentDidMount() {
+    let config = {
+      headers: {
+        researcher_id: localStorage.getItem("id"),
+      },
+    };
+    PatientService.getPatientById(this.props.match.params.id, config)
+      .then((data) => {
+        // this.setState({ ...data.data });
+        var { p_username, p_password, trial, researcher, ...patientToShow } =
+          data.data;
+        this.setState({ patientToShow: patientToShow });
+        this.setState({ trialToShow: data.data.trial });
+        var { r_username, r_password, ...researcherToShow } =
+          data.data.researcher;
+        this.setState({ researcherToShow: researcherToShow });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }
 
-export default PatientInfoPage;
+export default withRouter(PatientInfoPage);

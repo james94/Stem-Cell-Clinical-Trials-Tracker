@@ -35,5 +35,10 @@ public class RDiseaseAreaRepository {
 		List<RDiseaseArea> list = jdbc.query(sql, new BeanPropertyRowMapper<RDiseaseArea>(RDiseaseArea.class), researcher_id);
 		return list;
 	}
+	
+	public void addRDisease(String r_id, String disease) {
+		String sql = "insert r_disease_area values (?, ?)";
+		jdbc.update(sql, r_id, disease);
+	}
 
 }

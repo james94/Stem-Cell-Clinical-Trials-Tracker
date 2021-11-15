@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import { EDIT_PATIENT } from "../settings/";
 import { Form } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
-export default class EditPatient extends Component {
+class EditPatient extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +17,7 @@ export default class EditPatient extends Component {
       p_username: "",
       p_password: "",
       researcher_id: "",
+      redirect: false,
     };
     this.setDisease = this.setDisease.bind(this);
     this.setPhase = this.setPhase.bind(this);
@@ -73,13 +76,21 @@ export default class EditPatient extends Component {
       .then((data) => {
         console.log("the data after sending the post req is " + data);
         window.location.reload();
+        // this.props.history.push(`"/patient/${this.props.match.params.id}"`);
       })
       .catch((err) => {
         console.log("the error after sending the post req is " + err);
       });
+
+    this.setState({ redirect: true });
   };
 
   render() {
+    let href_link_submit = "/patient/" + this.props.match.params.id;
+    // if (this.state.redirect) {
+    //   <Redirect to={href_link_submit} />;
+    // }
+
     return (
       <div className="col-md-8 mx-auto m-5">
         <Form onSubmit={this.handleSubmit}>
@@ -123,10 +134,16 @@ export default class EditPatient extends Component {
             >
               Update data for Patient {this.state.patient_id}
             </button>
-            {/* <button className="btn btn-outline-primary m-3">Cancel</button> */}
+            <Link to={href_link_submit}>
+              <button className="btn btn-outline-primary m-3">
+                Go Back to the Info Page
+              </button>
+            </Link>
           </center>
         </Form>
       </div>
     );
   }
 }
+
+export default EditPatient;
