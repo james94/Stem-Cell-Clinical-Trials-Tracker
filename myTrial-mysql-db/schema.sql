@@ -60,7 +60,7 @@ CREATE TABLE p_watchlist (
     patient_id varchar(9) not null,
     disease_area varchar(300) not null,
     primary key (patient_id, name),
-    foreign key (patient_id) references patient (patient_id)
+    foreign key (patient_id) references patient (patient_id) ON DELETE CASCADE
 );
 
 CREATE TABLE discussion_forum (
