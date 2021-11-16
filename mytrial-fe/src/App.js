@@ -7,6 +7,8 @@ import ResearcherHomePage from "./components/ResearcherHomePage";
 import TrialsPage from "./components/TrialsPage";
 import TrialInfoPage from "./components/TrialInfoPage";
 import CreateTrialPage from "./components/CreateTrialPage";
+import GrantsListPage from "./components/GrantsListPage";
+import GrantInfoPage from "./components/GrantInfoPage";
 import EditPatient from "./components/EditPatient";
 import DiscussionForumPage from "./components/DiscussionForumPage";
 import DiscussionForumInfoPage from "./components/DiscussionForumInfoPage";
@@ -49,7 +51,14 @@ function App() {
             <Top />
             <CreateTrialPage />
           </Route>
-
+          <Route path="/grant/:id">
+            <Top />
+            <GrantInfoPage />
+          </Route>
+          <Route path="/grants_list">
+            <Top />
+            <GrantsListPage />
+          </Route>
           <Route path="/editpatient/:id" component={EditPatient}>
             {/* <EditPatient /> */}
           </Route>
