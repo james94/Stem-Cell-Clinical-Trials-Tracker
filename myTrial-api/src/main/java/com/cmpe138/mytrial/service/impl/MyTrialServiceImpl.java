@@ -35,6 +35,11 @@ public class MyTrialServiceImpl implements MyTrialService {
 	public List<Trial> getTrialsByResearcherId(String researcher_id) {
 		return trialRepository.findByResearcherId(researcher_id);
 	}
+
+	@Override
+	public List<Trial> getTrialsByPatientId(String patient_id) {
+		return trialRepository.findByPatientId(patient_id);
+	}
 	
 	@Override
 	@Transactional

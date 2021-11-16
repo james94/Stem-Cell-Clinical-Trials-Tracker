@@ -7,3 +7,12 @@
 2021-11-16 12:38:34.310  INFO 37061 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 37061 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
 2021-11-16 12:38:34.313  INFO 37061 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
 2021-11-16 12:38:36.463  INFO 37061 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.666 seconds (JVM running for 8.805)
+2021-11-16 13:30:19.522  INFO 38552 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 38552 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 13:30:19.527  INFO 38552 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
+2021-11-16 13:30:21.628  INFO 38552 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.63 seconds (JVM running for 8.752)
+2021-11-16 13:35:07.327  INFO 38714 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 38714 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 13:35:07.331  INFO 38714 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
+2021-11-16 13:35:09.443  INFO 38714 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.554 seconds (JVM running for 8.554)
+2021-11-16 13:38:21.804  INFO 38833 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 38833 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 13:38:21.808  INFO 38833 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
+2021-11-16 13:38:23.971  INFO 38833 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.585 seconds (JVM running for 9.323)
