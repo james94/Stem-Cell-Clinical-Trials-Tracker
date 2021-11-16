@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "semantic-ui-react";
 import PatientService from '../service/PatientService';
 import { withRouter } from "react-router";
-import queryString from 'query-string';
+import DonorService from "../service/DonorService";
 
 class PatientInfoPage extends React.Component {
 
@@ -35,17 +35,36 @@ class PatientInfoPage extends React.Component {
             })
     }
 
+    retriveDonorByPatientId = () =>{
+        DonorService.getDonorByPatientId(this.props.match.params.id)
+            .then(data=>{
+                console.log(data.data)
+                this.setState({
+                    donor: data.data
+                });
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+    }
+
     render() {
 
         return (
             <div>
-                {
-                    (this.state.donor) ?
-                        <h2>Donor: {this.state.donor.name}</h2> :
-                        <Link to="#">
-                            <Button>Add Donor</Button>
-                        </Link>
+
+                {/*    {*/}
+                {/*        (localStorage.getItem('role') === 'researcher' && this.retriveDonorByPatientId() && this.state.donor) ?*/}
+                {/*            <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button>:null*/}
+                {/*    }*/}
+                {/*{*/}
+                {/*    (localStorage.getItem('role') === 'researcher' && this.retriveDonorByPatientId() && !this.state.donor)?*/}
+                {/*        <Button><Link to={{pathname:`/add_donor/${this.props.match.params.id}`}}>Add Donor</Link></Button>:null*/}
+                {/*}*/}
+                {(localStorage.getItem('role') === 'researcher')?
+                <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button>:null
                 }
+
                 <h2>Patient Data</h2>
                 <pre>
                     {JSON.stringify(this.state.patientToShow, null, 2)}
