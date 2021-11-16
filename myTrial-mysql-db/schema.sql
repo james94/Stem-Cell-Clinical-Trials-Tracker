@@ -30,6 +30,7 @@ CREATE TABLE researcher (
     r_name varchar(50) not null,
     r_username varchar(30) not null,
     r_password blob not null,
+    unique(r_username),
     primary key (researcher_id)
 );
 
@@ -42,6 +43,7 @@ CREATE TABLE patient (
     p_username varchar(30) not null,
     p_password blob not null,
     researcher_id varchar(9) not null,
+    unique(p_username),
     primary key (patient_id),
     foreign key (trial_id) references trial (trial_id),
     foreign key (researcher_id) references researcher (researcher_id)
@@ -395,12 +397,12 @@ INSERT researcher VALUES
 ('000000028','Steve Dowdy','SteveDowdy',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000029','Xiaokui Zhang','XiaokuiZhang',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000030','PREET Chaudhary','PREETChaudhary',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
-('000000031','Song  Li','SongLi',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
+('000000031','Song  Li','SongLi0',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000032','Vaithilingaraja Arumugaswami','VaithilingarajaArumugaswami',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000033','Jianhua Yu','JianhuaYu',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000034','Albert Wong','AlbertWong',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000035','Caroline Kuo','CarolineKuo',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
-('000000036','Stuart Lipton','StuartLipton',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
+('000000036','Stuart Lipton','StuartLipton0',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000037','Michael Matthay','MichaelMatthay',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000038','Pierre Caudrelier','PierreCaudrelier',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000039','Brigitte Gomperts','BrigitteGomperts',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
@@ -587,7 +589,7 @@ INSERT researcher VALUES
 ('000000220','Ellen Fung','EllenFung',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000221','Wafa Tawackoli','WafaTawackoli',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000222','John Ravits','JohnRavits',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
-('000000223','Fouad  Kandeel','FouadKandeel',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
+('000000223','Fouad  Kandeel','FouadKandeel0',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000224','Ophir Klein','OphirKlein',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000225','Anthony Gringeri','AnthonyGringeri',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000226','Edward Holmes','EdwardHolmes',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
@@ -782,7 +784,7 @@ INSERT researcher VALUES
 ('000000415','Marc Unger','MarcUnger',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000416','Irvin Chen','IrvinChen',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000417','John Dimos','JohnDimos',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
-('000000418','Markus Muschen','MarkusMuschen',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
+('000000418','Markus Muschen','MarkusMuschen0',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000419','Arturo Alvarez-Buylla','ArturoAlvarez-Buylla',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000420','Bruno  Peault','BrunoPeault',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
 ('000000421','Peter Coffey','PeterCoffey',AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)),				
