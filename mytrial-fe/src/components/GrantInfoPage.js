@@ -2,8 +2,6 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import GrantsService from '../service/GrantsService';
 import { withRouter } from "react-router";
-// import { fetchMytrial } from "../utils";
-import { GRANTS_ALL_API_BASE_URL } from "../settings";
 
 class GrantInfoPage extends React.Component {
     constructor(props) {

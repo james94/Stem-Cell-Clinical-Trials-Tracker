@@ -10,6 +10,4 @@ export const PWATCHLISTS_API_BASE_URL = `${MYTRIAL_API}/watchlists/`;
 export const EDIT_PATIENT = `${MYTRIAL_API}/editpatient/`;
 export const PATIIENT_API_BASE_URL = `${MYTRIAL_API}/patient/`;
 
-export const GRANTS_ALL_API_BASE_URL = `${MYTRIAL_API}/grants`;
-
 export default MYTRIAL_API;
