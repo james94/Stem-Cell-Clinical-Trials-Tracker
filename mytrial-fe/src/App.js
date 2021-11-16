@@ -21,7 +21,7 @@ import PatientInfoPage from './components/PatientInfoPage';
 import PatientWatchlistsPage from './components/PatientWatchlistsPage';
 import ResearcherPage from './components/ResearcherPage';
 import ResearcherInfoPage from './components/ResearcherInfoPage';
-import WatchListPage from './components/WatchListPage';
+import DiseaseWatchListPage from './components/DiseaseWatchListPage';
 import SearchViewAllPatients from './components/SearchViewAllPatients';
 import Top from './components/Top';
 
@@ -33,8 +33,8 @@ function App() {
           <Route path="/search">
             <SearchPage />
           </Route>
-          <Route path="/watch">
-            <WatchListPage />
+          <Route path="/rwatchlist">
+            <DiseaseWatchListPage />
           </Route>
           <Route path="/login">
             <Top />
