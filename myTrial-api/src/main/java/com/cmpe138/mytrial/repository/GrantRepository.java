@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cmpe138.mytrial.model.CTGrant;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Repository
 public class GrantRepository {
@@ -21,39 +23,39 @@ public class GrantRepository {
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public CTGrant findByGrantNumber(grant_number) {
+    public CTGrant findByGrantNumber(String grant_number) {
         String sql = "select * from ct_grant where grant_number = " + grant_number;
         List<CTGrant> res = jdbc.query(sql, this::mapRowToGrant);
         if(res.size() == 0) return null;
         return res.get(0);
     }
 
-    public List<CTGrant> findByTrialId(trial_id) {
+    public List<CTGrant> findByTrialId(String trial_id) {
         String sql = "select * from ct_grant where trial_id = " + trial_id;
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public List<CTGrant> findByDiseaseFocus(disease_focus) {
+    public List<CTGrant> findByDiseaseFocus(String disease_focus) {
         String sql = "select * from ct_grant where disease_focus = " + disease_focus;
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public List<CTGrant> findByInstitution(institution) {
+    public List<CTGrant> findByInstitution(String institution) {
         String sql = "select * from ct_grant where institution = " + institution;
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public List<CTGrant> findByStemCellUse(stem_cell_use) {
+    public List<CTGrant> findByStemCellUse(String stem_cell_use) {
         String sql = "select * from ct_grant where stem_cell_use = " + stem_cell_use;
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public List<CTGrant> findByResearcherId(researcher_id) {
+    public List<CTGrant> findByResearcherId(String researcher_id) {
         String sql = "select * from ct_grant G where G.grant_number in (select A.grant_no from awards A where A.researcher_id = " + researcher_id + ")";
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
-    public void addGrant(researcher_id, grant) {
+    public void addGrant(String researcher_id, ObjectNode grant) {
         String grant_sql = "insert ct_grant values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbc.update(grant_sql,
             grant.get("grant_number").asText(),
@@ -66,7 +68,7 @@ public class GrantRepository {
             grant.get("award_status").asText(),
             grant.get("institution").asText(),
             grant.get("stem_cell_use").asText(),
-            grant.get("amount").asText());
+            grant.get("amount").asDouble());
 
         // when we add a grant, we also have to take into account adding to awards table due to N to M relationship
         String awards_sql = "insert awards values (?, ?)";
@@ -86,7 +88,7 @@ public class GrantRepository {
         g.setAward_status(rs.getString("award_status"));
         g.setInstitution(rs.getString("institution"));
         g.setStem_cell_use(rs.getString("stem_cell_use"));
-        g.setAmount(rs.getString("amount"));
+        g.setAmount(rs.getDouble("amount"));
         return g;
     }
 }

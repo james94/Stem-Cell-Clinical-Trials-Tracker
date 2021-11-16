@@ -1690,3 +1690,6 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	... 152 common frames omitted
 
 2021-11-15 07:51:51.822  INFO 17961 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 4.145 seconds (JVM running for 5.511)
+2021-11-15 18:07:57.737  INFO 26600 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 26600 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-15 18:07:57.741  INFO 26600 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
+2021-11-15 18:07:59.980  INFO 26600 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.774 seconds (JVM running for 8.997)
