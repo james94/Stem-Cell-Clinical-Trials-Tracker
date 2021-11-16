@@ -30,7 +30,7 @@ CREATE TABLE researcher (
     r_name varchar(50) not null,
     r_username varchar(30) not null,
     r_password blob not null,
-    unique (r_username),
+    unique(r_username),
     primary key (researcher_id)
 );
 
@@ -43,7 +43,7 @@ CREATE TABLE patient (
     p_username varchar(30) not null,
     p_password blob not null,
     researcher_id varchar(9) not null,
-    unique (p_username),
+    unique(p_username),
     primary key (patient_id),
     foreign key (trial_id) references trial (trial_id),
     foreign key (researcher_id) references researcher (researcher_id)
@@ -62,7 +62,7 @@ CREATE TABLE p_watchlist (
     patient_id varchar(9) not null,
     disease_area varchar(300) not null,
     primary key (patient_id, name),
-    foreign key (patient_id) references patient (patient_id)
+    foreign key (patient_id) references patient (patient_id) ON DELETE CASCADE
 );
 
 CREATE TABLE discussion_forum (

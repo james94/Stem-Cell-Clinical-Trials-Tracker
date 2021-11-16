@@ -37,7 +37,10 @@ const LoginForm = (props) => {
             <div>
                 Test Researcher:<br />
                 MarkHumayun<br />
-                MDAwMTIz
+                MDAwMTIz<br />
+                Test Patient:<br />
+                01-Amd1<br />
+                MDAwMTIz<br />
             </div>
         </Form>)
 }

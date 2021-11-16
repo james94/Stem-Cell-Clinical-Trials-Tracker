@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
-import { PATIENTS_ALL_BASE_URL } from "../settings/";
+import { PATIIENT_API_BASE_URL } from "../settings/";
 
 class SearchViewAllPatients extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class SearchViewAllPatients extends React.Component {
       }
     };
     axios
-      .get(PATIENTS_ALL_BASE_URL, config)
+      .get(PATIIENT_API_BASE_URL, config)
       .then((response) => {
         const query = this.state;
         const filteredData = response.data.filter((element) => {
