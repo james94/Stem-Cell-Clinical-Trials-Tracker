@@ -45,6 +45,12 @@ public class TrialRepository {
 		return jdbc.query(sql, this::mapRowToTrial);
 	}
 	
+	public List<Trial> findByPatientId(String patient_id) {
+		String sql = "select * from trial T where T.trial_id in "
+				+ "(select P.trial_id from patient P where P.patient_id = " + patient_id + ")";
+		return jdbc.query(sql, this::mapRowToTrial);
+	}
+
 	private Trial mapRowToTrial(ResultSet rs, int rowNum) throws SQLException {
 		Trial t = new Trial();
 		t.setTrial_id(rs.getString("trial_id"));
