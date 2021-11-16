@@ -55,7 +55,7 @@ class PatientInfoPage extends React.Component {
                 <hr />
                 {/* go to trial page */}
                 <h2>Trial Data</h2>
-                {<Link to={{ pathname: `/trial/${this.state.trialToShow.trial_id}` }}>{this.state.trialToShow.title}</Link>}
+                {<Link to={{ pathname: `/trials/${this.state.trialToShow.trial_id}` }}>{this.state.trialToShow.title}</Link>}
                 <pre>
                     {JSON.stringify(this.state.trialToShow, null, 2)}
                 </pre>
