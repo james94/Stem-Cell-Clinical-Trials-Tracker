@@ -3,6 +3,7 @@ package com.cmpe138.mytrial.repository;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -58,4 +59,44 @@ public class PatientRepository {
 			return null;
 		}
 	}
+	
+	/**
+	 * Editing Patient Details
+	 * 
+	 * @param disease
+	 * @param phase
+	 * @param status
+	 * @param trial_id
+	 * @param patient_id
+	 * @return
+	 */
+	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+		System.out.println("in the repo, about to prepare the statement");
+		String sql = "update patient set disease = ?, phase = ?, p_status = ?, trial_id = ? where patient_id = ?";
+		try {
+			jdbc.update(sql,disease, phase, status, trial_id, patient_id);
+		} catch (DataIntegrityViolationException e) {
+			System.out.println("Error data integrity constraint violated when updating record for patient_id = " + patient_id);
+		}
+	}
+
+	/**
+	 * For researcher, can delete a patient by patient ID
+	 * @param patient_id
+	 * @return
+	 */
+	public int deletePatientById(int patient_id) {
+		String delete_query = "delete from patient where patient_id = ?";
+		try {
+			System.out.println("Calling delete query for patient record for patient_id = " + patient_id);
+			int delete_query_res = jdbc.update(delete_query, patient_id);
+			System.out.println("delete_query_res = " + delete_query_res);
+			return delete_query_res;
+		} catch(Exception e) {
+			// Check if patient table has dep on other table like a foreign key
+			System.out.println(e);
+			System.out.println("Error referential integrity constraint violated when removing record for patient_id = " + patient_id);
+		}
+		return 0; // 0 rows deleted, but need 1 deleted
+	}	
 }

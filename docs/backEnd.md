@@ -225,6 +225,14 @@ Access myTrial-api app at `localhost:8080/test`
 
 So now not only the docker host has access to the docker container, the other remote computers have access to the docker container too.
 
+If you need to see the log of your SpringBoot server, you can run `tail -f` in your docker container from your host machine with the following docker command:
+
+~~~bash
+sudo docker exec -it mytrial-sb-server tail -f myapplication.log
+~~~
+
+Since our Spring Boot server is now configured to writing all the logs to **myapplication.log**, we can tail it.
+
 ## Appendix
 
 ### Running VirtualBox, Set Up Port Forwarding
@@ -374,3 +382,5 @@ mysql -h localhost -u mytrial_docker -p # when asked, enter password mytrial_doc
 - [Stackoverflow: Docker - Container cannot be connected to network endpoints](https://stackoverflow.com/questions/60301221/docker-container-cannot-be-connected-to-network-endpoints): Part on when I found when you launch container, it seems we can't connect to multiple networks just one at that time, we have to manually connect them to remaining networks using "docker network connect"
 
 - [Stackoverflow: How to run SQL script in MySQL?](https://stackoverflow.com/questions/8940230/how-to-run-sql-script-in-mysql)
+
+- [SpringBoot Logging: File and Console](https://docs.spring.io/spring-boot/docs/1.5.x/reference/html/howto-logging.html)

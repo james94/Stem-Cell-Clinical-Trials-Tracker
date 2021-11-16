@@ -33,7 +33,15 @@ public interface PatientService {
 	 * @return
 	 */
 	Patient getPatientByUsernamePassword(String username, String password);
+	
+	void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id);
 
 	List<Patient> getPatientByTrialId(String trial_id);
 
+	/**
+	 * For researcher, can delete a patient by patient ID
+	 * @param patient_id
+	 * @return
+	 */
+	boolean deletePatientById(int patient_id);
 }

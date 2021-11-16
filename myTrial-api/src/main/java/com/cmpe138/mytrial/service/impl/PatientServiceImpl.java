@@ -27,7 +27,8 @@ public class PatientServiceImpl implements PatientService {
 	public List<Patient> getAll() {
 		return patientRepo.findAll();
 	}
-
+	
+	
 	@Override
 	public List<Patient> getPatientByResearcherId(String researcher_id) {
 		return patientRepo.getPatientsByResearcher_id(researcher_id);
@@ -36,7 +37,9 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getPatientById(String patient_id) {
 		// TODO Auto-generated method stub
-		return null;
+		Patient p = patientRepo.getPatientById(patient_id);
+		System.out.println(p);
+		return p;
 	}
 
 	@Override
@@ -60,10 +63,22 @@ public class PatientServiceImpl implements PatientService {
 	public Patient getPatientByUsernamePassword(String username, String password) {
 		return patientRepo.getPatientByUsernamePassword(username, password);
 	}
+	
+	@Override
+	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+		patientRepo.updatePatientUsingPatientID(disease, phase, status, trial_id, patient_id);
+		System.out.println("Completed calling the repo function from updatePatientUsingPatientID, service file");
+	}
 
 	@Override
 	public List<Patient> getPatientByTrialId(String trial_id) {
 		return patientRepo.getPatientsByTrialId(trial_id);
+	}
+
+	@Override
+	public boolean deletePatientById(int patient_id) {
+		int rowsDeleted = patientRepo.deletePatientById(patient_id);
+		return rowsDeleted == 1; // how many rows
 	}
 
 }
