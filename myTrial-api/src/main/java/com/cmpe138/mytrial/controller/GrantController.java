@@ -27,29 +27,32 @@ public class GrantController {
     private GrantService grantService;
 
     @GetMapping("/grants")
-    public List<CTGrant> getGrants(@RequestHeader(value="id", required=false) String researcher_id,
+    public List<CTGrant> getGrants(@RequestHeader(value="researcher_id", required=false) String researcher_id,
             @RequestHeader(value="list_all", required=false) boolean list_all,
             @RequestParam(value="grant_number", required=false) String grant_number,
             @RequestParam(value="trial_id", required=false) String trial_id,
             @RequestParam(value="disease_focus", required=false) String disease_focus,
             @RequestParam(value="institution", required=false) String institution,
             @RequestParam(value="stem_cell_use", required=false) String stem_cell_use) {
-        if((!researcher_id.isEmpty()) && list_all == true) {
+        if((researcher_id != null) && list_all == true) {
             return grantService.getAll();
-        } else if(!grant_number.isEmpty()) {
+        } else if(grant_number != null) {
             List<CTGrant> res = new ArrayList<>();
             res.add(grantService.getGrantByNumber(grant_number));
             return res;
-        } else if(!trial_id.isEmpty()) {
+        } else if(trial_id != null) {
             return grantService.getGrantsByTrialId(trial_id);
-        } else if(!disease_focus.isEmpty()) {
+        } else if(disease_focus != null) {
             return grantService.getGrantsByDiseaseFocus(disease_focus);
-        } else if(!institution.isEmpty()) {
+        } else if(institution != null) {
             return grantService.getGrantsByInstitution(institution);
-        } else if(!stem_cell_use.isEmpty()) {
+        } else if(stem_cell_use != null) {
             return grantService.getGrantsByStemCellUse(stem_cell_use);
-        } else {
+        } else if(researcher_id != null) {
             return grantService.getGrantsByResearcherId(researcher_id);
+        } else {
+            System.out.println("No valid arguments passed in header or parameter returning null");
+            return null;
         }
     }
 

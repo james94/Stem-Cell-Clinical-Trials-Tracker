@@ -24,7 +24,7 @@ public class GrantRepository {
     }
 
     public CTGrant findByGrantNumber(String grant_number) {
-        String sql = "select * from ct_grant where grant_number = " + grant_number;
+        String sql = "select * from ct_grant where grant_number = '" + grant_number + "'";
         List<CTGrant> res = jdbc.query(sql, this::mapRowToGrant);
         if(res.size() == 0) return null;
         return res.get(0);
@@ -36,17 +36,17 @@ public class GrantRepository {
     }
 
     public List<CTGrant> findByDiseaseFocus(String disease_focus) {
-        String sql = "select * from ct_grant where disease_focus = " + disease_focus;
+        String sql = "select * from ct_grant where disease_focus = '" + disease_focus + "'";
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
     public List<CTGrant> findByInstitution(String institution) {
-        String sql = "select * from ct_grant where institution = " + institution;
+        String sql = "select * from ct_grant where institution = '" + institution + "'";
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
     public List<CTGrant> findByStemCellUse(String stem_cell_use) {
-        String sql = "select * from ct_grant where stem_cell_use = " + stem_cell_use;
+        String sql = "select * from ct_grant where stem_cell_use = '" + stem_cell_use + "'";
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
