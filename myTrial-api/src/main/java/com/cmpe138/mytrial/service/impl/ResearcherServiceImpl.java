@@ -83,7 +83,9 @@ public class ResearcherServiceImpl implements ResearcherService {
 	}
 	
 	@Override
-	public void createResearcher(String r_name, String r_username, String r_password, List<String> organizations, List<String> disease_areas) {
+	@Transactional
+	public void createResearcher(String r_name, String r_username, String r_password, 
+			List<String> organizations, List<String> disease_areas) {
 		String r_id = String.valueOf((int) (Math.random() * 999999999));
 		while (getResearchertById(r_id) != null) {
 			r_id = String.valueOf((int) (Math.random() * 999999999));

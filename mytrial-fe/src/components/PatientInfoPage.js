@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "semantic-ui-react";
 import PatientService from '../service/PatientService';
 import { withRouter } from "react-router";
+import queryString from 'query-string';
 
 class PatientInfoPage extends React.Component {
 
@@ -12,12 +13,30 @@ class PatientInfoPage extends React.Component {
             researcher_id: "000000052",
             patientToShow: {},
             trialToShow: {},
-            researcherToShow: {}
+            researcherToShow: {},
             // researcher_id: localStorage.getItem('id')
         };
     }
 
+    deletePatient = (event, patient_id) => {
+        alert('Deleting Patient: ' + patient_id + '; Heading to Trials Page');
+
+        PatientService.deletePatient(patient_id)
+            .then(data => {
+                // pass whole history obj to our component as properties with help from withRouter
+                const { history } = this.props;
+                if(history) {
+                    // http://localhost:3001/patient?trial_id=000000001
+                    history.push("/trials");
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     render() {
+
         return (
             <div>
                 {
@@ -47,9 +66,10 @@ class PatientInfoPage extends React.Component {
                 <pre>
                     {JSON.stringify(this.state.researcherToShow, null, 2)}
                 </pre>
-                <Link to="#">
-                    <Button>Edit Profile</Button>
-                </Link>
+                <Button>
+                    <Link to={`/editPatient/${this.props.match.params.id}`}>Edit Profile</Link>
+                </Button>
+                    {localStorage.getItem('role') === 'researcher' && <Button onClick={(event) => { this.deletePatient(event, this.props.match.params.id) }}>Delete Patient</Button>}
             </div>
         )
     }
