@@ -30,9 +30,11 @@ function App() {
       <div>
         <Switch>
           <Route path="/search">
+            <Top />
             <SearchPage />
           </Route>
           <Route path="/rwatchlist">
+            <Top />
             <DiseaseWatchListPage />
           </Route>
           <Route path="/login">

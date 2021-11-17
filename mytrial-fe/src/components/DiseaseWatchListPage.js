@@ -4,7 +4,8 @@ import {
 } from '@fluentui/react';
 import React from 'react';
 import UnauthorizedPage from './UnauthorizedPage';
-import { DetailsList, DetailsListLayoutMode, Selection, IColumn } from '@fluentui/react/lib/DetailsList';
+// import { Selection, IColumn } from '@fluentui/react/lib/DetailsList';
+import { DetailsList, DetailsListLayoutMode } from '@fluentui/react/lib/DetailsList';
 import axios from "axios";
 import { RWATCHLISTS_API_BASE_URL, ADD_R_WATCHLIST_END_POINT } from "../settings/";
 

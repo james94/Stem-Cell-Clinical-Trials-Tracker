@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import UnauthorizedPage from './UnauthorizedPage';
 import axios from "axios";
 import { PATIENTS_ALL_BASE_URL } from "../settings/";
-import { DetailsList, DetailsListLayoutMode, Selection, IColumn } from '@fluentui/react/lib/DetailsList';
-import { TextField, ITextFieldStyles } from '@fluentui/react/lib/TextField';
+// import { Selection, IColumn } from '@fluentui/react/lib/DetailsList';
+import { DetailsList, DetailsListLayoutMode } from '@fluentui/react/lib/DetailsList';
+// import { ITextFieldStyles } from '@fluentui/react/lib/TextField';
+import { TextField } from '@fluentui/react/lib/TextField';
 
 //TODO: Maybe add pagination to make list more readable.
 const comboBoxStyles = { root: { margin:'10px', maxWidth: 300 } };
