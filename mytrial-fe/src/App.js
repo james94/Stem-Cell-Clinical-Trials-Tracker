@@ -20,6 +20,7 @@ import SearchViewAllPatients from './components/SearchViewAllPatients';
 import ResearcherPage from "./components/ResearcherPage";
 import ResearcherInfoPage from "./components/ResearcherInfoPage";
 import Top from "./components/Top";
+import UpdateDonorPage from "./components/UpdateDonorPage";
 
 function App() {
   return (
@@ -77,6 +78,14 @@ function App() {
           <Route path="/patient/:id">
             <Top />
             <PatientInfoPage />
+          </Route>
+          <Route path="/update_donor/:id">
+            <Top />
+            <UpdateDonorPage />
+          </Route>
+          <Route path="/add_donor/:id">
+            <Top />
+            {/*< Add_Donor_Page/>*/}
           </Route>
           <Route path="/patient">
             <Top />

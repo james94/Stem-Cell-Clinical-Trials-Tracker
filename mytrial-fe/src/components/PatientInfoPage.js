@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "semantic-ui-react";
 import PatientService from '../service/PatientService';
 import { withRouter } from "react-router";
-import queryString from 'query-string';
+import DonorService from "../service/DonorService";
 
 class PatientInfoPage extends React.Component {
 
@@ -14,7 +14,7 @@ class PatientInfoPage extends React.Component {
             patientToShow: {},
             trialToShow: {},
             researcherToShow: {},
-            // researcher_id: localStorage.getItem('id')
+            donor: null
         };
     }
 
@@ -35,17 +35,32 @@ class PatientInfoPage extends React.Component {
             })
     }
 
+    retrieveDonorByPatientId = () =>{
+        DonorService.getDonorByPatientId(this.props.match.params.id)
+            .then(response => {
+                console.log(response.data)
+                this.setState({
+                    donor: response.data
+                });
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+            console.log(this.state.donor);
+    }
+
     render() {
 
         return (
             <div>
-                {
-                    (this.state.donor) ?
-                        <h2>Donor: {this.state.donor.name}</h2> :
-                        <Link to="#">
-                            <Button>Add Donor</Button>
-                        </Link>
+
+                {  // shows Update Donor button if patient has a donor and role is researcher, else shows Add Donor button
+                    (this.state.donor && localStorage.getItem('role') === 'researcher') ?
+                        <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button> :
+                        <Button><Link to={{pathname:`/add_donor/${this.props.match.params.id}`}}>Add Donor</Link></Button>
                 }
+
                 <h2>Patient Data</h2>
                 <pre>
                     {JSON.stringify(this.state.patientToShow, null, 2)}
@@ -92,6 +107,8 @@ class PatientInfoPage extends React.Component {
             .catch(err => {
                 console.log(err)
             })
+
+        this.retrieveDonorByPatientId();
     }
 }
 
