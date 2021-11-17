@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.model;
 
 public class Donor {
@@ -31,10 +32,7 @@ public class Donor {
 
     @Override
     public String toString() {
-        return "Donor{" +
-                "patient_id='" + patient_id + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Donor{" + "patient_id='" + patient_id + '\'' + ", name='" + name + '\'' + ", email='" + email + '\''
+                + '}';
     }
 }

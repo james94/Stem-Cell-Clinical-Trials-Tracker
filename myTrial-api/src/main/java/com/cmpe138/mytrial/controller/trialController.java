@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.ArrayList;
@@ -22,15 +23,15 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @CrossOrigin
 @RestController
 public class trialController {
-	
+
 	@Autowired
 	private MyTrialService myTrial;
-	
+
 	@GetMapping("/trials")
-	public List<Trial> getTrials(@RequestHeader(value="id", required=false) String researcher_id,
-			@RequestHeader(value="patient_id", required=false) String patient_id, 
-			@RequestParam(value="trialId", required=false) String trial_id, 
-			@RequestParam(value="disease", required=false) String disease_area) {
+	public List<Trial> getTrials(@RequestHeader(value = "id", required = false) String researcher_id,
+			@RequestHeader(value = "patient_id", required = false) String patient_id,
+			@RequestParam(value = "trialId", required = false) String trial_id,
+			@RequestParam(value = "disease", required = false) String disease_area) {
 		if (trial_id != null) {
 			List<Trial> res = new ArrayList<>();
 			res.add(myTrial.getTrialById(trial_id));
@@ -43,17 +44,19 @@ public class trialController {
 			return myTrial.getTrialsByResearcherId(researcher_id);
 		}
 	}
-	
+
 	@PostMapping("/addtrial")
-	public ResponseEntity<String> addTrial(@RequestHeader(value="id") String researcher_id, @RequestBody ObjectNode trial) {
+	public ResponseEntity<String> addTrial(@RequestHeader(value = "id") String researcher_id,
+			@RequestBody ObjectNode trial) {
 		List<String> diseases = new ArrayList<>();
 		try {
 			JsonNode diseasesNode = trial.get("diseases");
 			for (JsonNode disease : diseasesNode) {
 				diseases.add(disease.asText());
 			}
-			myTrial.createTrial(researcher_id, diseases, trial.get("trial_status").asText(), trial.get("target_enrollment").asInt(), 
-					 trial.get("nct_no").asText(), trial.get("phase").asText(), trial.get("title").asText(), trial.get("organization_name").asText());
+			myTrial.createTrial(researcher_id, diseases, trial.get("trial_status").asText(),
+					trial.get("target_enrollment").asInt(), trial.get("nct_no").asText(), trial.get("phase").asText(),
+					trial.get("title").asText(), trial.get("organization_name").asText());
 		} catch (Exception e) {
 			System.out.println(e);
 			return new ResponseEntity<>("Trial creation failed!", HttpStatus.BAD_REQUEST);
@@ -61,5 +64,5 @@ public class trialController {
 		System.out.println("Trial creation success!");
 		return new ResponseEntity<>("Trial creation success!", HttpStatus.OK);
 	}
-	
+
 }

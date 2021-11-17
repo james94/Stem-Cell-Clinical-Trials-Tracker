@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.model;
 
 import java.util.ArrayList;
@@ -70,7 +71,8 @@ public class DiscussionForum {
 
 	@Override
 	public String toString() {
-		return "DiscussionForum [df_id=" + df_id + ", df_name=" + df_name + ", df_timestamp=" + df_timestamp + ", details=" + details + ", researcher_id=" + researcher_id + ", replies=" + replies + "]";
+		return "DiscussionForum [df_id=" + df_id + ", df_name=" + df_name + ", df_timestamp=" + df_timestamp
+				+ ", details=" + details + ", researcher_id=" + researcher_id + ", replies=" + replies + "]";
 	}
 
 }

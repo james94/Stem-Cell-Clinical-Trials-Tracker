@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.List;
@@ -24,12 +25,15 @@ public class PatientController {
 	private PatientService patientService;
 
 	@GetMapping("/patient/{patient_id}")
-	public Patient getPatientById(@RequestHeader(value = "researcher_id", required = false) String researcher_id, @PathVariable(value = "patient_id") String patient_id) {
+	public Patient getPatientById(@RequestHeader(value = "researcher_id", required = false) String researcher_id,
+			@PathVariable(value = "patient_id") String patient_id) {
 		return patientService.getPatientById(researcher_id, patient_id);
 	}
 
 	@GetMapping("/patient")
-	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id, @RequestHeader(value = "researcher_id", required = false) String researcher_id, @RequestHeader(value = "search", required = false) boolean search) {
+	public List<Patient> getPatientByHeaderId(@RequestHeader(value = "trial_id", required = false) String trial_id,
+			@RequestHeader(value = "researcher_id", required = false) String researcher_id,
+			@RequestHeader(value = "search", required = false) boolean search) {
 		try {
 			if ((!researcher_id.isEmpty()) && search == true) {
 				return patientService.getAll();
@@ -40,15 +44,17 @@ public class PatientController {
 			}
 		} catch (Exception e) {
 			System.err.println(e);
-			System.err.println("Failed to Get Patients! At least one header arg 'trial_id' or 'researcher_id' or 'search' needs to be passed in header!");
+			System.err.println(
+					"Failed to Get Patients! At least one header arg 'trial_id' or 'researcher_id' or 'search' needs to be passed in header!");
 			return null;
 		}
 	}
-	
+
 	@PostMapping("/editpatient/{patient_id}")
 	public void updatePatient(@PathVariable(value = "patient_id") String patient_id, @RequestBody Patient p) {
 		p.setPatient_id(patient_id);
-		patientService.updatePatientUsingPatientID(p.getDisease(), p.getPhase(), p.getP_status(), p.getTrial_id(), p.getPatient_id());
+		patientService.updatePatientUsingPatientID(p.getDisease(), p.getPhase(), p.getP_status(), p.getTrial_id(),
+				p.getPatient_id());
 	}
 
 	@DeleteMapping("/patient/{patient_id}")
@@ -57,4 +63,3 @@ public class PatientController {
 	}
 
 }
-

@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.model;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class Researcher {
 	private List<Patient> patients = new ArrayList<Patient>();
 	private List<Trial> trials = new ArrayList<Trial>();
 	private List<Organization> organizations = new ArrayList<Organization>();
-//	private List<RWatchList> RWatchLists = new ArrayList<RWatchList>();
+	// private List<RWatchList> RWatchLists = new ArrayList<RWatchList>();
 
 	public String getResearcher_id() {
 		return researcher_id;
@@ -98,11 +99,10 @@ public class Researcher {
 
 	@Override
 	public String toString() {
-		return "Researcher [researcher_id=" + researcher_id + ", r_name=" + r_name + ", r_username=" + r_username + 
-				", r_password=" + r_password + ", RDiseaseAreas=" + RDiseaseAreas + ", DiscussionForums=" + DiscussionForums + 
-				", replies=" + replies + ", patients=" + patients + ", trials=" + trials + ", organizations=" + organizations + "]";
+		return "Researcher [researcher_id=" + researcher_id + ", r_name=" + r_name + ", r_username=" + r_username
+				+ ", r_password=" + r_password + ", RDiseaseAreas=" + RDiseaseAreas + ", DiscussionForums="
+				+ DiscussionForums + ", replies=" + replies + ", patients=" + patients + ", trials=" + trials
+				+ ", organizations=" + organizations + "]";
 	}
-
-	
 
 }

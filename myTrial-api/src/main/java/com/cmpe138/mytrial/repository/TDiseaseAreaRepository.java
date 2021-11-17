@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
@@ -10,7 +11,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.cmpe138.mytrial.model.TDiseaseArea;
-
 
 @Repository
 public class TDiseaseAreaRepository {
@@ -30,10 +30,11 @@ public class TDiseaseAreaRepository {
 
 	public List<TDiseaseArea> findByTrialId(String trial_id) {
 		String sql = "select * from t_disease_area where trial_id = ?";
-		List<TDiseaseArea> list = jdbc.query(sql, new BeanPropertyRowMapper<TDiseaseArea>(TDiseaseArea.class), trial_id);
+		List<TDiseaseArea> list = jdbc.query(sql, new BeanPropertyRowMapper<TDiseaseArea>(TDiseaseArea.class),
+				trial_id);
 		return list;
 	}
-	
+
 	public void addTDisease(String t_id, String disease) {
 		String sql = "insert t_disease_area values (?, ?)";
 		jdbc.update(sql, t_id, disease);

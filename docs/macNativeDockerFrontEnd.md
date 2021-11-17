@@ -1,3 +1,5 @@
+# SJSU CMPE 138 Fall 2021 TEAM1
+
 # FrontEnd: Deploy ReactJS Docker Alpine Container (Mac OS Ed)
 
 If you haven't installed Docker, refer to our
@@ -5,20 +7,20 @@ If you haven't installed Docker, refer to our
 
 1\. Let's change to **mytrial-fe** directory:
 
-~~~bash
+```bash
 cd $pwd/Stem-Cell-Clinical-Trials-Tracker/mytrial-fe
-~~~
+```
 
 3\. Build and tag the Docker image for our ReactJS **mytrial-fe** app:
 
-~~~bash
+```bash
 # Installs Node.js 13.12, npm 6.14.4
 docker build -t mytrial-fe:dev .
-~~~
+```
 
 4\. Launch a Docker container named **mytrial_rjs_client** for our ReactJS app with code based from **mytrial-fe** folder:
 
-~~~bash
+```bash
 # REACT_APP_API_BASE_URL uses localhost since communication between react and sb happens on localhost
 sudo docker run -it \
     --name mytrial_rjs_client \
@@ -29,7 +31,7 @@ sudo docker run -it \
     -e CHOKIDAR_USEPOLLINNG=true \
     --network=frontend \
     mytrial-fe:dev
-~~~
+```
 
 <!-- Check node version and npm version inside docker container scct_tracker -->
 
@@ -42,26 +44,26 @@ sudo docker run -it \
 
 5\. Open your Ubuntu VM's browser http://localhost:3001/ and you should see the app. You can make a change to the `App` component within your code editor and see the app hot-reload.
 
-If you need to get into the Docker alpine's container, execute the following command: 
+If you need to get into the Docker alpine's container, execute the following command:
 
-~~~bash
+```bash
 sudo docker exec -it scct_tracker /bin/ash
-~~~
+```
 
 **Optional**\. If you want to open the ReactJS app in your Windows or Mac host machine's browser outside the Ubuntu VM, if you are running your Ubuntu VM on Virtualbox, click:
 
-- **Settings** -> **Network** -> **Advanced** -> **Port Forwarding** -> 
+- **Settings** -> **Network** -> **Advanced** -> **Port Forwarding** ->
 
 Add a new Port Forwarding Rule with following properties:
 
-~~~bash
+```bash
 Name = SCCTT_ReactJS
 Protocol = TCP
 Host Port = 30001
 Guest Port = 3001
-~~~
+```
 
-Click OK, then OK again for the port forwarding to be saved. Then from your host machine's browser, access link: http://localhost:3001/ 
+Click OK, then OK again for the port forwarding to be saved. Then from your host machine's browser, access link: http://localhost:3001/
 
 ## Reference
 

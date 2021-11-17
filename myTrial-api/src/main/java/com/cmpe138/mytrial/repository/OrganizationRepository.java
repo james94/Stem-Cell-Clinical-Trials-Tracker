@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
@@ -21,9 +22,10 @@ public class OrganizationRepository {
 	public List<Organization> findAll() {
 		return jdbc.query("select * from org", this::mapRowToOrganization);
 	}
-	
+
 	public List<Organization> getOrganizationByResearcherId(String researcher_id) {
-		return jdbc.query("select * from org o join works_for w on o.org_name = w.org_name where w.researcher_id = ?", new BeanPropertyRowMapper<Organization>(Organization.class), researcher_id);
+		return jdbc.query("select * from org o join works_for w on o.org_name = w.org_name where w.researcher_id = ?",
+				new BeanPropertyRowMapper<Organization>(Organization.class), researcher_id);
 	}
 
 	private Organization mapRowToOrganization(ResultSet rs, int rowNum) throws SQLException {

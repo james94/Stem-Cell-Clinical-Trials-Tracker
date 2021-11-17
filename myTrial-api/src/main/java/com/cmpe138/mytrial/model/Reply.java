@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.model;
 
 public class Reply {
@@ -59,8 +60,8 @@ public class Reply {
 
 	@Override
 	public String toString() {
-		return "Reply [reply_id=" + reply_id + ", r_timestamp=" + r_timestamp + ", content=" + content + ", df_id=" + df_id + ", researcher_id=" + researcher_id + ", researcher=" + researcher + "]";
+		return "Reply [reply_id=" + reply_id + ", r_timestamp=" + r_timestamp + ", content=" + content + ", df_id="
+				+ df_id + ", researcher_id=" + researcher_id + ", researcher=" + researcher + "]";
 	}
 
-	
 }

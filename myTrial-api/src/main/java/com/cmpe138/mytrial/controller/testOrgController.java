@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.List;
@@ -16,8 +17,8 @@ import com.cmpe138.mytrial.service.OrganizationService;
 public class testOrgController {
 	@Autowired
 
-    private OrganizationService myOrg;
-	
+	private OrganizationService myOrg;
+
 	@GetMapping("/test2")
 	public String test() {
 		return "hello testing trial and org from server";
@@ -25,7 +26,7 @@ public class testOrgController {
 
 	@GetMapping("/organizations")
 	public List<Organization> getOrganizations() {
-		return myOrg.getAllOrganizations();				
+		return myOrg.getAllOrganizations();
 	}
 
 }

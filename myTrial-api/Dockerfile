@@ -1,3 +1,4 @@
+# SJSU CMPE 138 Fall 2021 TEAM1
 FROM openjdk:17-jdk-alpine
 
 ENV SPRING_DATASOURCE_URL=jdbc:mysql://mytrial-db:3306/mytrial

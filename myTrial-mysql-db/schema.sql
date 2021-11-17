@@ -1,3 +1,4 @@
+-- SJSU CMPE 138 Fall 2021 TEAM1
 drop database if exists mytrial;
 create database mytrial;
 use mytrial;

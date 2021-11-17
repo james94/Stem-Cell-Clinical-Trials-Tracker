@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.model;
 
 import java.util.ArrayList;
@@ -106,17 +107,10 @@ public class CTGrant {
 
     @Override
     public String toString() {
-        return "CTGrant [grant_number=" + grant_number
-               + ", grant_title=" + grant_title
-               + ", trial_id=" + trial_id
-               + ", disease_focus=" + disease_focus
-               + ", start_date=" + start_date
-               + ", end_date=" + end_date
-               + ", type=" + type
-               + ", award_status=" + award_status
-               + ", institution=" + institution
-               + ", stem_cell_use=" + stem_cell_use
-               + ", amount=" + amount + "]";
+        return "CTGrant [grant_number=" + grant_number + ", grant_title=" + grant_title + ", trial_id=" + trial_id
+                + ", disease_focus=" + disease_focus + ", start_date=" + start_date + ", end_date=" + end_date
+                + ", type=" + type + ", award_status=" + award_status + ", institution=" + institution
+                + ", stem_cell_use=" + stem_cell_use + ", amount=" + amount + "]";
     }
 
 };

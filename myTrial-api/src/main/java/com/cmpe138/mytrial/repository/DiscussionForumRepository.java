@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
@@ -23,7 +24,8 @@ public class DiscussionForumRepository {
 
 	public List<DiscussionForum> findAll() {
 		String sql = "select * from discussion_forum";
-		List<DiscussionForum> forums = jdbc.query(sql, new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class));
+		List<DiscussionForum> forums = jdbc.query(sql,
+				new BeanPropertyRowMapper<DiscussionForum>(DiscussionForum.class));
 		return forums;
 	}
 
@@ -43,15 +45,15 @@ public class DiscussionForumRepository {
 		String sql = "insert discussion_forum (df_name, details, researcher_id) values (?, ?, ?)";
 		return jdbc.update(sql, df_name, details, researcher_id);
 	}
-	
+
 	public int updateDiscussion(int df_id, String df_name, String details) {
 		String sql = "update discussion_forum set df_name = ?, details = ? where df_id = ? ";
 		return jdbc.update(sql, df_name, details, df_id);
 	}
-	
+
 	public int deleteDiscussion(int df_id) {
 		String sql = "delete from discussion_forum where df_id = ? ";
-		return jdbc.update(sql,df_id);
+		return jdbc.update(sql, df_id);
 	}
 
 	// RowMapper
@@ -80,7 +82,5 @@ public class DiscussionForumRepository {
 			return r;
 		}
 	}
-
-	
 
 }

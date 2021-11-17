@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import com.cmpe138.mytrial.model.DiscussionForum;
@@ -17,6 +18,7 @@ public class DonorRepository {
         String donor_sql = "INSERT donor VALUES (?, ?, ?)";
         jdbc.update(donor_sql, name, patient_id, email);
     }
+
     public void updateDonorByPatientId(String patient_id, String name, String email) {
         String donor_sql = "UPDATE donor SET name=?, email=? where patient_id=?";
         jdbc.update(donor_sql, name, email, patient_id);

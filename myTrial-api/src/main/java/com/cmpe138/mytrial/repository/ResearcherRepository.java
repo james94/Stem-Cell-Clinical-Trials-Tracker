@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.util.List;
@@ -34,12 +35,13 @@ public class ResearcherRepository {
 		// AES_ENCRYPT('MDAwMTIz',@key_str,@init_vector)
 		String sql = "select * from researcher where r_username = ? and r_password = AES_ENCRYPT(?, SHA2('The secret passphrase',512), RANDOM_BYTES(16))";
 		try {
-			return jdbc.queryForObject(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class), username, password);
+			return jdbc.queryForObject(sql, new BeanPropertyRowMapper<Researcher>(Researcher.class), username,
+					password);
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
-	
+
 	public List<Researcher> getResearcherByTrialId(String t_id) {
 		String sql = "select * from researcher R where R.researcher_id in (select I.researcher_id from investigates I where I.trial_id = ?)";
 		try {

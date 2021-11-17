@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.List;
@@ -24,12 +25,13 @@ public class ReplyController {
 	private ReplyService replyService;
 
 	@GetMapping("/researcher/reply")
-	public List<Reply> getResearcherReply(@RequestHeader(value = "researcher_id", required = false) String researcher_id) {
+	public List<Reply> getResearcherReply(
+			@RequestHeader(value = "researcher_id", required = false) String researcher_id) {
 		return replyService.getReplyByResearcherId(researcher_id);
 	}
 
 	@GetMapping("/reply/{reply_id}")
-	public Reply getReply(@PathVariable(value="reply_id") int reply_id) {
+	public Reply getReply(@PathVariable(value = "reply_id") int reply_id) {
 		return replyService.getReplyId(reply_id);
 	}
 
@@ -37,12 +39,12 @@ public class ReplyController {
 	public Integer addReply(@RequestBody Reply reply) {
 		return replyService.addReply(reply.getContent(), reply.getDf_id(), reply.getResearcher_id());
 	}
-	
+
 	@PutMapping("/reply")
 	public Integer updateReply(@RequestBody Reply reply) {
 		return replyService.updateReply(reply.getReply_id(), reply.getContent(), reply.getResearcher_id());
 	}
-	
+
 	@DeleteMapping("/reply/{id}")
 	public boolean deleteReply(@PathVariable(value = "id", required = true) Integer reply_id) {
 		return replyService.deleteReply(reply_id);

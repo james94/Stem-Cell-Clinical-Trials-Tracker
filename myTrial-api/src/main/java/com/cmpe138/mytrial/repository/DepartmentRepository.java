@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
@@ -13,18 +14,18 @@ import com.cmpe138.mytrial.model.Department;
 public class DepartmentRepository {
 	@Autowired
 	private JdbcTemplate jdbc;
-	
+
 	public List<Department> findAll() {
 		System.out.println("Reached repo");
 		return jdbc.query("select * from department", this::mapRowToDepartment);
 	}
-	
+
 	private Department mapRowToDepartment(ResultSet rs, int rowNum) throws SQLException {
-			Department d =  new Department();
-			d.setDname(rs.getString("dname"));
-			d.setDnumber(rs.getInt("dnumber"));
-			d.setMgrssn(rs.getInt("mgrssn"));
-			d.setMgrstartdate(rs.getDate("mgrstartdate"));
-			return d;
+		Department d = new Department();
+		d.setDname(rs.getString("dname"));
+		d.setDnumber(rs.getInt("dnumber"));
+		d.setMgrssn(rs.getInt("mgrssn"));
+		d.setMgrstartdate(rs.getDate("mgrstartdate"));
+		return d;
 	}
 }

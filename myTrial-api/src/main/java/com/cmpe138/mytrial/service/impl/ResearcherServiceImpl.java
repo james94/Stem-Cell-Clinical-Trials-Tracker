@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.service.impl;
 
 import java.util.ArrayList;
@@ -81,11 +82,11 @@ public class ResearcherServiceImpl implements ResearcherService {
 		}
 		return names;
 	}
-	
+
 	@Override
 	@Transactional
-	public void createResearcher(String r_name, String r_username, String r_password, 
-			List<String> organizations, List<String> disease_areas) {
+	public void createResearcher(String r_name, String r_username, String r_password, List<String> organizations,
+			List<String> disease_areas) {
 		String r_id = String.valueOf((int) (Math.random() * 999999999));
 		while (getResearchertById(r_id) != null) {
 			r_id = String.valueOf((int) (Math.random() * 999999999));

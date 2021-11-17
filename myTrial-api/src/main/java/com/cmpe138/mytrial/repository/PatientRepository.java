@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.util.List;
@@ -27,7 +28,8 @@ public class PatientRepository {
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<Patient>(Patient.class), patient_id);
 	}
 
-	public int createPatient(String disease, String phase, String p_status, String p_username, String p_password, String trial_id, String researcher_id) {
+	public int createPatient(String disease, String phase, String p_status, String p_username, String p_password,
+			String trial_id, String researcher_id) {
 		String sql = "insert patient(disease, phase, p_status, p_username, p_password, trial_id, researcher_id) values (?,?,?,?,?,?,?)";
 		return jdbc.update(sql, disease, phase, p_status, p_username, p_password, trial_id, researcher_id);
 	}
@@ -59,7 +61,7 @@ public class PatientRepository {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Editing Patient Details
 	 * 
@@ -70,18 +72,21 @@ public class PatientRepository {
 	 * @param patient_id
 	 * @return
 	 */
-	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+	public void updatePatientUsingPatientID(String disease, String phase, String status, String trial_id,
+			String patient_id) {
 		System.out.println("in the repo, about to prepare the statement");
 		String sql = "update patient set disease = ?, phase = ?, p_status = ?, trial_id = ? where patient_id = ?";
 		try {
-			jdbc.update(sql,disease, phase, status, trial_id, patient_id);
+			jdbc.update(sql, disease, phase, status, trial_id, patient_id);
 		} catch (DataIntegrityViolationException e) {
-			System.out.println("Error data integrity constraint violated when updating record for patient_id = " + patient_id);
+			System.out.println(
+					"Error data integrity constraint violated when updating record for patient_id = " + patient_id);
 		}
 	}
 
 	/**
 	 * For researcher, can delete a patient by patient ID
+	 * 
 	 * @param patient_id
 	 * @return
 	 */
@@ -92,11 +97,12 @@ public class PatientRepository {
 			int delete_query_res = jdbc.update(delete_query, patient_id);
 			System.out.println("delete_query_res = " + delete_query_res);
 			return delete_query_res;
-		} catch(Exception e) {
+		} catch (Exception e) {
 			// Check if patient table has dep on other table like a foreign key
 			System.out.println(e);
-			System.out.println("Error referential integrity constraint violated when removing record for patient_id = " + patient_id);
+			System.out.println("Error referential integrity constraint violated when removing record for patient_id = "
+					+ patient_id);
 		}
 		return 0; // 0 rows deleted, but need 1 deleted
-	}	
+	}
 }

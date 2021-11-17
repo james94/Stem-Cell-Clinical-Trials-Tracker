@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.service.impl;
 
 import java.util.List;
@@ -27,8 +28,7 @@ public class PatientServiceImpl implements PatientService {
 	public List<Patient> getAll() {
 		return patientRepo.findAll();
 	}
-	
-	
+
 	@Override
 	public List<Patient> getPatientByResearcherId(String researcher_id) {
 		return patientRepo.getPatientsByResearcher_id(researcher_id);
@@ -45,8 +45,8 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getPatientById(String researcher_id, String patient_id) {
 		Patient p = patientRepo.getPatientById(patient_id);
-//		if (p == null || p.getResearcher_id() != researcher_id)
-//			return new Patient();
+		// if (p == null || p.getResearcher_id() != researcher_id)
+		// return new Patient();
 		// add Trial
 		Trial t = trialRepo.findById(p.getTrial_id());
 
@@ -63,9 +63,10 @@ public class PatientServiceImpl implements PatientService {
 	public Patient getPatientByUsernamePassword(String username, String password) {
 		return patientRepo.getPatientByUsernamePassword(username, password);
 	}
-	
+
 	@Override
-	public void updatePatientUsingPatientID(String disease, String phase,String status,String trial_id, String patient_id) {
+	public void updatePatientUsingPatientID(String disease, String phase, String status, String trial_id,
+			String patient_id) {
 		patientRepo.updatePatientUsingPatientID(disease, phase, status, trial_id, patient_id);
 		System.out.println("Completed calling the repo function from updatePatientUsingPatientID, service file");
 	}

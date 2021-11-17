@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.List;
@@ -28,11 +29,10 @@ public class ResearcherController {
 	public Researcher getResearchersById(@PathVariable(value = "researcher_id") String researcher_id) {
 		return researcherService.getResearchertById(researcher_id);
 	}
-	
+
 	@GetMapping("/researcher_names")
 	public List<String> getResearcherNamesByTrialId(@RequestParam(value = "trialId") String trial_id) {
 		return researcherService.getResearcherByTrialId(trial_id);
 	}
-	
 
 }

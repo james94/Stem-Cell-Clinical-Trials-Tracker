@@ -1,3 +1,5 @@
+# SJSU CMPE 138 Fall 2021 TEAM1
+
 # FullStack: Deploy MyTrial App Across React, SpringBoot & MySQL Docker Containers
 
 Let's go through the steps to manually deploy each Docker Container in our MyTrials-Tracker Full Stack Web Application by using docker run commands in each linked section.
@@ -25,7 +27,6 @@ The FrontEnd part of the application `mytrial-client` is written in ReactJS.
 Check out the **mytrial-fe** [Dockerfile](../mytrial-fe/Dockerfile) for reference.
 
 Let's go deploy the ReactJS Client Docker Container: [FrontEnd: Install ReactJS on Ubuntu VM, Then Deploy ReactJS Docker Alpine Container](./frontEnd.md)
-
 
 <!-- ## Deploy FullStack MyTrial App with Docker Compose
 

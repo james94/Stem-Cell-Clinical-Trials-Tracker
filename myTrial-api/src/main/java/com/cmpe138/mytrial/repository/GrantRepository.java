@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.repository;
 
 import java.sql.ResultSet;
@@ -15,8 +16,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Repository
 public class GrantRepository {
-	@Autowired
-	private JdbcTemplate jdbc;
+    @Autowired
+    private JdbcTemplate jdbc;
 
     public List<CTGrant> findAll() {
         String sql = "select * from ct_grant";
@@ -26,7 +27,8 @@ public class GrantRepository {
     public CTGrant findByGrantNumber(String grant_number) {
         String sql = "select * from ct_grant where grant_number = '" + grant_number + "'";
         List<CTGrant> res = jdbc.query(sql, this::mapRowToGrant);
-        if(res.size() == 0) return null;
+        if (res.size() == 0)
+            return null;
         return res.get(0);
     }
 
@@ -51,26 +53,20 @@ public class GrantRepository {
     }
 
     public List<CTGrant> findByResearcherId(String researcher_id) {
-        String sql = "select * from ct_grant G where G.grant_number in (select A.grant_no from awards A where A.researcher_id = " + researcher_id + ")";
+        String sql = "select * from ct_grant G where G.grant_number in (select A.grant_no from awards A where A.researcher_id = "
+                + researcher_id + ")";
         return jdbc.query(sql, this::mapRowToGrant);
     }
 
     public void addGrant(String researcher_id, ObjectNode grant) {
         String grant_sql = "insert ct_grant values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbc.update(grant_sql,
-            grant.get("grant_number").asText(),
-            grant.get("grant_title").asText(),
-            grant.get("trial_id").asText(),
-            grant.get("disease_focus").asText(),
-            grant.get("start_date").asText(),
-            grant.get("end_date").asText(),
-            grant.get("type").asText(),
-            grant.get("award_status").asText(),
-            grant.get("institution").asText(),
-            grant.get("stem_cell_use").asText(),
-            grant.get("amount").asDouble());
+        jdbc.update(grant_sql, grant.get("grant_number").asText(), grant.get("grant_title").asText(),
+                grant.get("trial_id").asText(), grant.get("disease_focus").asText(), grant.get("start_date").asText(),
+                grant.get("end_date").asText(), grant.get("type").asText(), grant.get("award_status").asText(),
+                grant.get("institution").asText(), grant.get("stem_cell_use").asText(), grant.get("amount").asDouble());
 
-        // when we add a grant, we also have to take into account adding to awards table due to N to M relationship
+        // when we add a grant, we also have to take into account adding to awards table
+        // due to N to M relationship
         String awards_sql = "insert awards values (?, ?)";
         jdbc.update(awards_sql, grant.get("grant_number").asText(), researcher_id);
     }

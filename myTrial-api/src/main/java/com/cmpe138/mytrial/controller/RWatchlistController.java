@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.controller;
 
 import java.util.ArrayList;
@@ -18,17 +19,18 @@ import com.cmpe138.mytrial.service.RWatchlistService;
 @RestController
 public class RWatchlistController {
 
-    @Autowired
+	@Autowired
 	private RWatchlistService watchlistServ;
-	
+
 	@GetMapping("/researcher/watchlists")
-	public List<RWatchlist> getWatchlists(@RequestHeader(value="id", required=false) String researcher_id) {
+	public List<RWatchlist> getWatchlists(@RequestHeader(value = "id", required = false) String researcher_id) {
 		return watchlistServ.getAllWatchlists(researcher_id);
 	}
-	
+
 	@PostMapping("/researcher/addwatchlist")
-	public void addWatchlist(@RequestHeader(value="id", required=false) String researcher_id, @RequestBody RWatchlist rWatchlist) {
+	public void addWatchlist(@RequestHeader(value = "id", required = false) String researcher_id,
+			@RequestBody RWatchlist rWatchlist) {
 		watchlistServ.createWatchlist(rWatchlist.getName(), researcher_id, rWatchlist.getDiseaseArea());
-    }
-    
+	}
+
 }
