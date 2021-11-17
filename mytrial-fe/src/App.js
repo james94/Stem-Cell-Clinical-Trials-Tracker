@@ -1,7 +1,8 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
-import SearchPage from './components/SearchPage';
+import SearchPage from "./components/SearchPage";
 import RegisterPage from "./components/RegisterPage";
 import LandingPage from "./components/LandingPage";
 import ResearcherHomePage from "./components/ResearcherHomePage";
@@ -17,10 +18,10 @@ import PatientHomePage from "./components/PatientHomePage";
 import PatientPage from "./components/PatientPage";
 import PatientInfoPage from "./components/PatientInfoPage";
 import PatientWatchlistsPage from "./components/PatientWatchlistsPage";
-import SearchViewAllPatients from './components/SearchViewAllPatients';
+import SearchViewAllPatients from "./components/SearchViewAllPatients";
 import ResearcherPage from "./components/ResearcherPage";
 import ResearcherInfoPage from "./components/ResearcherInfoPage";
-import DiseaseWatchListPage from './components/DiseaseWatchListPage';
+import DiseaseWatchListPage from "./components/DiseaseWatchListPage";
 import Top from "./components/Top";
 import UpdateDonorPage from "./components/UpdateDonorPage";
 

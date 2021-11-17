@@ -1,6 +1,7 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React from "react";
 import axios from "axios";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import { PATIIENT_API_BASE_URL } from "../settings/";
 
 class SearchViewAllPatients extends React.Component {
@@ -9,8 +10,8 @@ class SearchViewAllPatients extends React.Component {
     this.state = {
       query: "",
       data: [],
-      researcher_id: localStorage.getItem('id'),
-      role: localStorage.getItem('role'),
+      researcher_id: localStorage.getItem("id"),
+      role: localStorage.getItem("role"),
       filteredData: [],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,9 +36,9 @@ class SearchViewAllPatients extends React.Component {
   getData = () => {
     let config = {
       headers: {
-          researcher_id: this.state.researcher_id,
-          search: true
-      }
+        researcher_id: this.state.researcher_id,
+        search: true,
+      },
     };
     axios
       .get(PATIIENT_API_BASE_URL, config)

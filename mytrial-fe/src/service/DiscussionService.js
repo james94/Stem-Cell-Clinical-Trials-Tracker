@@ -1,28 +1,28 @@
-import axios from 'axios';
-import MYTRIAL_API from '../settings/index'
+// SJSU CMPE 138 Fall 2021 TEAM1
+import axios from "axios";
+import MYTRIAL_API from "../settings/index";
 const DISCUSSION_API_BASE_URL = `${MYTRIAL_API}/discussion`;
 
 class DiscussionService {
+  getDiscussions() {
+    return axios.get(DISCUSSION_API_BASE_URL);
+  }
 
-    getDiscussions() {
-        return axios.get(DISCUSSION_API_BASE_URL);
-    }
+  createDiscussion(discussion) {
+    return axios.post(DISCUSSION_API_BASE_URL, discussion);
+  }
 
-    createDiscussion(discussion) {
-        return axios.post(DISCUSSION_API_BASE_URL, discussion);
-    }
+  getDiscussionById(discussionId) {
+    return axios.get(DISCUSSION_API_BASE_URL + "/" + discussionId);
+  }
 
-    getDiscussionById(discussionId) {
-        return axios.get(DISCUSSION_API_BASE_URL + '/' + discussionId);
-    }
+  updateDiscussion(discussion) {
+    return axios.put(DISCUSSION_API_BASE_URL, discussion);
+  }
 
-    updateDiscussion(discussion) {
-        return axios.put(DISCUSSION_API_BASE_URL , discussion);
-    }
-
-    deleteDiscussion(discussionId) {
-        return axios.delete(DISCUSSION_API_BASE_URL + '/' + discussionId);
-    }
+  deleteDiscussion(discussionId) {
+    return axios.delete(DISCUSSION_API_BASE_URL + "/" + discussionId);
+  }
 }
 
-export default new DiscussionService()
+export default new DiscussionService();

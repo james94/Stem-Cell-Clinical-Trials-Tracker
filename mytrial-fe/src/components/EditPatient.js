@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React, { Component } from "react";
 import axios from "axios";
 import { PATIIENT_API_BASE_URL, EDIT_PATIENT } from "../settings/";
@@ -28,8 +29,8 @@ class EditPatient extends Component {
   getData = () => {
     let config_header = {
       headers: {
-        researcher_id: localStorage.getItem('id')
-      }
+        researcher_id: localStorage.getItem("id"),
+      },
     };
 
     axios
@@ -127,10 +128,7 @@ class EditPatient extends Component {
             />
           </Form.Field>
           <center>
-            <button
-              className="btn btn-outline-primary m-3"
-              type="submit"
-            >
+            <button className="btn btn-outline-primary m-3" type="submit">
               Update data for Patient {this.state.patient_id}
             </button>
             <Link to={href_link_submit}>

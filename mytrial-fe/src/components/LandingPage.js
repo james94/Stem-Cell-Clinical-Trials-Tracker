@@ -1,20 +1,32 @@
-import {Link} from "react-router-dom";
+// SJSU CMPE 138 Fall 2021 TEAM1
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-    return (
-        <div>
-            Select your role:
-            <ul>
-                <li>
-                    <button onClick={() => {localStorage.setItem('role', 'researcher')}}><Link to="/login">Researcher</Link></button>
-                </li>
-                <li>
-                    <button onClick={() => {localStorage.setItem('role', 'patient')}}><Link to="/login">Patient</Link></button>
-                </li>
-                
-            </ul>
-        </div>
-    )
-}
+  return (
+    <div>
+      Select your role:
+      <ul>
+        <li>
+          <button
+            onClick={() => {
+              localStorage.setItem("role", "researcher");
+            }}
+          >
+            <Link to="/login">Researcher</Link>
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              localStorage.setItem("role", "patient");
+            }}
+          >
+            <Link to="/login">Patient</Link>
+          </button>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default LandingPage;
