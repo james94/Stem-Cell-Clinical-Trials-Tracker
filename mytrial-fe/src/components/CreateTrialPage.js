@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { useState } from 'react';
 import { ADD_TRIAL_END_POINT } from '../settings';
@@ -150,9 +151,9 @@ const CreateTrialPage = ({history}) => {
             </Form.Field>
             <Form.Field required>
                 <label>Disease Area</label>
-                <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseOptions} 
-                    onChange={(_, obj) => {setDisease(obj.value)}} 
-                />               
+                <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseOptions}
+                    onChange={(_, obj) => {setDisease(obj.value)}}
+                />
             </Form.Field>
             <Form.Field required>
                 <label>Organization</label>

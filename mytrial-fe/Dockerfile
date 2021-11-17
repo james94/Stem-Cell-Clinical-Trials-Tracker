@@ -1,3 +1,4 @@
+# SJSU CMPE 138 Fall 2021 TEAM1
 # Node.js version 13.12, npm version 6.14.4
 FROM node:13.12.0-alpine
 # set working directory, we're inside this dir in Docker image

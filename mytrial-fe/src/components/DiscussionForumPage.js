@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DiscussionService from '../service/DiscussionService';

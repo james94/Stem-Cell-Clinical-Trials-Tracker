@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 const MYTRIAL_API = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
 export const TRIALS_BY_RESEARCHER_END_POINT = `${MYTRIAL_API}/trials`;

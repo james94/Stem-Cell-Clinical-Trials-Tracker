@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
