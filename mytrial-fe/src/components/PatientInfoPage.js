@@ -14,7 +14,7 @@ class PatientInfoPage extends React.Component {
             patientToShow: {},
             trialToShow: {},
             researcherToShow: {},
-            // researcher_id: localStorage.getItem('id')
+            donor: null
         };
     }
 
@@ -35,17 +35,19 @@ class PatientInfoPage extends React.Component {
             })
     }
 
-    retriveDonorByPatientId = () =>{
+    retrieveDonorByPatientId = () =>{
         DonorService.getDonorByPatientId(this.props.match.params.id)
-            .then(data=>{
-                console.log(data.data)
+            .then(response => {
+                console.log(response.data)
                 this.setState({
-                    donor: data.data
+                    donor: response.data
                 });
             })
-            .catch(err=>{
+            .catch(err => {
                 console.log(err)
             })
+
+            console.log(this.state.donor);
     }
 
     render() {
@@ -53,16 +55,10 @@ class PatientInfoPage extends React.Component {
         return (
             <div>
 
-                {/*    {*/}
-                {/*        (localStorage.getItem('role') === 'researcher' && this.retriveDonorByPatientId() && this.state.donor) ?*/}
-                {/*            <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button>:null*/}
-                {/*    }*/}
-                {/*{*/}
-                {/*    (localStorage.getItem('role') === 'researcher' && this.retriveDonorByPatientId() && !this.state.donor)?*/}
-                {/*        <Button><Link to={{pathname:`/add_donor/${this.props.match.params.id}`}}>Add Donor</Link></Button>:null*/}
-                {/*}*/}
-                {(localStorage.getItem('role') === 'researcher')?
-                <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button>:null
+                {  // shows Update Donor button if patient has a donor and role is researcher, else shows Add Donor button
+                    (this.state.donor && localStorage.getItem('role') === 'researcher') ?
+                        <Button><Link to={{pathname: `/update_donor/${this.props.match.params.id}`}}>Update Donor</Link></Button> :
+                        <Button><Link to={{pathname:`/add_donor/${this.props.match.params.id}`}}>Add Donor</Link></Button>
                 }
 
                 <h2>Patient Data</h2>
@@ -111,6 +107,8 @@ class PatientInfoPage extends React.Component {
             .catch(err => {
                 console.log(err)
             })
+
+        this.retrieveDonorByPatientId();
     }
 }
 

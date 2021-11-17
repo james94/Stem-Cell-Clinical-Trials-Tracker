@@ -35,9 +35,12 @@ const LoginForm = (props) => {
             <Button type='submit'>Submit</Button>
             {localStorage.getItem('role') === 'researcher' && <Link to="/register">No account? Register</Link>}
             <div>
-                Test Researcher:<br />
+                Test Researcher Without Patient Donor:<br />
                 MarkHumayun<br />
-                MDAwMTIz<br />
+                MDAwMTIz<br /><br />
+                Test Researcher With Patient Donor:<br />
+                TippiMacKenzie<br />
+                MDAwMTIz<br /><br />
                 Test Patient:<br />
                 01-Amd1<br />
                 MDAwMTIz<br />
