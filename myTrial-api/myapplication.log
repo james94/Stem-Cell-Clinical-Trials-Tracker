@@ -213,3 +213,155 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	... 152 common frames omitted
 
 2021-11-16 16:53:06.163  INFO 43068 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 10.935 seconds (JVM running for 13.982)
+2021-11-16 22:51:18.631  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 11372 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 22:51:18.636  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 22:51:19.153  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 22:51:19.158  INFO 11372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 22:51:19.158  INFO 11372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 22:51:19.177  INFO 11372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 22:51:19.177  INFO 11372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 530 ms
+2021-11-16 22:51:19.625  INFO 11372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-16 22:51:19.640  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-16 22:51:19.652  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Started MyTrialApplication in 6.218 seconds (JVM running for 4557.435)
+2021-11-16 22:51:19.668  INFO 11372 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-16 22:51:21.399  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 11372 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 22:51:21.404  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 22:51:21.831  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 22:51:21.835  INFO 11372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 22:51:21.835  INFO 11372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 22:51:21.851  INFO 11372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 22:51:21.851  INFO 11372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 435 ms
+2021-11-16 22:51:22.140  INFO 11372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-16 22:51:22.149  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-16 22:51:22.154  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Started MyTrialApplication in 0.924 seconds (JVM running for 4559.937)
+2021-11-16 22:51:22.155  INFO 11372 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-16 23:00:40.241  INFO 12483 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 12483 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 23:00:40.243  INFO 12483 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 23:00:40.331  INFO 12483 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-16 23:00:40.332  INFO 12483 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-16 23:00:40.563  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 11372 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 23:00:40.567  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 23:00:40.902  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 23:00:40.906  INFO 11372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 23:00:40.906  INFO 11372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 23:00:40.915  INFO 11372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 23:00:40.915  INFO 11372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 339 ms
+2021-11-16 23:00:41.131  INFO 11372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-16 23:00:41.140  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-16 23:00:41.145  INFO 11372 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Started MyTrialApplication in 5.682 seconds (JVM running for 5118.942)
+2021-11-16 23:00:41.148  INFO 11372 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-16 23:00:41.550  INFO 12483 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 23:00:41.557  INFO 12483 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 23:00:41.557  INFO 12483 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 23:00:41.613  INFO 12483 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 23:00:41.613  INFO 12483 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1281 ms
+2021-11-16 23:00:42.204  WARN 12483 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-11-16 23:00:42.233  WARN 12483 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-11-16 23:00:42.245  INFO 12483 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-16 23:00:42.261  INFO 12483 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-11-16 23:00:42.270 ERROR 12483 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-11-16 23:00:53.245  INFO 11372 --- [RMI TCP Connection(98)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-16 23:01:02.049  INFO 12486 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 12486 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 23:01:02.051  INFO 12486 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 23:01:02.121  INFO 12486 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-16 23:01:02.122  INFO 12486 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-16 23:01:03.180  INFO 12486 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 23:01:03.189  INFO 12486 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 23:01:03.189  INFO 12486 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 23:01:03.243  INFO 12486 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 23:01:03.244  INFO 12486 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1121 ms
+2021-11-16 23:01:03.770  INFO 12486 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-16 23:01:03.802  INFO 12486 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-16 23:01:03.824  INFO 12486 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Started MyTrialApplication in 2.146 seconds (JVM running for 7.83)
+2021-11-16 23:01:04.687  INFO 12487 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 12487 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 23:01:04.689  INFO 12487 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 23:01:04.764  INFO 12487 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-16 23:01:04.765  INFO 12487 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-16 23:01:05.883  INFO 12487 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 23:01:05.889  INFO 12487 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 23:01:05.890  INFO 12487 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 23:01:05.951  INFO 12487 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 23:01:05.951  INFO 12487 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1185 ms
+2021-11-16 23:01:06.542  WARN 12487 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-11-16 23:01:06.566  WARN 12487 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-11-16 23:01:06.573  INFO 12487 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-16 23:01:06.599  INFO 12487 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-11-16 23:01:06.608 ERROR 12487 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-11-16 23:01:19.764  INFO 12486 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-16 23:01:19.765  INFO 12486 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-16 23:01:19.767  INFO 12486 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-11-16 23:01:19.862 DEBUG 12486 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:01:19.867 DEBUG 12486 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from patient where patient_id = ?]
+2021-11-16 23:01:19.869  INFO 12486 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-16 23:01:20.238  INFO 12486 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-16 23:01:20.288 DEBUG 12486 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select * from trial where trial_id = 000000001]
+2021-11-16 23:01:20.312 DEBUG 12486 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:01:20.312 DEBUG 12486 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from researcher where researcher_id = ?]
+2021-11-16 23:01:45.961  INFO 12486 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-16 23:01:45.986  INFO 12486 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-16 23:01:45.998  INFO 12486 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-16 23:02:12.113  INFO 12504 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Starting MyTrialApplication using Java 17.0.1 on Somils-MacBook-Air.local with PID 12504 (/Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api/target/classes started by somilmanishkumarjain in /Users/somilmanishkumarjain/Desktop/180B-round two/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-16 23:02:12.115  INFO 12504 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 23:02:12.182  INFO 12504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-16 23:02:12.182  INFO 12504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-16 23:02:13.231  INFO 12504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-16 23:02:13.237  INFO 12504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-16 23:02:13.237  INFO 12504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-16 23:02:13.286  INFO 12504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-16 23:02:13.287  INFO 12504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1104 ms
+2021-11-16 23:02:13.816  INFO 12504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-16 23:02:13.847  INFO 12504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-16 23:02:13.863  INFO 12504 --- [restartedMain] com.cmpe138.mytrial.MyTrialApplication   : Started MyTrialApplication in 2.132 seconds (JVM running for 7.848)
+2021-11-16 23:02:23.845  INFO 12504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-16 23:02:23.846  INFO 12504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-16 23:02:23.847  INFO 12504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-16 23:02:23.946 DEBUG 12504 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:02:23.947 DEBUG 12504 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from patient where patient_id = ?]
+2021-11-16 23:02:23.950  INFO 12504 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-16 23:02:24.286  INFO 12504 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-16 23:02:24.334 DEBUG 12504 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select * from trial where trial_id = 000000001]
+2021-11-16 23:02:24.362 DEBUG 12504 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:02:24.362 DEBUG 12504 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from researcher where researcher_id = ?]
+2021-11-16 23:03:22.329 DEBUG 12504 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:03:22.331 DEBUG 12504 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from patient where patient_id = ?]
+2021-11-16 23:03:22.343 DEBUG 12504 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select * from trial where trial_id = 000000001]
+2021-11-16 23:03:22.347 DEBUG 12504 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:03:22.347 DEBUG 12504 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from researcher where researcher_id = ?]
+2021-11-16 23:03:25.072 DEBUG 12504 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:03:25.073 DEBUG 12504 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from patient where patient_id = ?]
+2021-11-16 23:03:25.086 DEBUG 12504 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select * from trial where trial_id = 000000001]
+2021-11-16 23:03:25.116 DEBUG 12504 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-11-16 23:03:25.116 DEBUG 12504 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from researcher where researcher_id = ?]
+2021-11-16 23:03:31.019  INFO 12504 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-16 23:03:31.045  INFO 12504 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-16 23:03:31.057  INFO 12504 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
