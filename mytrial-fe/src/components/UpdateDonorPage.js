@@ -1,7 +1,7 @@
 import { Button, Form} from 'semantic-ui-react';
 import { useState } from 'react';
 import DonorService from "../service/DonorService";
-import {useLocation, useParams, withRouter} from "react-router-dom";
+import {useParams, withRouter} from "react-router-dom";
 
 const updateDonor = (patient_id, name, email) => {
     console.log(patient_id, name, email);
