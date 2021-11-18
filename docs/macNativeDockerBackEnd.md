@@ -1,5 +1,7 @@
 # BackEnd: Deploy MySQL and SpringBoot Containers for MyTrials App (Mac OS Ed)
 
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
+
 If you haven't installed Docker, refer to our
 [Mac OS Docker Install Guide](https://docs.docker.com/desktop/mac/install/)
 

@@ -5,7 +5,7 @@
 	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
 	<root level="INFO">
-		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="CONSOLE" /> <!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
 		<appender-ref ref="FILE" />
 	</root>
 </configuration> 

@@ -1,5 +1,7 @@
 # Install Docker on Ubuntu
 
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
+
 1\. Set up Docker Repository
 
 ~~~bash

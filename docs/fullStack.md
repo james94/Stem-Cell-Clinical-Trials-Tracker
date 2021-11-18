@@ -1,5 +1,7 @@
 # FullStack: Deploy MyTrial App Across React, SpringBoot & MySQL Docker Containers
 
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
+
 Let's go through the steps to manually deploy each Docker Container in our MyTrials-Tracker Full Stack Web Application by using docker run commands in each linked section.
 
 ## BackEnd: MySQL Server Docker Container
