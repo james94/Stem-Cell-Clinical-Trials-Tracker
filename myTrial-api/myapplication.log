@@ -1,3 +1,4 @@
+--- SJSU CMPE 138 Fall 2021 TEAM1
 2021-11-16 10:53:33.710  INFO 35136 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 35136 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
 2021-11-16 10:53:33.720  INFO 35136 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
 2021-11-16 10:53:35.943  INFO 35136 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.758 seconds (JVM running for 8.927)
@@ -1971,3 +1972,6 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
 2021-11-17 11:00:10.922  INFO 14673 --- [RMI TCP Connection(28)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-17 21:37:04.621  INFO 14161 --- [main] c.c.mytrial.MyTrialApplicationTests      : Starting MyTrialApplicationTests using Java 11 on MacBook-Pro.local with PID 14161 (started by grandepac in /Users/grandepac/Documents/GitHub/Stem-Cell-Clinical-Trials-Tracker/myTrial-api)
+2021-11-17 21:37:04.624  INFO 14161 --- [main] c.c.mytrial.MyTrialApplicationTests      : No active profile set, falling back to default profiles: default
+2021-11-17 21:37:06.826  INFO 14161 --- [main] c.c.mytrial.MyTrialApplicationTests      : Started MyTrialApplicationTests in 7.681 seconds (JVM running for 8.882)

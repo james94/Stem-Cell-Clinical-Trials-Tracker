@@ -1,4 +1,5 @@
 # Stem Cell Clinical Trials Tracker
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
 
 Regenerative Medicine Stem Cell Clinical Trials Tracker Database Application.
 
@@ -24,43 +25,47 @@ California Institute of Regenerative Medicine
 - Large Data Set CIRM Grants: https://www.cirm.ca.gov/grants
 
 
-## Action Items
+## Action Items For Demo
 
-- [ ] Set Up Development Environment
-  - [ ] Integrate Frontend & Backend Containers
-  - [ ] Frontend Docker Container
-    - [ ] JavaScript React.js
-  - [ ] Backend Docker Container
-    - [ ] Java ODBC
-    - [ ] MySQL
+- [x] Set Up Development Environment
+  - [x] Integrate Frontend, Middleware & Backend Containers
+  - [x] Frontend Docker Container
+    - [x] JavaScript React.js
+  - [x] Middleware Docker Container
+    - [x] Java SpringBoot JDBC
+  - [x] Backend Docker Container
+    - [x] MySQL
 
-- [ ] Create Database: RMSC_Clinical_Trials
-- [ ] Create Tables: 
-  - [ ] Grant 
-  - [ ] Trial
-  - [ ] Researcher
-  - [ ] Patient
-  - [ ] Donor
-  - [ ] Organization 
-  - [ ] Watchlist
-  - [ ] Discussion Forum
-- [ ] Researcher Planned Functionality:
-  - [ ] Retrieve information about all his/her past and current trials
-  - [ ] Create or close description of clinical trial, target enrollment of patients and doctor
-  - [ ] View the list of patients or individual patient info based on id in one of his/her trial
-  - [ ] Search for a potential patient who has a particular disease (need consent from patient)
-  - [ ] Set up a watch list that gets updated from patients interested in trials and receive notifications when patients with specific disease/conditions become available 
-  - [ ] Communicate with other researchers in a discussion board
-  - [ ] Search for existing patients who are already participating in a doctors trial
-  - [ ] Edit patient profile, add or remove patient in a trial
-  - [ ] Edit allogeneic or autologous donor profile, add or remove donor from a trial
-  - [ ] Register with the site, on the backend, make sure password is encrypted/hashed in DB table, login, create a researcher account by name and organization 
+- [x] Create Database: mytrial
+- [x] Create Tables and Insert Data for Most: 
+  - [x] Grant 
+  - [x] Trial
+  - [x] Researcher
+  - [x] Patient
+  - [x] Donor
+  - [x] Organization 
+  - [x] Watchlist
+  - [x] Discussion Forum
+- [x] Researcher Planned Functionality:
+  - [x] Retrieve information about all his/her past and current trials
+  - [x] Create or close description of clinical trial, target enrollment of patients and doctor
+  - [x] View the list of patients or individual patient info based on id in one of his/her trial
+  - [x] Search for a potential patient who has a particular disease
+  - [x] Set up researcher watch list of patients by selecting a disease 
+  - [x] Communicate with other researchers in a discussion board
+  - [x] Search for existing patients by username
+  - [x] Edit and update patient profile 
+  - [x] Delete patient from a trial, which also deletes patient
+  - [x] Edit and update Donor profile associated with a patient
+  - [x] add or remove donor from a patient
+  - [x] Register new researcher to system, encrypt password in DB
+  - [x] Researcher Login to system with username and password
 
-- [ ] Patient Planned Functionality:
-  - [ ] Set up a watch list and receive notifications when new trials/grants are available.
-  - [ ] Retrieve information on all past and current trials related to the one they’ll participate in
-  - [ ] View the list of researchers or individual researcher info by id for their trial
-  - [ ] Register on the site, on the backend, make sure password is encrypted/hashed in DB table, login, view their own profile
+- [x] Patient Planned Functionality:
+  - [x] Set up a patient watch list containing trials for a certain disease
+  - [x] MyTrial - Retrieve patient’s certain trial
+  - [x] Patient login to system with username and password - encrypted in DB
+  - [x] Patient view their own portal
 
 ## Queries
 
