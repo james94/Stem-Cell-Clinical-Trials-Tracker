@@ -26,7 +26,7 @@ class ResearcherInfoPage extends React.Component {
     componentDidMount() {
         let config = {
             headers: {
-                researcher_id: "000000052"
+                researcher_id: localStorage.getItem('id')
             }
         };
         // show discussion list
