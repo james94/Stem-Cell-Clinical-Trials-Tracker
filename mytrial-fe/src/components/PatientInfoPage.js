@@ -11,7 +11,7 @@ class PatientInfoPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            researcher_id: "000000052",
+            researcher_id: localStorage.getItem("id"),
             patientToShow: {},
             trialToShow: {},
             researcherToShow: {},
