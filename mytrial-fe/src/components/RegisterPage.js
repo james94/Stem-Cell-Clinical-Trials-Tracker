@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import {useState} from 'react';
 import { Button, Form, Dropdown } from 'semantic-ui-react';
 import { REGISTER_END_POINT } from '../settings';
@@ -33,7 +34,7 @@ const registerUser = (r_name, organization, disease_area, r_username, r_password
         .then(data => {
             console.log(data);
             console.log('Registered with ' + r_name + r_username + r_password);
-            history.push("/rhome"); 
+            history.push("/rhome");
         })
         .catch(err => {
             history.push("/");
@@ -82,12 +83,12 @@ const RegisterForm = (props) => {
             </Form.Field>
             <Form.Field>
                 <label>Organizations</label>
-                <Dropdown placeholder='organizations' fluid multiple selection options = {organizationOptions} 
+                <Dropdown placeholder='organizations' fluid multiple selection options = {organizationOptions}
                     onChange={handleOrgsChange}/>
             </Form.Field>
             <Form.Field>
                 <label>Disease Areas</label>
-                <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseAreaOptions} 
+                <Dropdown placeholder='disease areas' fluid multiple selection options = {diseaseAreaOptions}
                     onChange={handleDiseasesChange}/>
             </Form.Field>
             <Form.Field>

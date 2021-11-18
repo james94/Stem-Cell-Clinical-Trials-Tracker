@@ -1,12 +1,16 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
+import SearchPage from './components/SearchPage';
 import RegisterPage from "./components/RegisterPage";
 import LandingPage from "./components/LandingPage";
 import ResearcherHomePage from "./components/ResearcherHomePage";
 import TrialsPage from "./components/TrialsPage";
 import TrialInfoPage from "./components/TrialInfoPage";
 import CreateTrialPage from "./components/CreateTrialPage";
+import GrantsListPage from "./components/GrantsListPage";
+import GrantInfoPage from "./components/GrantInfoPage";
 import EditPatient from "./components/EditPatient";
 import DiscussionForumPage from "./components/DiscussionForumPage";
 import DiscussionForumInfoPage from "./components/DiscussionForumInfoPage";
@@ -17,13 +21,23 @@ import PatientWatchlistsPage from "./components/PatientWatchlistsPage";
 import SearchViewAllPatients from './components/SearchViewAllPatients';
 import ResearcherPage from "./components/ResearcherPage";
 import ResearcherInfoPage from "./components/ResearcherInfoPage";
+import DiseaseWatchListPage from './components/DiseaseWatchListPage';
 import Top from "./components/Top";
+import UpdateDonorPage from "./components/UpdateDonorPage";
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
+          <Route path="/search">
+            <Top />
+            <SearchPage />
+          </Route>
+          <Route path="/rwatchlist">
+            <Top />
+            <DiseaseWatchListPage />
+          </Route>
           <Route path="/login">
             <Top />
             <LoginPage />
@@ -48,7 +62,14 @@ function App() {
             <Top />
             <CreateTrialPage />
           </Route>
-
+          <Route path="/grant/:id">
+            <Top />
+            <GrantInfoPage />
+          </Route>
+          <Route path="/grants_list">
+            <Top />
+            <GrantsListPage />
+          </Route>
           <Route path="/editpatient/:id" component={EditPatient}>
             {/* <EditPatient /> */}
           </Route>
@@ -68,6 +89,14 @@ function App() {
           <Route path="/patient/:id">
             <Top />
             <PatientInfoPage />
+          </Route>
+          <Route path="/update_donor/:id">
+            <Top />
+            <UpdateDonorPage />
+          </Route>
+          <Route path="/add_donor/:id">
+            <Top />
+            {/*< Add_Donor_Page/>*/}
           </Route>
           <Route path="/patient">
             <Top />

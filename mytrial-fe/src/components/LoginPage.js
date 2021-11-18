@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { LOGIN_END_POINT } from '../settings';
@@ -35,9 +36,12 @@ const LoginForm = (props) => {
             <Button type='submit'>Submit</Button>
             {localStorage.getItem('role') === 'researcher' && <Link to="/register">No account? Register</Link>}
             <div>
-                Test Researcher:<br />
+                Test Researcher Without Patient Donor:<br />
                 MarkHumayun<br />
-                MDAwMTIz<br />
+                MDAwMTIz<br /><br />
+                Test Researcher With Patient Donor:<br />
+                TippiMacKenzie<br />
+                MDAwMTIz<br /><br />
                 Test Patient:<br />
                 01-Amd1<br />
                 MDAwMTIz<br />

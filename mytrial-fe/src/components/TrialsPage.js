@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Button } from "semantic-ui-react";
@@ -10,7 +11,7 @@ class Trials extends React.Component {
         trials: []
     };
 
-    retrieveMyTrialsByUserId = (url) => {
+    retrieveMyTrialsByResearcherId = (url) => {
         fetchMytrial(url, null, { method: 'GET' }, null, { 'id': localStorage.getItem('id') })
             .then(data => {
                 console.log(data)
@@ -23,8 +24,8 @@ class Trials extends React.Component {
             })
     }
 
-    retrieveMyTrialsByDisease = (url, disease) => {
-        fetchMytrial(url, { 'disease': disease }, { method: 'GET' }, null, { 'id': localStorage.getItem('id') })
+    retrieveMyTrialsByPatientId = (url) => {
+        fetchMytrial(url, null, { method: 'GET' }, null, { 'patient_id': localStorage.getItem('id') })
             .then(data => {
                 console.log(data)
                 this.setState({
@@ -36,11 +37,24 @@ class Trials extends React.Component {
             })
     }
 
+    // retrieveMyTrialsByDisease = (url, disease) => {
+    //     fetchMytrial(url, { 'disease': disease }, { method: 'GET' }, null, { 'id': localStorage.getItem('id') })
+    //         .then(data => {
+    //             console.log(data)
+    //             this.setState({
+    //                 trials: data
+    //             });
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
+
     componentDidMount() {
         //const { disease } = this.props.location ? this.props.location.state : null;
         localStorage.getItem('role') === 'researcher' ?
-            this.retrieveMyTrialsByUserId(TRIALS_BY_RESEARCHER_END_POINT)
-            : this.retrieveMyTrialsByDisease(TRIALS_BY_RESEARCHER_END_POINT, this.props.location.state.disease);
+            this.retrieveMyTrialsByResearcherId(TRIALS_BY_RESEARCHER_END_POINT)
+            : this.retrieveMyTrialsByPatientId(TRIALS_BY_RESEARCHER_END_POINT);
     }
 
     render() {

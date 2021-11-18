@@ -1,3 +1,4 @@
+//SJSU CMPE 138 Fall 2021 TEAM1
 package com.cmpe138.mytrial.service.impl;
 
 import java.util.List;
@@ -34,6 +35,11 @@ public class MyTrialServiceImpl implements MyTrialService {
 	@Override
 	public List<Trial> getTrialsByResearcherId(String researcher_id) {
 		return trialRepository.findByResearcherId(researcher_id);
+	}
+
+	@Override
+	public List<Trial> getTrialsByPatientId(String patient_id) {
+		return trialRepository.findByPatientId(patient_id);
 	}
 	
 	@Override
