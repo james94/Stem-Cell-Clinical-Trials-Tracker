@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

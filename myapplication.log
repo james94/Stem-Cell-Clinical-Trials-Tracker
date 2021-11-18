@@ -1,3 +1,4 @@
+-- SJSU CMPE 138 Fall 2021 TEAM1
 2021-11-16 00:01:48.032 DEBUG 3360 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
 2021-11-16 00:01:48.078 DEBUG 3360 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select * from researcher where r_username = ? and r_password = AES_ENCRYPT(?, SHA2('The secret passphrase',512), RANDOM_BYTES(16))]
 2021-11-16 00:01:48.083 DEBUG 3360 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : SQLWarning ignored: SQL state 'HY000', error code '1618', message [<IV> option ignored]

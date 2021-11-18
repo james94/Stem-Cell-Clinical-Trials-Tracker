@@ -1,5 +1,7 @@
 # CMPE 180B Project: Proposal
 
+<!-- SJSU CMPE 138 Fall 2021 TEAM1 -->
+
 **Title: Stem Cell Clinical Trials App**
 
 ## Team 1
