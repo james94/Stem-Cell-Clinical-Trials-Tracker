@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import {
     ComboBox,
     PrimaryButton
@@ -12,8 +13,8 @@ import { RWATCHLISTS_API_BASE_URL, ADD_R_WATCHLIST_END_POINT } from "../settings
 const comboBoxStyles = { root: { maxWidth: 300 } };
 const buttonStyles = { root: { display: 'block', margin: '10px 0 20px' } };
 
-//TODO: get disease options from DB 
-//TODO: maybe make list more readable 
+//TODO: get disease options from DB
+//TODO: maybe make list more readable
 class DiseaseWatchListPage extends React.Component {
 
     constructor(props) {
@@ -173,7 +174,7 @@ class DiseaseWatchListPage extends React.Component {
                             setKey="set"
                             layoutMode={DetailsListLayoutMode.justified}
                         />
-                    </div> 
+                    </div>
                 </div>
 
 

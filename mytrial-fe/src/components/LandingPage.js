@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import {Link} from "react-router-dom";
 
 const LandingPage = () => {
@@ -11,7 +12,7 @@ const LandingPage = () => {
                 <li>
                     <button onClick={() => {localStorage.setItem('role', 'patient')}}><Link to="/login">Patient</Link></button>
                 </li>
-                
+
             </ul>
         </div>
     )

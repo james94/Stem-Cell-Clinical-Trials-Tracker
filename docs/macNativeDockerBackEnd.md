@@ -50,9 +50,12 @@ docker exec -it mytrial-db bash
 
 # Inside the container, login to container's MySQL server directly
 mysql -u mytrial_docker -p # when asked, enter password mytrial_docker
+
+# or login as passwordless root, it is needed to see mysql.user table
+mysql -u root
 ~~~
 
-Verify if you have **mytrial_docker**  user for your MySQL DB on host machine:
+Verify if you have **root**  user for your MySQL DB on host machine:
 
 ~~~sql
 -- Running Host's MySQL server to check users who exist

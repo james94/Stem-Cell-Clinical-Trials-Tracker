@@ -20,7 +20,7 @@ docker build -t mytrial-fe:dev .
 
 ~~~bash
 # REACT_APP_API_BASE_URL uses localhost since communication between react and sb happens on localhost
-sudo docker run -it \
+docker run -it \
     --name mytrial_rjs_client \
     -v ${PWD}:/mytrial-fe \
     -v /mytrial-fe/node_modules \

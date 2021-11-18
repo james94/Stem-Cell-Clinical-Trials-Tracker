@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import { Link } from 'react-router-dom';
 
 const PatientHomePage = () => {

@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import axios from 'axios';
 import MYTRIAL_API from '../settings/index'
 const RESEARCHER_API_BASE_URL = `${MYTRIAL_API}/researcher`;

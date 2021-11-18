@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchMyPWatchlist } from '../utils';
@@ -144,7 +145,7 @@ class PatientWatchlistsPage extends React.Component {
                 <h1>Patient's Watchlist</h1>
                 <ul>
                     {this.state.watchlists.map((e,i) => <li key={i}>
-                        <Link to={{pathname:'/trials', state:{disease: e.diseaseArea}}} >{e.name}</Link>   
+                        <Link to={{pathname:'/trials', state:{disease: e.diseaseArea}}} >{e.name}</Link>
                     </li>)}
                 </ul>
                 <Modal
@@ -164,7 +165,7 @@ class PatientWatchlistsPage extends React.Component {
                         content="Submit"
                         labelPosition='right'
                         icon='checkmark'
-                        onClick={() => {  
+                        onClick={() => {
                             this.addWatchlist(this.state.watchListName, this.state.diseaseInForm);
                         }}
                         positive

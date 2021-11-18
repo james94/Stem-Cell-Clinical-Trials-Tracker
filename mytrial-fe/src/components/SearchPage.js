@@ -1,3 +1,4 @@
+// SJSU CMPE 138 Fall 2021 TEAM1
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import UnauthorizedPage from './UnauthorizedPage';
@@ -20,7 +21,7 @@ class SearchPage extends React.Component {
             items: [],
             response: [],
             role: localStorage.getItem('role'),
-            researcher_id: localStorage.getItem('id') 
+            researcher_id: localStorage.getItem('id')
         };
 
         // This binding is necessary to make `this` work in the callback
@@ -47,7 +48,7 @@ class SearchPage extends React.Component {
                     researcher: x.researcher
                 }
             })
-    
+
             this.setState({
               data: filteredItems,
               items: filteredItems,
@@ -57,10 +58,10 @@ class SearchPage extends React.Component {
             console.log(error);
           });
       };
-    
+
       componentDidMount() {
         this.getData();
-      }    
+      }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -83,7 +84,7 @@ class SearchPage extends React.Component {
 
     render() {
 
-        const role = this.state.role; 
+        const role = this.state.role;
         this._columns = [
             { key: '', name: 'Disease Name', fieldName: 'dname', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: '', name: 'Patient ID', fieldName: 'pid', minWidth: 100, maxWidth: 200, isResizable: true },
